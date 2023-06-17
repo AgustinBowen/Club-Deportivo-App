@@ -18,7 +18,7 @@ namespace clubApp
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run( MainView.Instance); // uso de la unica instancia admitida en el sistema.
 
-            //prueba gitignore notebook
+            //prueba gitignore notebook 2
         }
     }
 }
