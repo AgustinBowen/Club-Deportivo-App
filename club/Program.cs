@@ -17,6 +17,8 @@ namespace clubApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run( MainView.Instance); // uso de la unica instancia admitida en el sistema.
+
+            //prueba de gitignore
         }
     }
 }
