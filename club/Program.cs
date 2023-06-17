@@ -18,7 +18,6 @@ namespace clubApp
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run( MainView.Instance); // uso de la unica instancia admitida en el sistema.
 
-            //ESTO ES UNA PRUEBA DE LA RAMA DE LA PC
         }
     }
 }
