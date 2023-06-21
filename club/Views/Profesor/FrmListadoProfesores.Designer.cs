@@ -37,16 +37,18 @@
             this.DniCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LocalidadCbo = new System.Windows.Forms.ComboBox();
+            this.LocalidadChk = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfesoresGrd)).BeginInit();
             this.SuspendLayout();
             // 
             // FiltroBtn
             // 
-            this.FiltroBtn.Location = new System.Drawing.Point(983, 23);
-            this.FiltroBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FiltroBtn.Location = new System.Drawing.Point(737, 19);
+            this.FiltroBtn.Margin = new System.Windows.Forms.Padding(2);
             this.FiltroBtn.Name = "FiltroBtn";
-            this.FiltroBtn.Size = new System.Drawing.Size(101, 39);
+            this.FiltroBtn.Size = new System.Drawing.Size(76, 32);
             this.FiltroBtn.TabIndex = 7;
             this.FiltroBtn.Text = "Filtrar";
             this.FiltroBtn.UseVisualStyleBackColor = true;
@@ -56,30 +58,30 @@
             // 
             this.groupBox1.Controls.Add(this.ApellidoTxt);
             this.groupBox1.Controls.Add(this.ApellidoChk);
-            this.groupBox1.Location = new System.Drawing.Point(12, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(9, 8);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(303, 52);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(227, 42);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
             // ApellidoTxt
             // 
             this.ApellidoTxt.Enabled = false;
-            this.ApellidoTxt.Location = new System.Drawing.Point(92, 18);
-            this.ApellidoTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ApellidoTxt.Location = new System.Drawing.Point(69, 15);
+            this.ApellidoTxt.Margin = new System.Windows.Forms.Padding(2);
             this.ApellidoTxt.Name = "ApellidoTxt";
-            this.ApellidoTxt.Size = new System.Drawing.Size(193, 22);
+            this.ApellidoTxt.Size = new System.Drawing.Size(146, 20);
             this.ApellidoTxt.TabIndex = 1;
             // 
             // ApellidoChk
             // 
             this.ApellidoChk.AutoSize = true;
-            this.ApellidoChk.Location = new System.Drawing.Point(5, 21);
-            this.ApellidoChk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ApellidoChk.Location = new System.Drawing.Point(4, 17);
+            this.ApellidoChk.Margin = new System.Windows.Forms.Padding(2);
             this.ApellidoChk.Name = "ApellidoChk";
-            this.ApellidoChk.Size = new System.Drawing.Size(80, 21);
+            this.ApellidoChk.Size = new System.Drawing.Size(63, 17);
             this.ApellidoChk.TabIndex = 0;
             this.ApellidoChk.Text = "Apellido";
             this.ApellidoChk.UseVisualStyleBackColor = true;
@@ -95,14 +97,14 @@
             this.DniCol,
             this.ApellidoCol,
             this.NombreCol});
-            this.ProfesoresGrd.Location = new System.Drawing.Point(12, 68);
-            this.ProfesoresGrd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ProfesoresGrd.Location = new System.Drawing.Point(9, 55);
+            this.ProfesoresGrd.Margin = new System.Windows.Forms.Padding(2);
             this.ProfesoresGrd.MultiSelect = false;
             this.ProfesoresGrd.Name = "ProfesoresGrd";
             this.ProfesoresGrd.ReadOnly = true;
             this.ProfesoresGrd.RowTemplate.Height = 24;
             this.ProfesoresGrd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProfesoresGrd.Size = new System.Drawing.Size(1101, 433);
+            this.ProfesoresGrd.Size = new System.Drawing.Size(826, 352);
             this.ProfesoresGrd.TabIndex = 5;
             // 
             // Legajo
@@ -135,15 +137,41 @@
             this.NombreCol.ReadOnly = true;
             this.NombreCol.Width = 190;
             // 
+            // LocalidadCbo
+            // 
+            this.LocalidadCbo.DisplayMember = "Id";
+            this.LocalidadCbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.LocalidadCbo.Enabled = false;
+            this.LocalidadCbo.FormattingEnabled = true;
+            this.LocalidadCbo.Location = new System.Drawing.Point(383, 23);
+            this.LocalidadCbo.Margin = new System.Windows.Forms.Padding(2);
+            this.LocalidadCbo.Name = "LocalidadCbo";
+            this.LocalidadCbo.Size = new System.Drawing.Size(115, 21);
+            this.LocalidadCbo.TabIndex = 9;
+            this.LocalidadCbo.ValueMember = "Nombre";
+            // 
+            // LocalidadChk
+            // 
+            this.LocalidadChk.AutoSize = true;
+            this.LocalidadChk.Location = new System.Drawing.Point(303, 23);
+            this.LocalidadChk.Margin = new System.Windows.Forms.Padding(2);
+            this.LocalidadChk.Name = "LocalidadChk";
+            this.LocalidadChk.Size = new System.Drawing.Size(72, 17);
+            this.LocalidadChk.TabIndex = 8;
+            this.LocalidadChk.Text = "Localidad";
+            this.LocalidadChk.UseVisualStyleBackColor = true;
+            // 
             // FrmListadoProfesores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 513);
+            this.ClientSize = new System.Drawing.Size(846, 417);
+            this.Controls.Add(this.LocalidadCbo);
+            this.Controls.Add(this.LocalidadChk);
             this.Controls.Add(this.FiltroBtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ProfesoresGrd);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmListadoProfesores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Profesores";
@@ -151,6 +179,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfesoresGrd)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -165,5 +194,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DniCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCol;
+        private System.Windows.Forms.ComboBox LocalidadCbo;
+        private System.Windows.Forms.CheckBox LocalidadChk;
     }
 }

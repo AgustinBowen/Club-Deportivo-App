@@ -151,7 +151,6 @@ namespace clubApp.Views
         private void ListadoProfesors_Click(object sender, EventArgs e)
         {
             FrmListadoProfesores frm = new FrmListadoProfesores();
-            frm.Show();
         }
 
         private void IngresoProfesor_Click(object sender, EventArgs e)
@@ -162,7 +161,8 @@ namespace clubApp.Views
 
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmProfesorBusq frm = new FrmProfesorBusq();
+            frm.ShowBuscar();
         }
 
         
@@ -177,6 +177,9 @@ namespace clubApp.Views
             e.Cancel = true;
         }
 
+        public void ShowBuscar(){
+
+        }
         
         
     }
