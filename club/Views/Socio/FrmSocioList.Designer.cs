@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSocioList));
             this.CerrarBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SociosGrd = new System.Windows.Forms.DataGridView();
@@ -45,7 +46,7 @@
             // CerrarBtn
             // 
             this.CerrarBtn.Location = new System.Drawing.Point(676, 289);
-            this.CerrarBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CerrarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.CerrarBtn.Name = "CerrarBtn";
             this.CerrarBtn.Size = new System.Drawing.Size(54, 27);
             this.CerrarBtn.TabIndex = 7;
@@ -57,9 +58,9 @@
             // 
             this.groupBox1.Controls.Add(this.SociosGrd);
             this.groupBox1.Location = new System.Drawing.Point(5, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(752, 266);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
@@ -82,7 +83,7 @@
             this.Domicilio,
             this.Localidad});
             this.SociosGrd.Location = new System.Drawing.Point(4, 17);
-            this.SociosGrd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SociosGrd.Margin = new System.Windows.Forms.Padding(2);
             this.SociosGrd.MultiSelect = false;
             this.SociosGrd.Name = "SociosGrd";
             this.SociosGrd.ReadOnly = true;
@@ -150,7 +151,8 @@
             this.ClientSize = new System.Drawing.Size(770, 327);
             this.Controls.Add(this.CerrarBtn);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmSocioList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

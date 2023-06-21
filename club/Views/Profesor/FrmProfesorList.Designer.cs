@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfesorList));
             this.CerrarBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ProfesorGrd = new System.Windows.Forms.DataGridView();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Legaj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfesorGrd)).BeginInit();
@@ -62,7 +63,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado...";
             // 
-            // SociosGrd
+            // ProfesorGrd
             // 
             this.ProfesorGrd.AllowUserToAddRows = false;
             this.ProfesorGrd.AllowUserToDeleteRows = false;
@@ -74,7 +75,7 @@
             this.ProfesorGrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Apellido,
             this.Nombres,
-            this.Legaj,
+            this.Legajo,
             this.Localidad});
             this.ProfesorGrd.Location = new System.Drawing.Point(4, 17);
             this.ProfesorGrd.Margin = new System.Windows.Forms.Padding(2);
@@ -104,14 +105,13 @@
             this.Nombres.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.Nombres.Width = 130;
             // 
-            // Dni
+            // Legajo
             // 
-            this.Legaj.DataPropertyName = "Legajo";
-            this.Legaj.HeaderText = "Legajo";
-            this.Legaj.Name = "Legajo";
-            this.Legaj.ReadOnly = true;
-            this.Legaj.Width = 80;
-            // 
+            this.Legajo.DataPropertyName = "Legajo";
+            this.Legajo.HeaderText = "Legajo";
+            this.Legajo.Name = "Legajo";
+            this.Legajo.ReadOnly = true;
+            this.Legajo.Width = 80;
             // 
             // Localidad
             // 
@@ -128,6 +128,7 @@
             this.ClientSize = new System.Drawing.Size(784, 325);
             this.Controls.Add(this.CerrarBtn);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProfesorList";
             this.Text = "FrmProfesorList";
             this.groupBox1.ResumeLayout(false);
@@ -145,6 +146,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn Legaj;
         private System.Windows.Forms.DataGridViewTextBoxColumn Localidad;
-
+        private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfesorBusq));
             this.LocalidadCbo = new System.Windows.Forms.ComboBox();
             this.LocalidadChk = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -165,6 +166,7 @@
             this.Controls.Add(this.NombresChk);
             this.Controls.Add(this.ApellidoTxt);
             this.Controls.Add(this.ApellidoChk);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmProfesorBusq";

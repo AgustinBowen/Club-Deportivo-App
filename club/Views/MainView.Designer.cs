@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Socios_mnu_top = new System.Windows.Forms.ToolStripMenuItem();
             this.SocioAM_mnu = new System.Windows.Forms.ToolStripMenuItem();
@@ -448,6 +449,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.status);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
