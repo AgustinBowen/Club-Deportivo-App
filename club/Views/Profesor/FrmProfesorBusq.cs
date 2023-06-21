@@ -60,7 +60,7 @@ namespace clubApp.Views
                 }
                 // invocar Formulario de Listado.
                 FrmProfesorList frm = new FrmProfesorList();
-                //frm.ShowListado(lista, this, null);
+                frm.ShowListado(lista, this, null);
             }
             catch (Exception ex)
             {
