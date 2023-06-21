@@ -52,7 +52,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>diego1.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
@@ -258,7 +259,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="diego1.ico" />
     <Content Include="Resources\diego1.ico" />
     <Content Include="references\de\Npgsql.resources.dll" />
     <Content Include="references\es\Npgsql.resources.dll" />
