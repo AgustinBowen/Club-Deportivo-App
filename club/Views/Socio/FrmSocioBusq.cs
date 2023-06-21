@@ -39,6 +39,17 @@ namespace clubApp.Views
                 else
                     criterio += String.Format(" and cod_postal = {0}", LocalidadCbo.SelectedValue);
             }
+            if (this.DniChk.Checked)
+            {
+                if (criterio == null)
+                {
+                    criterio = String.Format("dni = {0}", DniTxt.Text);
+                }
+                else
+                {
+                    criterio += String.Format(" and dni = {0}", DniTxt.Text);
+                }
+            }
 
             try
             {
