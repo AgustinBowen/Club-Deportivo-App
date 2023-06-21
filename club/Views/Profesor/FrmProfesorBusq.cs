@@ -29,7 +29,17 @@ namespace clubApp.Views
             {
                 criterio = String.Format("apellido like '%{0}%'", ApellidoTxt.Text);
             }
-
+            if (this.NombresChk.Checked)
+            {
+                if (criterio == null)
+                {
+                    criterio = String.Format("nombres like '%{0}%'", NombresTxt.Text);
+                }
+                else
+                {
+                    criterio = String.Format(" and nombres like '%{0}%'", NombresTxt.Text);
+                }
+            }
             if (this.LocalidadChk.Checked)
             {
                 if (criterio == null)

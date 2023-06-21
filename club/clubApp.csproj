@@ -263,6 +263,9 @@
     <Content Include="references\Npgsql.pdb" />
     <Content Include="references\Npgsql.XML" />
     <Content Include="references\zh-CN\Npgsql.resources.dll" />
+    <None Include="Resources\mainMaradona.png" />
+    <None Include="Resources\firmaMarado.png" />
+    <None Include="Resources\diego1.png" />
     <Content Include="Script\scriptBD.sql" />
     <None Include="Resources\img_vac2.jpg" />
     <None Include="Resources\img_vac.jpg" />
