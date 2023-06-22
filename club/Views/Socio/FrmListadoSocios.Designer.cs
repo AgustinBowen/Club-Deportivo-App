@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListadoSocios));
             this.SociosGrd = new System.Windows.Forms.DataGridView();
             this.DniCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -247,6 +248,7 @@
             this.Controls.Add(this.FiltroBtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.SociosGrd);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmListadoSocios";

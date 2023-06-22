@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSocioBusq));
             this.ApellidoChk = new System.Windows.Forms.CheckBox();
             this.ApellidoTxt = new System.Windows.Forms.TextBox();
             this.NombresTxt = new System.Windows.Forms.TextBox();
@@ -165,6 +166,7 @@
             this.Controls.Add(this.NombresChk);
             this.Controls.Add(this.ApellidoTxt);
             this.Controls.Add(this.ApellidoChk);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

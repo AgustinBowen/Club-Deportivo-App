@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListadoProfesores));
             this.FiltroBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ApellidoTxt = new System.Windows.Forms.TextBox();
@@ -171,6 +172,7 @@
             this.Controls.Add(this.FiltroBtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ProfesoresGrd);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmListadoProfesores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
