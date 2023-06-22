@@ -74,6 +74,7 @@
             this.SociosGrd.Size = new System.Drawing.Size(826, 384);
             this.SociosGrd.TabIndex = 0;
             this.SociosGrd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SociosGrd_CellContentClick);
+            this.SociosGrd.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SociosGrd_ColumnHeaderMouseClick);
             this.SociosGrd.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.SociosGrd_DataBindingComplete);
             this.SociosGrd.DoubleClick += new System.EventHandler(this.SociosGrd_DoubleClick);
             // 

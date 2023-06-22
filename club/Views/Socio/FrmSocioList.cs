@@ -115,5 +115,10 @@ namespace clubApp.Views
                 direction == ListSortDirection.Ascending ?
                 SortOrder.Ascending : SortOrder.Descending;
         }
+
+        private void SociosGrd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

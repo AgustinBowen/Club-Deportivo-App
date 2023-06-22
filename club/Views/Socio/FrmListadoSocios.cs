@@ -83,5 +83,45 @@ namespace clubApp.Views
             List<Socio> listaSocio = Socio.FindAllStatic(null,null);
             frm.ShowExportar(listaSocio);
         }
+        private void SociosGrd_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewColumn newColumn = SociosGrd.Columns[e.ColumnIndex];
+            DataGridViewColumn oldColumn = SociosGrd.SortedColumn;
+            ListSortDirection direction;
+            List<Socio> listaAux = new List<Socio>();
+            listaAux = Socio.FindAllStatic(null, (p1, p2) => (p1.Apellido + p1.Nombres).CompareTo(p2.Apellido + p2.Nombres));
+            var binding = new BindingList<Socio>(listaAux);
+            var source = new BindingSource(binding, null);
+            this.SociosGrd.DataSource = source;
+            this.SociosGrd.AllowUserToOrderColumns = true;
+
+
+            // If oldColumn is null, then the DataGridView is not sorted.
+            if (oldColumn != null)
+            {
+                // Sort the same column again, reversing the SortOrder.
+                if (oldColumn == newColumn &&
+                    SociosGrd.SortOrder == SortOrder.Ascending)
+                {
+                    direction = ListSortDirection.Descending;
+                }
+                else
+                {
+                    // Sort a new column and remove the old SortGlyph.
+                    direction = ListSortDirection.Ascending;
+                    oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
+                }
+            }
+            else
+            {
+                direction = ListSortDirection.Ascending;
+            }
+
+            // Sort the selected column.
+            SociosGrd.Sort(newColumn, direction);
+            newColumn.HeaderCell.SortGlyphDirection =
+                direction == ListSortDirection.Ascending ?
+                SortOrder.Ascending : SortOrder.Descending;
+        }
     }
 }
