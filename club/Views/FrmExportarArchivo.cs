@@ -29,8 +29,9 @@ namespace clubApp.Views
         public void ConfigGuardar() 
         {
             this.saveFileDialog1.DefaultExt = "txt";
-            this.saveFileDialog1.FileName = String.Format("{0}", DateTime.Today.ToString());
+            this.saveFileDialog1.FileName = String.Format("{0}", DateTime.Today.ToString("yyyy-MM-dd"));
             this.saveFileDialog1.Title = "Guardar Archivo";
+            this.saveFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         }
 
         private void FrmExportarArchivo_Load(object sender, EventArgs e)
@@ -48,9 +49,7 @@ namespace clubApp.Views
                             writer.WriteLine(socAux.ToString());
                         }
                     }
-                    arch.Close();
                 }
-
             }
             this.Close();
         }
