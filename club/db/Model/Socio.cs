@@ -121,5 +121,9 @@ namespace clubApp.db
         {
             return this.Apellido.CompareTo((obj as Socio).Apellido);
         }
+        public override string ToString()
+        {
+            return String.Format("{0} - {1}",this.Nombres,this.Apellido);
+        }
     }
 }

@@ -151,6 +151,7 @@ namespace clubApp.Views
         private void ListadoProfesors_Click(object sender, EventArgs e)
         {
             FrmListadoProfesores frm = new FrmListadoProfesores();
+            frm.Show();
         }
 
         private void IngresoProfesor_Click(object sender, EventArgs e)

@@ -227,13 +227,12 @@
             // 
             // ExportarBtn
             // 
-            this.ExportarBtn.Enabled = false;
             this.ExportarBtn.Location = new System.Drawing.Point(736, 458);
             this.ExportarBtn.Name = "ExportarBtn";
             this.ExportarBtn.Size = new System.Drawing.Size(84, 26);
             this.ExportarBtn.TabIndex = 7;
             this.ExportarBtn.Text = "Exportar";
-            this.ExportarBtn.UseVisualStyleBackColor = true;
+            this.ExportarBtn.UseVisualStyleBackColor = false;
             this.ExportarBtn.Click += new System.EventHandler(this.ExportarBtn_Click);
             // 
             // FrmListadoSocios

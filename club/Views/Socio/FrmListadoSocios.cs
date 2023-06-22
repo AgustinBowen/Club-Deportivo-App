@@ -19,7 +19,7 @@ namespace clubApp.Views
 
         public override void ConfigurePermiso(PermisoAttribute perm)
         {
-            this.ExportarBtn.Enabled = Usuario.HasPermiso("Exportar");
+            
         }
 
         private void ApellidoChk_CheckedChanged(object sender, EventArgs e)
@@ -79,7 +79,9 @@ namespace clubApp.Views
 
         private void ExportarBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Implementar funcionalidad...!", "falta...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            FrmExportarArchivo frm = new FrmExportarArchivo(); 
+            List<Socio> listaSocio = Socio.FindAllStatic(null,null);
+            frm.ShowExportar(listaSocio);
         }
     }
 }

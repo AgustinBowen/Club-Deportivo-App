@@ -140,6 +140,12 @@
     <Compile Include="Views\Common\CommonView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\FrmExportarArchivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmExportarArchivo.Designer.cs">
+      <DependentUpon>FrmExportarArchivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Profesor\FrmProfesorBusq.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\FrmExportarArchivo.resx">
+      <DependentUpon>FrmExportarArchivo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Profesor\FrmProfesorBusq.resx">
       <DependentUpon>FrmProfesorBusq.cs</DependentUpon>
     </EmbeddedResource>
