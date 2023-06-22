@@ -430,7 +430,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::clubApp.Properties.Resources.firmaMarado;
-            this.pictureBox2.Location = new System.Drawing.Point(91, 192);
+            this.pictureBox2.Location = new System.Drawing.Point(467, 456);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(199, 175);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
