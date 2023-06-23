@@ -187,14 +187,15 @@
             // LocalidadAM_mnu
             // 
             this.LocalidadAM_mnu.Name = "LocalidadAM_mnu";
-            this.LocalidadAM_mnu.Size = new System.Drawing.Size(113, 22);
+            this.LocalidadAM_mnu.Size = new System.Drawing.Size(152, 22);
             this.LocalidadAM_mnu.Tag = "AltaLocalidad";
             this.LocalidadAM_mnu.Text = "Ingreso";
+            this.LocalidadAM_mnu.Click += new System.EventHandler(this.LocalidadAM_mnu_Click);
             // 
             // BuscarLocalidad_mnu
             // 
             this.BuscarLocalidad_mnu.Name = "BuscarLocalidad_mnu";
-            this.BuscarLocalidad_mnu.Size = new System.Drawing.Size(113, 22);
+            this.BuscarLocalidad_mnu.Size = new System.Drawing.Size(152, 22);
             this.BuscarLocalidad_mnu.Tag = "ModificaLocalidad,ConsultaLocalidad";
             this.BuscarLocalidad_mnu.Text = "Buscar";
             // 

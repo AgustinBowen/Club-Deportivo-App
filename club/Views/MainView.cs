@@ -181,6 +181,12 @@ namespace clubApp.Views
         public void ShowBuscar(){
 
         }
+
+        private void LocalidadAM_mnu_Click(object sender, EventArgs e)
+        {
+            FrmLocalidadAM frm = new FrmLocalidadAM();
+            frm.Show();
+        }
         
         
     }
