@@ -10,7 +10,7 @@ using clubApp.db;
 
 namespace clubApp.Views
 {
-    public partial class FrmListadoProfesores : Form
+    public partial class FrmListadoProfesores : FormBase
     {
         public FrmListadoProfesores()
         {
@@ -22,20 +22,11 @@ namespace clubApp.Views
             this.ApellidoTxt.Enabled = this.ApellidoChk.Checked;
         }
 
-        private void FrmListadoProfesors_Load(object sender, EventArgs e)
-        {
-            this.ProfesoresGrd.AutoGenerateColumns = false;
-            this.ProfesoresGrd.DataSource = ORMDB<Profesor>.FindAll(null);
-            
-        }
+   
                 
         private void FiltroBtn_Click(object sender, EventArgs e)
         {
-            //
-            string criterio = null;
             
-            this.ProfesoresGrd.AutoGenerateColumns = false;
-            this.ProfesoresGrd.DataSource = ORMDB<Profesor>.FindAll(criterio);
         }
 
         private void ProfesoresGrd_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -55,7 +46,15 @@ namespace clubApp.Views
 
         private void ProfesoresGrd_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
 
+        
+
+        private void FrmListadoProfesores_Load(object sender, EventArgs e)
+        {
+            this.ProfesoresGrd.AutoGenerateColumns = false;
+            this.ProfesoresGrd.DataSource = Profesor.FindAllStatic(null, (p1, p2) => (p1.Apellido + p1.Nombres).CompareTo(p2.Apellido + p2.Nombres));
         }       
 
     }

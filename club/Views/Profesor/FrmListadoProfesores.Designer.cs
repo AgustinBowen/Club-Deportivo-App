@@ -38,10 +38,14 @@
             this.DniCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LocalidadCbo = new System.Windows.Forms.ComboBox();
-            this.LocalidadChk = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.legajoChk = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfesoresGrd)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // FiltroBtn
@@ -59,7 +63,7 @@
             // 
             this.groupBox1.Controls.Add(this.ApellidoTxt);
             this.groupBox1.Controls.Add(this.ApellidoChk);
-            this.groupBox1.Location = new System.Drawing.Point(9, 8);
+            this.groupBox1.Location = new System.Drawing.Point(487, 9);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -138,37 +142,55 @@
             this.NombreCol.ReadOnly = true;
             this.NombreCol.Width = 190;
             // 
-            // LocalidadCbo
+            // groupBox2
             // 
-            this.LocalidadCbo.DisplayMember = "Id";
-            this.LocalidadCbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.LocalidadCbo.Enabled = false;
-            this.LocalidadCbo.FormattingEnabled = true;
-            this.LocalidadCbo.Location = new System.Drawing.Point(383, 23);
-            this.LocalidadCbo.Margin = new System.Windows.Forms.Padding(2);
-            this.LocalidadCbo.Name = "LocalidadCbo";
-            this.LocalidadCbo.Size = new System.Drawing.Size(115, 21);
-            this.LocalidadCbo.TabIndex = 9;
-            this.LocalidadCbo.ValueMember = "Nombre";
+            this.groupBox2.Location = new System.Drawing.Point(240, 9);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(227, 42);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
             // 
-            // LocalidadChk
+            // groupBox3
             // 
-            this.LocalidadChk.AutoSize = true;
-            this.LocalidadChk.Location = new System.Drawing.Point(303, 23);
-            this.LocalidadChk.Margin = new System.Windows.Forms.Padding(2);
-            this.LocalidadChk.Name = "LocalidadChk";
-            this.LocalidadChk.Size = new System.Drawing.Size(72, 17);
-            this.LocalidadChk.TabIndex = 8;
-            this.LocalidadChk.Text = "Localidad";
-            this.LocalidadChk.UseVisualStyleBackColor = true;
+            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.legajoChk);
+            this.groupBox3.Location = new System.Drawing.Point(9, 9);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(227, 42);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(69, 15);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(146, 20);
+            this.textBox2.TabIndex = 1;
+            // 
+            // legajoChk
+            // 
+            this.legajoChk.AutoSize = true;
+            this.legajoChk.Location = new System.Drawing.Point(4, 17);
+            this.legajoChk.Margin = new System.Windows.Forms.Padding(2);
+            this.legajoChk.Name = "legajoChk";
+            this.legajoChk.Size = new System.Drawing.Size(58, 17);
+            this.legajoChk.TabIndex = 0;
+            this.legajoChk.Text = "Legajo";
+            this.legajoChk.UseVisualStyleBackColor = true;
             // 
             // FrmListadoProfesores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 417);
-            this.Controls.Add(this.LocalidadCbo);
-            this.Controls.Add(this.LocalidadChk);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.FiltroBtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ProfesoresGrd);
@@ -177,11 +199,15 @@
             this.Name = "FrmListadoProfesores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Profesores";
+            this.Load += new System.EventHandler(this.FrmListadoProfesores_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfesoresGrd)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -196,7 +222,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DniCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCol;
-        private System.Windows.Forms.ComboBox LocalidadCbo;
-        private System.Windows.Forms.CheckBox LocalidadChk;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.CheckBox legajoChk;
     }
 }

@@ -84,7 +84,7 @@ namespace clubApp.Views
             frm.ShowExportar(listaSocio);
         }
         private void SociosGrd_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
+        {/*
             DataGridViewColumn newColumn = SociosGrd.Columns[e.ColumnIndex];
             DataGridViewColumn oldColumn = SociosGrd.SortedColumn;
             ListSortDirection direction;
@@ -121,7 +121,7 @@ namespace clubApp.Views
             SociosGrd.Sort(newColumn, direction);
             newColumn.HeaderCell.SortGlyphDirection =
                 direction == ListSortDirection.Ascending ?
-                SortOrder.Ascending : SortOrder.Descending;
+                SortOrder.Ascending : SortOrder.Descending;*/
         }
     }
 }
