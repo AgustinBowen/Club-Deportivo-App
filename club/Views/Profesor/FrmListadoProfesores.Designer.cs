@@ -38,14 +38,16 @@
             this.DniCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.legajoTxt = new System.Windows.Forms.TextBox();
             this.legajoChk = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dniTxt = new System.Windows.Forms.TextBox();
+            this.dniChk = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfesoresGrd)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // FiltroBtn
@@ -142,19 +144,9 @@
             this.NombreCol.ReadOnly = true;
             this.NombreCol.Width = 190;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Location = new System.Drawing.Point(240, 9);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(227, 42);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.legajoTxt);
             this.groupBox3.Controls.Add(this.legajoChk);
             this.groupBox3.Location = new System.Drawing.Point(9, 9);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
@@ -164,14 +156,14 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             // 
-            // textBox2
+            // legajoTxt
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(69, 15);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 20);
-            this.textBox2.TabIndex = 1;
+            this.legajoTxt.Enabled = false;
+            this.legajoTxt.Location = new System.Drawing.Point(69, 15);
+            this.legajoTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.legajoTxt.Name = "legajoTxt";
+            this.legajoTxt.Size = new System.Drawing.Size(146, 20);
+            this.legajoTxt.TabIndex = 1;
             // 
             // legajoChk
             // 
@@ -183,14 +175,48 @@
             this.legajoChk.TabIndex = 0;
             this.legajoChk.Text = "Legajo";
             this.legajoChk.UseVisualStyleBackColor = true;
+            this.legajoChk.CheckedChanged += new System.EventHandler(this.legajoChk_CheckedChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dniTxt);
+            this.groupBox2.Controls.Add(this.dniChk);
+            this.groupBox2.Location = new System.Drawing.Point(240, 9);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(227, 42);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            // 
+            // dniTxt
+            // 
+            this.dniTxt.Enabled = false;
+            this.dniTxt.Location = new System.Drawing.Point(69, 15);
+            this.dniTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.dniTxt.Name = "dniTxt";
+            this.dniTxt.Size = new System.Drawing.Size(146, 20);
+            this.dniTxt.TabIndex = 1;
+            // 
+            // dniChk
+            // 
+            this.dniChk.AutoSize = true;
+            this.dniChk.Location = new System.Drawing.Point(4, 17);
+            this.dniChk.Margin = new System.Windows.Forms.Padding(2);
+            this.dniChk.Name = "dniChk";
+            this.dniChk.Size = new System.Drawing.Size(42, 17);
+            this.dniChk.TabIndex = 0;
+            this.dniChk.Text = "Dni";
+            this.dniChk.UseVisualStyleBackColor = true;
+            this.dniChk.CheckedChanged += new System.EventHandler(this.dniChk_CheckedChanged);
             // 
             // FrmListadoProfesores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 417);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.FiltroBtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ProfesoresGrd);
@@ -203,10 +229,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfesoresGrd)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -222,9 +248,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DniCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCol;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox legajoTxt;
         private System.Windows.Forms.CheckBox legajoChk;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox dniTxt;
+        private System.Windows.Forms.CheckBox dniChk;
     }
 }

@@ -26,7 +26,48 @@ namespace clubApp.Views
                 
         private void FiltroBtn_Click(object sender, EventArgs e)
         {
-            
+            string criterio = null;
+            if (this.dniChk.Checked)
+            {
+                try{
+                    int.Parse(this.dniTxt.Text);
+                    criterio = string.Format("dni = {0}", this.dniTxt.Text);
+                }
+                catch(FormatException r){
+                    MessageBox.Show("Formato erroneo ingrese dni en numeros","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+            }
+            if (this.ApellidoChk.Checked)
+            {
+                if (criterio == null)
+                {
+                    criterio = string.Format("apellido like '%{0}%'", this.ApellidoTxt.Text);
+                }
+                else
+                {
+                    criterio += string.Format(" and apellido like '%{0}%'",this.ApellidoTxt.Text);
+                }
+            }
+            if (this.legajoChk.Checked)
+            {
+                try
+                {
+                    int.Parse(this.legajoTxt.Text);
+                    if (criterio == null)
+                    {
+                        criterio = string.Format("legajo = {0}", this.legajoTxt.Text);
+                    }
+                    else
+                    {
+                        criterio = string.Format(" and legajo = {0}", this.legajoTxt.Text);
+                    }
+                }
+                catch (FormatException r)
+                {
+                    MessageBox.Show("Formato erroneo ingrese un legajo en numeros","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+            }
+            this.ProfesoresGrd.DataSource = Profesor.FindAllStatic(criterio, (p1, p2) => (p1.Apellido + p1.Nombres).CompareTo(p2.Apellido + p2.Nombres));            
         }
 
         private void ProfesoresGrd_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -55,6 +96,16 @@ namespace clubApp.Views
         {
             this.ProfesoresGrd.AutoGenerateColumns = false;
             this.ProfesoresGrd.DataSource = Profesor.FindAllStatic(null, (p1, p2) => (p1.Apellido + p1.Nombres).CompareTo(p2.Apellido + p2.Nombres));
+        }
+
+        private void legajoChk_CheckedChanged(object sender, EventArgs e)
+        {
+            this.legajoTxt.Enabled = this.legajoChk.Checked;
+        }
+
+        private void dniChk_CheckedChanged(object sender, EventArgs e)
+        {
+            this.dniTxt.Enabled = this.dniChk.Checked;
         }       
 
     }
