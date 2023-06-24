@@ -11,7 +11,9 @@ using clubApp.db;
 namespace clubApp.Views
 {
     public partial class FrmListadoSocios : FormBase
+
     {
+        string criterio = null;
         public FrmListadoSocios()
         {
             InitializeComponent();
@@ -43,7 +45,6 @@ namespace clubApp.Views
         private void FiltroBtn_Click(object sender, EventArgs e)
         {
             //
-            string criterio = null;
             
             if (this.LocalidadChk.Checked && this.LocalidadCbo.SelectedIndex != -1)
             {
@@ -80,7 +81,7 @@ namespace clubApp.Views
         private void ExportarBtn_Click(object sender, EventArgs e)
         {
             FrmExportarArchivo frm = new FrmExportarArchivo(); 
-            List<Socio> listaSocio = Socio.FindAllStatic(null,null);
+            List<Socio> listaSocio = Socio.FindAllStatic(criterio,null);
             frm.ShowExportar(listaSocio);
         }
         private void SociosGrd_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

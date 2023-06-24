@@ -76,9 +76,9 @@ namespace clubApp.Views
                 {
                     using (StreamWriter writer = new StreamWriter(arch))
                     {
-                        foreach (Socio socAux in _lista)
+                        foreach (object aux in _lista)
                         {
-                            writer.WriteLine(socAux.ToString());
+                            writer.WriteLine(aux.ToString());
                         }
                     }
                 }

@@ -12,6 +12,7 @@ namespace clubApp.Views
 {
     public partial class FrmListadoProfesores : FormBase
     {
+        string criterio = null;
         public FrmListadoProfesores()
         {
             InitializeComponent();
@@ -26,7 +27,6 @@ namespace clubApp.Views
                 
         private void FiltroBtn_Click(object sender, EventArgs e)
         {
-            string criterio = null;
             if (this.dniChk.Checked)
             {
                 try{
@@ -106,7 +106,14 @@ namespace clubApp.Views
         private void dniChk_CheckedChanged(object sender, EventArgs e)
         {
             this.dniTxt.Enabled = this.dniChk.Checked;
-        }       
+        }
+
+        private void ExportarBtn_Click(object sender, EventArgs e)
+        {
+            FrmExportarArchivo frm = new FrmExportarArchivo();
+            List<Profesor> listaProfesor = Profesor.FindAllStatic(criterio, null);
+            frm.ShowExportar(listaProfesor);
+        }      
 
     }
 }

@@ -30,22 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListadoProfesores));
             this.FiltroBtn = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ApellidoTxt = new System.Windows.Forms.TextBox();
-            this.ApellidoChk = new System.Windows.Forms.CheckBox();
-            this.ProfesoresGrd = new System.Windows.Forms.DataGridView();
-            this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DniCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApellidoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.legajoTxt = new System.Windows.Forms.TextBox();
+            this.ApellidoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DniCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProfesoresGrd = new System.Windows.Forms.DataGridView();
+            this.ApellidoChk = new System.Windows.Forms.CheckBox();
+            this.ApellidoTxt = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.legajoChk = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dniTxt = new System.Windows.Forms.TextBox();
+            this.legajoTxt = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dniChk = new System.Windows.Forms.CheckBox();
-            this.groupBox1.SuspendLayout();
+            this.dniTxt = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ExportarBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ProfesoresGrd)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -61,38 +62,35 @@
             this.FiltroBtn.UseVisualStyleBackColor = true;
             this.FiltroBtn.Click += new System.EventHandler(this.FiltroBtn_Click);
             // 
-            // groupBox1
+            // NombreCol
             // 
-            this.groupBox1.Controls.Add(this.ApellidoTxt);
-            this.groupBox1.Controls.Add(this.ApellidoChk);
-            this.groupBox1.Location = new System.Drawing.Point(487, 9);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(227, 42);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
+            this.NombreCol.DataPropertyName = "Nombres";
+            this.NombreCol.HeaderText = "Nombres";
+            this.NombreCol.Name = "NombreCol";
+            this.NombreCol.ReadOnly = true;
+            this.NombreCol.Width = 190;
             // 
-            // ApellidoTxt
+            // ApellidoCol
             // 
-            this.ApellidoTxt.Enabled = false;
-            this.ApellidoTxt.Location = new System.Drawing.Point(69, 15);
-            this.ApellidoTxt.Margin = new System.Windows.Forms.Padding(2);
-            this.ApellidoTxt.Name = "ApellidoTxt";
-            this.ApellidoTxt.Size = new System.Drawing.Size(146, 20);
-            this.ApellidoTxt.TabIndex = 1;
+            this.ApellidoCol.DataPropertyName = "Apellido";
+            this.ApellidoCol.HeaderText = "Apellido";
+            this.ApellidoCol.Name = "ApellidoCol";
+            this.ApellidoCol.ReadOnly = true;
+            this.ApellidoCol.Width = 190;
             // 
-            // ApellidoChk
+            // DniCol
             // 
-            this.ApellidoChk.AutoSize = true;
-            this.ApellidoChk.Location = new System.Drawing.Point(4, 17);
-            this.ApellidoChk.Margin = new System.Windows.Forms.Padding(2);
-            this.ApellidoChk.Name = "ApellidoChk";
-            this.ApellidoChk.Size = new System.Drawing.Size(63, 17);
-            this.ApellidoChk.TabIndex = 0;
-            this.ApellidoChk.Text = "Apellido";
-            this.ApellidoChk.UseVisualStyleBackColor = true;
-            this.ApellidoChk.CheckedChanged += new System.EventHandler(this.ApellidoChk_CheckedChanged);
+            this.DniCol.DataPropertyName = "NroDocumento";
+            this.DniCol.HeaderText = "Dni";
+            this.DniCol.Name = "DniCol";
+            this.DniCol.ReadOnly = true;
+            // 
+            // Legajo
+            // 
+            this.Legajo.DataPropertyName = "Legajo";
+            this.Legajo.HeaderText = "Legajo";
+            this.Legajo.Name = "Legajo";
+            this.Legajo.ReadOnly = true;
             // 
             // ProfesoresGrd
             // 
@@ -114,56 +112,38 @@
             this.ProfesoresGrd.Size = new System.Drawing.Size(826, 352);
             this.ProfesoresGrd.TabIndex = 5;
             // 
-            // Legajo
+            // ApellidoChk
             // 
-            this.Legajo.DataPropertyName = "Legajo";
-            this.Legajo.HeaderText = "Legajo";
-            this.Legajo.Name = "Legajo";
-            this.Legajo.ReadOnly = true;
+            this.ApellidoChk.AutoSize = true;
+            this.ApellidoChk.Location = new System.Drawing.Point(4, 17);
+            this.ApellidoChk.Margin = new System.Windows.Forms.Padding(2);
+            this.ApellidoChk.Name = "ApellidoChk";
+            this.ApellidoChk.Size = new System.Drawing.Size(63, 17);
+            this.ApellidoChk.TabIndex = 0;
+            this.ApellidoChk.Text = "Apellido";
+            this.ApellidoChk.UseVisualStyleBackColor = true;
+            this.ApellidoChk.CheckedChanged += new System.EventHandler(this.ApellidoChk_CheckedChanged);
             // 
-            // DniCol
+            // ApellidoTxt
             // 
-            this.DniCol.DataPropertyName = "NroDocumento";
-            this.DniCol.HeaderText = "Dni";
-            this.DniCol.Name = "DniCol";
-            this.DniCol.ReadOnly = true;
+            this.ApellidoTxt.Enabled = false;
+            this.ApellidoTxt.Location = new System.Drawing.Point(69, 15);
+            this.ApellidoTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.ApellidoTxt.Name = "ApellidoTxt";
+            this.ApellidoTxt.Size = new System.Drawing.Size(146, 20);
+            this.ApellidoTxt.TabIndex = 1;
             // 
-            // ApellidoCol
+            // groupBox1
             // 
-            this.ApellidoCol.DataPropertyName = "Apellido";
-            this.ApellidoCol.HeaderText = "Apellido";
-            this.ApellidoCol.Name = "ApellidoCol";
-            this.ApellidoCol.ReadOnly = true;
-            this.ApellidoCol.Width = 190;
-            // 
-            // NombreCol
-            // 
-            this.NombreCol.DataPropertyName = "Nombres";
-            this.NombreCol.HeaderText = "Nombres";
-            this.NombreCol.Name = "NombreCol";
-            this.NombreCol.ReadOnly = true;
-            this.NombreCol.Width = 190;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.legajoTxt);
-            this.groupBox3.Controls.Add(this.legajoChk);
-            this.groupBox3.Location = new System.Drawing.Point(9, 9);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(227, 42);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            // 
-            // legajoTxt
-            // 
-            this.legajoTxt.Enabled = false;
-            this.legajoTxt.Location = new System.Drawing.Point(69, 15);
-            this.legajoTxt.Margin = new System.Windows.Forms.Padding(2);
-            this.legajoTxt.Name = "legajoTxt";
-            this.legajoTxt.Size = new System.Drawing.Size(146, 20);
-            this.legajoTxt.TabIndex = 1;
+            this.groupBox1.Controls.Add(this.ApellidoTxt);
+            this.groupBox1.Controls.Add(this.ApellidoChk);
+            this.groupBox1.Location = new System.Drawing.Point(487, 9);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(227, 42);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
             // 
             // legajoChk
             // 
@@ -177,26 +157,26 @@
             this.legajoChk.UseVisualStyleBackColor = true;
             this.legajoChk.CheckedChanged += new System.EventHandler(this.legajoChk_CheckedChanged);
             // 
-            // groupBox2
+            // legajoTxt
             // 
-            this.groupBox2.Controls.Add(this.dniTxt);
-            this.groupBox2.Controls.Add(this.dniChk);
-            this.groupBox2.Location = new System.Drawing.Point(240, 9);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(227, 42);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
+            this.legajoTxt.Enabled = false;
+            this.legajoTxt.Location = new System.Drawing.Point(69, 15);
+            this.legajoTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.legajoTxt.Name = "legajoTxt";
+            this.legajoTxt.Size = new System.Drawing.Size(146, 20);
+            this.legajoTxt.TabIndex = 1;
             // 
-            // dniTxt
+            // groupBox3
             // 
-            this.dniTxt.Enabled = false;
-            this.dniTxt.Location = new System.Drawing.Point(69, 15);
-            this.dniTxt.Margin = new System.Windows.Forms.Padding(2);
-            this.dniTxt.Name = "dniTxt";
-            this.dniTxt.Size = new System.Drawing.Size(146, 20);
-            this.dniTxt.TabIndex = 1;
+            this.groupBox3.Controls.Add(this.legajoTxt);
+            this.groupBox3.Controls.Add(this.legajoChk);
+            this.groupBox3.Location = new System.Drawing.Point(9, 9);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(227, 42);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
             // 
             // dniChk
             // 
@@ -210,11 +190,43 @@
             this.dniChk.UseVisualStyleBackColor = true;
             this.dniChk.CheckedChanged += new System.EventHandler(this.dniChk_CheckedChanged);
             // 
+            // dniTxt
+            // 
+            this.dniTxt.Enabled = false;
+            this.dniTxt.Location = new System.Drawing.Point(69, 15);
+            this.dniTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.dniTxt.Name = "dniTxt";
+            this.dniTxt.Size = new System.Drawing.Size(146, 20);
+            this.dniTxt.TabIndex = 1;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dniTxt);
+            this.groupBox2.Controls.Add(this.dniChk);
+            this.groupBox2.Location = new System.Drawing.Point(240, 9);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(227, 42);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            // 
+            // ExportarBtn
+            // 
+            this.ExportarBtn.Location = new System.Drawing.Point(750, 425);
+            this.ExportarBtn.Name = "ExportarBtn";
+            this.ExportarBtn.Size = new System.Drawing.Size(84, 26);
+            this.ExportarBtn.TabIndex = 9;
+            this.ExportarBtn.Text = "Exportar";
+            this.ExportarBtn.UseVisualStyleBackColor = false;
+            this.ExportarBtn.Click += new System.EventHandler(this.ExportarBtn_Click);
+            // 
             // FrmListadoProfesores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 417);
+            this.ClientSize = new System.Drawing.Size(846, 472);
+            this.Controls.Add(this.ExportarBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.FiltroBtn);
@@ -226,9 +238,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Profesores";
             this.Load += new System.EventHandler(this.FrmListadoProfesores_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ProfesoresGrd)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProfesoresGrd)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -240,19 +252,20 @@
         #endregion
 
         private System.Windows.Forms.Button FiltroBtn;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox ApellidoTxt;
-        private System.Windows.Forms.CheckBox ApellidoChk;
-        private System.Windows.Forms.DataGridView ProfesoresGrd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DniCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCol;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox legajoTxt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DniCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
+        private System.Windows.Forms.DataGridView ProfesoresGrd;
+        private System.Windows.Forms.CheckBox ApellidoChk;
+        private System.Windows.Forms.TextBox ApellidoTxt;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox legajoChk;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox dniTxt;
+        private System.Windows.Forms.TextBox legajoTxt;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox dniChk;
+        private System.Windows.Forms.TextBox dniTxt;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button ExportarBtn;
     }
 }

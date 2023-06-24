@@ -60,5 +60,9 @@ namespace clubApp.db
                 return true;
             return false;
         }
+        public override string ToString()
+        {
+            return string.Format("{0} - {1}",this._id,this._nombre);
+        }
     }
 }

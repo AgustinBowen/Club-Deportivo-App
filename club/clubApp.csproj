@@ -159,6 +159,12 @@
     <Compile Include="Views\FrmExportarArchivo.Designer.cs">
       <DependentUpon>FrmExportarArchivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Localidad\FrmListadoLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Localidad\FrmListadoLocalidad.Designer.cs">
+      <DependentUpon>FrmListadoLocalidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Localidad\FrmLocalidadBusq.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </Compile>
     <EmbeddedResource Include="Views\FrmExportarArchivo.resx">
       <DependentUpon>FrmExportarArchivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Localidad\FrmListadoLocalidad.resx">
+      <DependentUpon>FrmListadoLocalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Localidad\FrmLocalidadAM.resx">
       <DependentUpon>FrmLocalidadAM.cs</DependentUpon>
