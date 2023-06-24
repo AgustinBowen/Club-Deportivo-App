@@ -285,16 +285,18 @@
             // ingresoToolStripMenuItem
             // 
             this.ingresoToolStripMenuItem.Name = "ingresoToolStripMenuItem";
-            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ingresoToolStripMenuItem.Tag = "AltaHorario";
             this.ingresoToolStripMenuItem.Text = "Ingreso";
+            this.ingresoToolStripMenuItem.Click += new System.EventHandler(this.ingresoToolStripMenuItem_Click);
             // 
             // buscarToolStripMenuItem
             // 
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.buscarToolStripMenuItem.Tag = "ModificaHorario,ConsultaHorario";
             this.buscarToolStripMenuItem.Text = "Buscar";
+            this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click_1);
             // 
             // Listados_mnu_top
             // 
@@ -349,6 +351,7 @@
             this.HorariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.HorariosToolStripMenuItem.Tag = "ConsultaHorario";
             this.HorariosToolStripMenuItem.Text = "Horarios";
+            this.HorariosToolStripMenuItem.Click += new System.EventHandler(this.HorariosToolStripMenuItem_Click);
             // 
             // auditoriaToolStripMenuItem
             // 

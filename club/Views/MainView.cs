@@ -199,6 +199,23 @@ namespace clubApp.Views
             FrmListadoLocalidad f = new FrmListadoLocalidad();
             f.Show();
         }
+
+        private void ingresoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void buscarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FrmCuotaBusq f = new FrmCuotaBusq();
+            f.Show();
+        }
+
+        private void HorariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListadoCuotas f = new FrmListadoCuotas();
+            f.Show();
+        }
         
         
     }

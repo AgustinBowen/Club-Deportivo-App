@@ -153,6 +153,24 @@
     <Compile Include="Views\Common\CommonView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Cuota\FrmCuotaBusq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cuota\FrmCuotaBusq.Designer.cs">
+      <DependentUpon>FrmCuotaBusq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cuota\FrmCuotaList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cuota\FrmCuotaList.Designer.cs">
+      <DependentUpon>FrmCuotaList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cuota\FrmListadoCuotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cuota\FrmListadoCuotas.Designer.cs">
+      <DependentUpon>FrmListadoCuotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmExportarArchivo.cs">
       <SubType>Form</SubType>
     </Compile>
