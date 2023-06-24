@@ -23,13 +23,18 @@ namespace clubApp.Views
             this.InvokerForm = Invoker;
             _listado = listado;
             _criterio = criterio;
-            this.ProfesorGrd.AutoGenerateColumns = false;
+            this.LocalidadGrd.AutoGenerateColumns = false;
             var bindingList = new BindingList<Localidad>(listado);
             var source = new BindingSource(bindingList, null);
-            this.ProfesorGrd.DataSource = source;
+            this.LocalidadGrd.DataSource = source;
             InvokerForm.Close();
             this.MdiParent = MainView.Instance;
             this.Show();
+        }
+
+        private void CerrarBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

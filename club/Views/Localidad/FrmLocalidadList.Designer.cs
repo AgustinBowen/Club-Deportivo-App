@@ -31,13 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CerrarBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ProfesorGrd = new System.Windows.Forms.DataGridView();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LocalidadGrd = new System.Windows.Forms.DataGridView();
+            this.Codigo_Postal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProfesorGrd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LocalidadGrd)).BeginInit();
             this.SuspendLayout();
             // 
             // CerrarBtn
@@ -49,10 +47,11 @@
             this.CerrarBtn.TabIndex = 11;
             this.CerrarBtn.Text = "Cerrar";
             this.CerrarBtn.UseVisualStyleBackColor = true;
+            this.CerrarBtn.Click += new System.EventHandler(this.CerrarBtn_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.ProfesorGrd);
+            this.groupBox1.Controls.Add(this.LocalidadGrd);
             this.groupBox1.Location = new System.Drawing.Point(11, 11);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
@@ -62,63 +61,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado...";
             // 
-            // ProfesorGrd
+            // LocalidadGrd
             // 
-            this.ProfesorGrd.AllowUserToAddRows = false;
-            this.ProfesorGrd.AllowUserToDeleteRows = false;
-            this.ProfesorGrd.AllowUserToResizeColumns = false;
-            this.ProfesorGrd.AllowUserToResizeRows = false;
+            this.LocalidadGrd.AllowUserToAddRows = false;
+            this.LocalidadGrd.AllowUserToDeleteRows = false;
+            this.LocalidadGrd.AllowUserToResizeColumns = false;
+            this.LocalidadGrd.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ProfesorGrd.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.ProfesorGrd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProfesorGrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Apellido,
-            this.Nombres,
-            this.Legajo,
-            this.Localidad});
-            this.ProfesorGrd.Location = new System.Drawing.Point(4, 17);
-            this.ProfesorGrd.Margin = new System.Windows.Forms.Padding(2);
-            this.ProfesorGrd.MultiSelect = false;
-            this.ProfesorGrd.Name = "ProfesorGrd";
-            this.ProfesorGrd.ReadOnly = true;
-            this.ProfesorGrd.RowTemplate.Height = 24;
-            this.ProfesorGrd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProfesorGrd.Size = new System.Drawing.Size(743, 237);
-            this.ProfesorGrd.TabIndex = 0;
+            this.LocalidadGrd.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.LocalidadGrd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LocalidadGrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo_Postal,
+            this.Nombre});
+            this.LocalidadGrd.Location = new System.Drawing.Point(4, 17);
+            this.LocalidadGrd.Margin = new System.Windows.Forms.Padding(2);
+            this.LocalidadGrd.MultiSelect = false;
+            this.LocalidadGrd.Name = "LocalidadGrd";
+            this.LocalidadGrd.ReadOnly = true;
+            this.LocalidadGrd.RowTemplate.Height = 24;
+            this.LocalidadGrd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.LocalidadGrd.Size = new System.Drawing.Size(743, 237);
+            this.LocalidadGrd.TabIndex = 0;
             // 
-            // Apellido
+            // Codigo_Postal
             // 
-            this.Apellido.DataPropertyName = "Apellido";
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            this.Apellido.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Apellido.Width = 130;
+            this.Codigo_Postal.DataPropertyName = "id";
+            this.Codigo_Postal.HeaderText = "Codigo Postal";
+            this.Codigo_Postal.Name = "Codigo_Postal";
+            this.Codigo_Postal.ReadOnly = true;
+            this.Codigo_Postal.Width = 80;
             // 
-            // Nombres
+            // Nombre
             // 
-            this.Nombres.DataPropertyName = "Nombres";
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            this.Nombres.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Nombres.Width = 130;
-            // 
-            // Legajo
-            // 
-            this.Legajo.DataPropertyName = "Legajo";
-            this.Legajo.HeaderText = "Legajo";
-            this.Legajo.Name = "Legajo";
-            this.Legajo.ReadOnly = true;
-            this.Legajo.Width = 80;
-            // 
-            // Localidad
-            // 
-            this.Localidad.DataPropertyName = "Localidad";
-            this.Localidad.HeaderText = "Localidad";
-            this.Localidad.Name = "Localidad";
-            this.Localidad.ReadOnly = true;
-            this.Localidad.Width = 140;
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Nombre.Width = 130;
             // 
             // FrmLocalidadList
             // 
@@ -130,7 +110,7 @@
             this.Name = "FrmLocalidadList";
             this.Text = "FrmLocalidadList";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ProfesorGrd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LocalidadGrd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -139,10 +119,8 @@
 
         private System.Windows.Forms.Button CerrarBtn;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView ProfesorGrd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Localidad;
+        private System.Windows.Forms.DataGridView LocalidadGrd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo_Postal;
     }
 }
