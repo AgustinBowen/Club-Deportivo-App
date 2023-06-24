@@ -135,12 +135,18 @@ namespace clubApp.Views
             profesor = new Profesor();
             profesor.Apellido = ApellidoTxt.Text;
             profesor.Nombres = NombresTxt.Text;
-            profesor.Legajo = Int32.Parse(LegajoTxt.Text);
-            profesor.NroDocumento = Int32.Parse(DniTxt.Text);
             profesor.Domicilio = DomicilioTxt.Text;
-            profesor.Telefono = TelefonoTxt.Text;            
-            
-
+            profesor.Telefono = TelefonoTxt.Text;
+            try
+            {
+                profesor.Legajo = Int32.Parse(LegajoTxt.Text);
+                profesor.NroDocumento = Int32.Parse(DniTxt.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Formato de legajo o dni erroneo","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                this.Close();
+            }
             detalleLog += Newtonsoft.Json.JsonConvert.SerializeObject(profesor);
             // intentar guardar en la Base de datos.
             try
@@ -236,5 +242,13 @@ namespace clubApp.Views
             }
         }
 
+        private void LegajoTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+               (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

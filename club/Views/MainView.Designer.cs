@@ -198,6 +198,7 @@
             this.BuscarLocalidad_mnu.Size = new System.Drawing.Size(152, 22);
             this.BuscarLocalidad_mnu.Tag = "ModificaLocalidad,ConsultaLocalidad";
             this.BuscarLocalidad_mnu.Text = "Buscar";
+            this.BuscarLocalidad_mnu.Click += new System.EventHandler(this.BuscarLocalidad_mnu_Click);
             // 
             // Actividad_mnu_top
             // 

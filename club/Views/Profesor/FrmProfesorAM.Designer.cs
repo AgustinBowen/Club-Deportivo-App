@@ -62,9 +62,9 @@
             this.groupBox1.Controls.Add(this.ApellidoTxt);
             this.groupBox1.Controls.Add(this.ApellidoLbl);
             this.groupBox1.Location = new System.Drawing.Point(24, 19);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(274, 223);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -72,11 +72,12 @@
             // DniTxt
             // 
             this.DniTxt.Location = new System.Drawing.Point(74, 111);
-            this.DniTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DniTxt.Margin = new System.Windows.Forms.Padding(2);
             this.DniTxt.Name = "DniTxt";
             this.DniTxt.Size = new System.Drawing.Size(80, 20);
             this.DniTxt.TabIndex = 4;
             this.DniTxt.Tag = "Dni";
+            this.DniTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DniTxt_KeyPress);
             // 
             // DniLbl
             // 
@@ -91,11 +92,12 @@
             // TelefonoTxt
             // 
             this.TelefonoTxt.Location = new System.Drawing.Point(74, 176);
-            this.TelefonoTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TelefonoTxt.Margin = new System.Windows.Forms.Padding(2);
             this.TelefonoTxt.Name = "TelefonoTxt";
             this.TelefonoTxt.Size = new System.Drawing.Size(166, 20);
             this.TelefonoTxt.TabIndex = 6;
             this.TelefonoTxt.Tag = "Telefono";
+            this.TelefonoTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonoTxt_KeyPress);
             // 
             // TelefonoLbl
             // 
@@ -110,7 +112,7 @@
             // DomicilioTxt
             // 
             this.DomicilioTxt.Location = new System.Drawing.Point(74, 141);
-            this.DomicilioTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DomicilioTxt.Margin = new System.Windows.Forms.Padding(2);
             this.DomicilioTxt.Name = "DomicilioTxt";
             this.DomicilioTxt.Size = new System.Drawing.Size(166, 20);
             this.DomicilioTxt.TabIndex = 5;
@@ -128,11 +130,12 @@
             // LegajoTxt
             // 
             this.LegajoTxt.Location = new System.Drawing.Point(74, 15);
-            this.LegajoTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LegajoTxt.Margin = new System.Windows.Forms.Padding(2);
             this.LegajoTxt.Name = "LegajoTxt";
             this.LegajoTxt.Size = new System.Drawing.Size(80, 20);
             this.LegajoTxt.TabIndex = 3;
             this.LegajoTxt.Tag = "Legajo";
+            this.LegajoTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LegajoTxt_KeyPress);
             // 
             // LegajoLbl
             // 
@@ -147,7 +150,7 @@
             // NombresTxt
             // 
             this.NombresTxt.Location = new System.Drawing.Point(74, 80);
-            this.NombresTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NombresTxt.Margin = new System.Windows.Forms.Padding(2);
             this.NombresTxt.Name = "NombresTxt";
             this.NombresTxt.Size = new System.Drawing.Size(166, 20);
             this.NombresTxt.TabIndex = 2;
@@ -166,7 +169,7 @@
             // ApellidoTxt
             // 
             this.ApellidoTxt.Location = new System.Drawing.Point(74, 46);
-            this.ApellidoTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ApellidoTxt.Margin = new System.Windows.Forms.Padding(2);
             this.ApellidoTxt.Name = "ApellidoTxt";
             this.ApellidoTxt.Size = new System.Drawing.Size(160, 20);
             this.ApellidoTxt.TabIndex = 1;
@@ -185,7 +188,7 @@
             // CancelarBtn
             // 
             this.CancelarBtn.Location = new System.Drawing.Point(254, 262);
-            this.CancelarBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CancelarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.CancelarBtn.Name = "CancelarBtn";
             this.CancelarBtn.Size = new System.Drawing.Size(59, 27);
             this.CancelarBtn.TabIndex = 10;
@@ -196,7 +199,7 @@
             // GuardarBtn
             // 
             this.GuardarBtn.Location = new System.Drawing.Point(172, 262);
-            this.GuardarBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GuardarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.GuardarBtn.Name = "GuardarBtn";
             this.GuardarBtn.Size = new System.Drawing.Size(59, 27);
             this.GuardarBtn.TabIndex = 9;
@@ -213,7 +216,7 @@
             this.Controls.Add(this.GuardarBtn);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmProfesorAM";

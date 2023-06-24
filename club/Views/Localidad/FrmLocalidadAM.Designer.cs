@@ -31,9 +31,9 @@
             this.CancelarBtn = new System.Windows.Forms.Button();
             this.GuardarBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.DniTxt = new System.Windows.Forms.TextBox();
-            this.DniLbl = new System.Windows.Forms.Label();
-            this.NombresTxt = new System.Windows.Forms.TextBox();
+            this.CodPostalTxt = new System.Windows.Forms.TextBox();
+            this.CodPostalLbl = new System.Windows.Forms.Label();
+            this.NombreTxt = new System.Windows.Forms.TextBox();
             this.NombresLbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +47,7 @@
             this.CancelarBtn.TabIndex = 13;
             this.CancelarBtn.Text = "&Cancelar";
             this.CancelarBtn.UseVisualStyleBackColor = true;
+            this.CancelarBtn.Click += new System.EventHandler(this.CancelarBtn_Click);
             // 
             // GuardarBtn
             // 
@@ -57,12 +58,13 @@
             this.GuardarBtn.TabIndex = 12;
             this.GuardarBtn.Text = "&Guardar";
             this.GuardarBtn.UseVisualStyleBackColor = true;
+            this.GuardarBtn.Click += new System.EventHandler(this.GuardarBtn_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.DniTxt);
-            this.groupBox1.Controls.Add(this.DniLbl);
-            this.groupBox1.Controls.Add(this.NombresTxt);
+            this.groupBox1.Controls.Add(this.CodPostalTxt);
+            this.groupBox1.Controls.Add(this.CodPostalLbl);
+            this.groupBox1.Controls.Add(this.NombreTxt);
             this.groupBox1.Controls.Add(this.NombresLbl);
             this.groupBox1.Location = new System.Drawing.Point(11, 11);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -72,33 +74,34 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
-            // DniTxt
+            // CodPostalTxt
             // 
-            this.DniTxt.Location = new System.Drawing.Point(74, 51);
-            this.DniTxt.Margin = new System.Windows.Forms.Padding(2);
-            this.DniTxt.Name = "DniTxt";
-            this.DniTxt.Size = new System.Drawing.Size(80, 20);
-            this.DniTxt.TabIndex = 4;
-            this.DniTxt.Tag = "Dni";
+            this.CodPostalTxt.Location = new System.Drawing.Point(92, 52);
+            this.CodPostalTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.CodPostalTxt.Name = "CodPostalTxt";
+            this.CodPostalTxt.Size = new System.Drawing.Size(80, 20);
+            this.CodPostalTxt.TabIndex = 4;
+            this.CodPostalTxt.Tag = "Dni";
+            this.CodPostalTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CodPostalTxt_KeyPress);
             // 
-            // DniLbl
+            // CodPostalLbl
             // 
-            this.DniLbl.AutoSize = true;
-            this.DniLbl.Location = new System.Drawing.Point(16, 52);
-            this.DniLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.DniLbl.Name = "DniLbl";
-            this.DniLbl.Size = new System.Drawing.Size(50, 13);
-            this.DniLbl.TabIndex = 16;
-            this.DniLbl.Text = "&Nro.Doc.";
+            this.CodPostalLbl.AutoSize = true;
+            this.CodPostalLbl.Location = new System.Drawing.Point(16, 55);
+            this.CodPostalLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CodPostalLbl.Name = "CodPostalLbl";
+            this.CodPostalLbl.Size = new System.Drawing.Size(72, 13);
+            this.CodPostalLbl.TabIndex = 16;
+            this.CodPostalLbl.Text = "&Codigo Postal";
             // 
-            // NombresTxt
+            // NombreTxt
             // 
-            this.NombresTxt.Location = new System.Drawing.Point(74, 27);
-            this.NombresTxt.Margin = new System.Windows.Forms.Padding(2);
-            this.NombresTxt.Name = "NombresTxt";
-            this.NombresTxt.Size = new System.Drawing.Size(166, 20);
-            this.NombresTxt.TabIndex = 2;
-            this.NombresTxt.Tag = "Nombres";
+            this.NombreTxt.Location = new System.Drawing.Point(92, 27);
+            this.NombreTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.NombreTxt.Name = "NombreTxt";
+            this.NombreTxt.Size = new System.Drawing.Size(166, 20);
+            this.NombreTxt.TabIndex = 2;
+            this.NombreTxt.Tag = "Nombres";
             // 
             // NombresLbl
             // 
@@ -106,9 +109,9 @@
             this.NombresLbl.Location = new System.Drawing.Point(17, 30);
             this.NombresLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NombresLbl.Name = "NombresLbl";
-            this.NombresLbl.Size = new System.Drawing.Size(49, 13);
+            this.NombresLbl.Size = new System.Drawing.Size(44, 13);
             this.NombresLbl.TabIndex = 2;
-            this.NombresLbl.Text = "No&mbres";
+            this.NombresLbl.Text = "N&ombre";
             // 
             // FrmLocalidadAM
             // 
@@ -132,9 +135,9 @@
         private System.Windows.Forms.Button CancelarBtn;
         private System.Windows.Forms.Button GuardarBtn;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox DniTxt;
-        private System.Windows.Forms.Label DniLbl;
-        private System.Windows.Forms.TextBox NombresTxt;
+        private System.Windows.Forms.TextBox CodPostalTxt;
+        private System.Windows.Forms.Label CodPostalLbl;
+        private System.Windows.Forms.TextBox NombreTxt;
         private System.Windows.Forms.Label NombresLbl;
     }
 }

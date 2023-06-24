@@ -159,6 +159,18 @@
     <Compile Include="Views\FrmExportarArchivo.Designer.cs">
       <DependentUpon>FrmExportarArchivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Localidad\FrmLocalidadBusq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Localidad\FrmLocalidadBusq.Designer.cs">
+      <DependentUpon>FrmLocalidadBusq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Localidad\FrmLocalidadList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Localidad\FrmLocalidadList.Designer.cs">
+      <DependentUpon>FrmLocalidadList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Profesor\FrmProfesorBusq.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +252,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Localidad\FrmLocalidadAM.resx">
       <DependentUpon>FrmLocalidadAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Localidad\FrmLocalidadBusq.resx">
+      <DependentUpon>FrmLocalidadBusq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Localidad\FrmLocalidadList.resx">
+      <DependentUpon>FrmLocalidadList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Profesor\FrmProfesorBusq.resx">
       <DependentUpon>FrmProfesorBusq.cs</DependentUpon>
