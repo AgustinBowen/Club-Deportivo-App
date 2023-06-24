@@ -30,11 +30,11 @@ namespace clubApp.Views
             {
                 if (criterio == null)
                 {
-                    criterio = String.Format("id = {0}", CodPostalTxt.Text);
+                    criterio = String.Format("cod_postal = {0}", CodPostalTxt.Text);
                 }
                 else
                 {
-                    criterio += String.Format(" and id = {0}", CodPostalTxt.Text);
+                    criterio += String.Format(" and cod_postal = {0}", CodPostalTxt.Text);
                 }
             }
 

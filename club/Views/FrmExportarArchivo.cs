@@ -55,6 +55,8 @@ namespace clubApp.Views
             this.Show();
         }
 
+        //Falta auditoria
+
 
         public void ConfigGuardar() 
         {
