@@ -59,7 +59,7 @@
             // 
             // CodPostalTxt
             // 
-            this.CodPostalTxt.Enabled = false;
+            this.CodPostalTxt.Enabled = true;
             this.CodPostalTxt.Location = new System.Drawing.Point(99, 15);
             this.CodPostalTxt.Margin = new System.Windows.Forms.Padding(2);
             this.CodPostalTxt.Name = "CodPostalTxt";
@@ -94,7 +94,7 @@
             // 
             // NombreTxt
             // 
-            this.NombreTxt.Enabled = false;
+            this.NombreTxt.Enabled = true;
             this.NombreTxt.Location = new System.Drawing.Point(69, 15);
             this.NombreTxt.Margin = new System.Windows.Forms.Padding(2);
             this.NombreTxt.Name = "NombreTxt";

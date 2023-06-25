@@ -71,16 +71,20 @@ namespace clubApp.Views
             }
             if (this.PagaChk.Checked)
             {
-                criterio = String.Format("estado like 'paga'");
+                criterio = String.Format("estado like 'p'");
             }
             if (this.ImpagaChk.Checked)
             {
-                criterio = String.Format("estado like 'impaga'");
+                criterio = String.Format("estado like 'i'");
+            }
+            if (this.AnuladaChk.Checked)
+            {
+                criterio = String.Format("estado = 'a'", FechaPagoPicker.Text);
             }
             if (this.ImporteChk.Checked)
             {
                 int.Parse(this.ImporteTxt.Text);
-                criterio = String.Format("anio = {0}", ImporteTxt.Text);
+                criterio = String.Format("importe = {0}", ImporteTxt.Text);
             }
             if (this.FechaVencimientoChk.Checked)
             {
@@ -92,7 +96,6 @@ namespace clubApp.Views
                 Convert.ToDateTime(this.FechaPagoPicker.Text);
                 criterio = String.Format("fecha_pago = {0}", FechaPagoPicker.Text);
             }
-
             this.CuotasGrd.DataSource = Cuota.FindAllStatic(criterio, (c1, c2) => (c1.Anio).CompareTo(c2.Anio));
         }
 
@@ -131,6 +134,11 @@ namespace clubApp.Views
         {
             this.CuotasGrd.AutoGenerateColumns = false;
             this.CuotasGrd.DataSource = Cuota.FindAllStatic(null, (c1, c2) => (c1.Anio).CompareTo(c2.Anio));
+        }
+
+        private void AnuladaChk_CheckedChanged(object sender, EventArgs e)
+        {
+            this.AnuladaChk.Enabled = this.AnuladaChk.Checked;
         }
     }
 }

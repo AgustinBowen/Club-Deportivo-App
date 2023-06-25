@@ -30,9 +30,11 @@ namespace clubApp.Views
         private void LoadCombos()
         {
 
-            //this.ActSocioCbo.DataSource = ActividadSocio.FindAllStatic(null, (act1, act2) => act1.NroSocio.CompareTo(act2.NroSocio));
+            var listaActividades = ActividadSocio.FindAllStatic(null, (act1, act2) => act1.NroSocio.CompareTo(act2.NroSocio));
 
-            this.ActSocioCbo.DataSource = ORMDB<ActividadSocio>.FindAll(null);
+            this.ActSocioCbo.DataSource = ActividadSocio.FindAllStatic(null, (act1, act2) => act1.NroSocio.CompareTo(act2.NroSocio));
+
+            //this.ActSocioCbo.DataSource = ORMDB<ActividadSocio>.FindAll(null);
         }
 
         public override void ConfigurePermiso(PermisoAttribute perm)
@@ -137,13 +139,6 @@ namespace clubApp.Views
                 return;
             }
 
-            if (FechaVencimientoPicker.Text == "")
-            {
-                MessageBox.Show("Ingrese teléfono", "Dato(s) faltante(s)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                FechaVencimientoPicker.Focus();
-                return;
-            }
-
             cuota = new Cuota();
             cuota.Estado = EstadoTxt.Text;
 
@@ -235,6 +230,11 @@ namespace clubApp.Views
         private void FrmCuotaAM_Deactivate(object sender, EventArgs e)
         {
             MainView.Instance.Cursor = Cursors.Default;
+        }
+
+        private void ActSocioCbo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

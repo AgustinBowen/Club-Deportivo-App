@@ -33,7 +33,6 @@
             this.GuardarBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.FechaVencimientoPicker = new System.Windows.Forms.DateTimePicker();
-            this.ActSocioCbo = new System.Windows.Forms.ComboBox();
             this.MesTxt = new System.Windows.Forms.TextBox();
             this.MesLbl = new System.Windows.Forms.Label();
             this.FechaVencimientoLbl = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@
             this.AnioLbl = new System.Windows.Forms.Label();
             this.ImporteTxt = new System.Windows.Forms.TextBox();
             this.ImporteLbl = new System.Windows.Forms.Label();
+            this.ActSocioCbo = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,8 +71,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.FechaVencimientoPicker);
             this.groupBox1.Controls.Add(this.ActSocioCbo);
+            this.groupBox1.Controls.Add(this.FechaVencimientoPicker);
             this.groupBox1.Controls.Add(this.MesTxt);
             this.groupBox1.Controls.Add(this.MesLbl);
             this.groupBox1.Controls.Add(this.FechaVencimientoLbl);
@@ -98,18 +98,6 @@
             this.FechaVencimientoPicker.Size = new System.Drawing.Size(200, 20);
             this.FechaVencimientoPicker.TabIndex = 17;
             this.FechaVencimientoPicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // ActSocioCbo
-            // 
-            this.ActSocioCbo.DisplayMember = "Id actividad";
-            this.ActSocioCbo.FormattingEnabled = true;
-            this.ActSocioCbo.Location = new System.Drawing.Point(117, 18);
-            this.ActSocioCbo.Name = "ActSocioCbo";
-            this.ActSocioCbo.Size = new System.Drawing.Size(121, 21);
-            this.ActSocioCbo.TabIndex = 14;
-            this.ActSocioCbo.Tag = "CodigoActSocio";
-            this.ActSocioCbo.ValueMember = "Id";
-            this.ActSocioCbo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // MesTxt
             // 
@@ -206,6 +194,20 @@
             this.ImporteLbl.TabIndex = 0;
             this.ImporteLbl.Text = "Importe";
             // 
+            // ActSocioCbo
+            // 
+            this.ActSocioCbo.DisplayMember = "Nombre";
+            this.ActSocioCbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ActSocioCbo.FormattingEnabled = true;
+            this.ActSocioCbo.Location = new System.Drawing.Point(117, 15);
+            this.ActSocioCbo.Margin = new System.Windows.Forms.Padding(2);
+            this.ActSocioCbo.Name = "ActSocioCbo";
+            this.ActSocioCbo.Size = new System.Drawing.Size(166, 21);
+            this.ActSocioCbo.TabIndex = 14;
+            this.ActSocioCbo.Tag = "id";
+            this.ActSocioCbo.ValueMember = "Id";
+            this.ActSocioCbo.SelectedIndexChanged += new System.EventHandler(this.ActSocioCbo_SelectedIndexChanged);
+            // 
             // FrmCuotaAM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,7 +240,7 @@
         private System.Windows.Forms.Label AnioLbl;
         private System.Windows.Forms.TextBox ImporteTxt;
         private System.Windows.Forms.Label ImporteLbl;
-        private System.Windows.Forms.ComboBox ActSocioCbo;
         private System.Windows.Forms.DateTimePicker FechaVencimientoPicker;
+        private System.Windows.Forms.ComboBox ActSocioCbo;
     }
 }
