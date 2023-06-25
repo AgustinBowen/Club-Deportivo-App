@@ -280,6 +280,12 @@
     <EmbeddedResource Include="Views\Cuota\FrmCuotaAM.resx">
       <DependentUpon>FrmCuotaAM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Cuota\FrmCuotaList.resx">
+      <DependentUpon>FrmCuotaList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Cuota\FrmListadoCuotas.resx">
+      <DependentUpon>FrmListadoCuotas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmExportarArchivo.resx">
       <DependentUpon>FrmExportarArchivo.cs</DependentUpon>
     </EmbeddedResource>

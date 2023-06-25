@@ -32,7 +32,8 @@
             this.CancelarBtn = new System.Windows.Forms.Button();
             this.GuardarBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.FechaVencimientoPicker = new System.Windows.Forms.DateTimePicker();
+            this.ActSocioCbo = new System.Windows.Forms.ComboBox();
             this.MesTxt = new System.Windows.Forms.TextBox();
             this.MesLbl = new System.Windows.Forms.Label();
             this.FechaVencimientoLbl = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.AnioLbl = new System.Windows.Forms.Label();
             this.ImporteTxt = new System.Windows.Forms.TextBox();
             this.ImporteLbl = new System.Windows.Forms.Label();
-            this.FechaVencimientoPicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +72,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.FechaVencimientoPicker);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.ActSocioCbo);
             this.groupBox1.Controls.Add(this.MesTxt);
             this.groupBox1.Controls.Add(this.MesLbl);
             this.groupBox1.Controls.Add(this.FechaVencimientoLbl);
@@ -91,14 +91,25 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
-            // comboBox1
+            // FechaVencimientoPicker
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(117, 18);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 14;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.FechaVencimientoPicker.Location = new System.Drawing.Point(117, 176);
+            this.FechaVencimientoPicker.Name = "FechaVencimientoPicker";
+            this.FechaVencimientoPicker.Size = new System.Drawing.Size(200, 20);
+            this.FechaVencimientoPicker.TabIndex = 17;
+            this.FechaVencimientoPicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // ActSocioCbo
+            // 
+            this.ActSocioCbo.DisplayMember = "Id actividad";
+            this.ActSocioCbo.FormattingEnabled = true;
+            this.ActSocioCbo.Location = new System.Drawing.Point(117, 18);
+            this.ActSocioCbo.Name = "ActSocioCbo";
+            this.ActSocioCbo.Size = new System.Drawing.Size(121, 21);
+            this.ActSocioCbo.TabIndex = 14;
+            this.ActSocioCbo.Tag = "CodigoActSocio";
+            this.ActSocioCbo.ValueMember = "Id";
+            this.ActSocioCbo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // MesTxt
             // 
@@ -195,14 +206,6 @@
             this.ImporteLbl.TabIndex = 0;
             this.ImporteLbl.Text = "Importe";
             // 
-            // FechaVencimientoPicker
-            // 
-            this.FechaVencimientoPicker.Location = new System.Drawing.Point(117, 176);
-            this.FechaVencimientoPicker.Name = "FechaVencimientoPicker";
-            this.FechaVencimientoPicker.Size = new System.Drawing.Size(200, 20);
-            this.FechaVencimientoPicker.TabIndex = 17;
-            this.FechaVencimientoPicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
             // FrmCuotaAM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,7 +238,7 @@
         private System.Windows.Forms.Label AnioLbl;
         private System.Windows.Forms.TextBox ImporteTxt;
         private System.Windows.Forms.Label ImporteLbl;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ActSocioCbo;
         private System.Windows.Forms.DateTimePicker FechaVencimientoPicker;
     }
 }

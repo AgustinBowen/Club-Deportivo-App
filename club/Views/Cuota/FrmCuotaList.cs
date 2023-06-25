@@ -33,14 +33,14 @@ namespace clubApp.Views
             this.Show();
         }
 
-        private void CerrarBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void CuotasGrd_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void CerrarBtn_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

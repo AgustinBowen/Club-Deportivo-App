@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-       /* private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,68 +28,136 @@
         /// </summary>
         private void InitializeComponent()
         {
-            /*this.ExportarBtn = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListadoCuotas));
+            this.ExportarBtn = new System.Windows.Forms.Button();
             this.PagaChk = new System.Windows.Forms.CheckBox();
             this.ImpagaChk = new System.Windows.Forms.CheckBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.FechaPagoPicker = new System.Windows.Forms.DateTimePicker();
+            this.FechaVencimientoPicker = new System.Windows.Forms.DateTimePicker();
+            this.FechaPagoChk = new System.Windows.Forms.CheckBox();
+            this.FechaVencimientoChk = new System.Windows.Forms.CheckBox();
             this.FiltroBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AnioTxt = new System.Windows.Forms.TextBox();
             this.AnioChk = new System.Windows.Forms.CheckBox();
             this.CuotasGrd = new System.Windows.Forms.DataGridView();
-            this.EstadoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImporteCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaVencimientoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaPagoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Impaga = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Paga = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Impaga = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.MesTxt = new System.Windows.Forms.TextBox();
+            this.MesChk = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.ImporteTxt = new System.Windows.Forms.TextBox();
+            this.ImporteChk = new System.Windows.Forms.CheckBox();
+            this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CuotasGrd)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // ExportarBtn
             // 
-            this.ExportarBtn.Location = new System.Drawing.Point(738, 450);
+            this.ExportarBtn.Location = new System.Drawing.Point(765, 468);
             this.ExportarBtn.Name = "ExportarBtn";
             this.ExportarBtn.Size = new System.Drawing.Size(84, 26);
             this.ExportarBtn.TabIndex = 14;
             this.ExportarBtn.Text = "Exportar";
             this.ExportarBtn.UseVisualStyleBackColor = false;
+            this.ExportarBtn.Click += new System.EventHandler(this.ExportarBtn_Click);
             // 
             // PagaChk
             // 
             this.PagaChk.AutoSize = true;
-            this.PagaChk.Location = new System.Drawing.Point(264, 18);
+            this.PagaChk.Location = new System.Drawing.Point(601, 67);
             this.PagaChk.Name = "PagaChk";
             this.PagaChk.Size = new System.Drawing.Size(51, 17);
             this.PagaChk.TabIndex = 13;
             this.PagaChk.Text = "Paga";
             this.PagaChk.UseVisualStyleBackColor = true;
+            this.PagaChk.CheckedChanged += new System.EventHandler(this.PagaChk_CheckedChanged);
             // 
             // ImpagaChk
             // 
             this.ImpagaChk.AutoSize = true;
-            this.ImpagaChk.Location = new System.Drawing.Point(379, 18);
+            this.ImpagaChk.Location = new System.Drawing.Point(666, 67);
             this.ImpagaChk.Name = "ImpagaChk";
             this.ImpagaChk.Size = new System.Drawing.Size(61, 17);
             this.ImpagaChk.TabIndex = 12;
             this.ImpagaChk.Text = "Impaga";
             this.ImpagaChk.UseVisualStyleBackColor = true;
+            this.ImpagaChk.CheckedChanged += new System.EventHandler(this.ImpagaChk_CheckedChanged);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.FechaPagoPicker);
+            this.groupBox3.Controls.Add(this.FechaVencimientoPicker);
+            this.groupBox3.Controls.Add(this.FechaPagoChk);
+            this.groupBox3.Controls.Add(this.FechaVencimientoChk);
+            this.groupBox3.Location = new System.Drawing.Point(23, 11);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(330, 81);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            // 
+            // FechaPagoPicker
+            // 
+            this.FechaPagoPicker.Location = new System.Drawing.Point(125, 53);
+            this.FechaPagoPicker.Name = "FechaPagoPicker";
+            this.FechaPagoPicker.Size = new System.Drawing.Size(200, 20);
+            this.FechaPagoPicker.TabIndex = 4;
+            // 
+            // FechaVencimientoPicker
+            // 
+            this.FechaVencimientoPicker.Location = new System.Drawing.Point(124, 15);
+            this.FechaVencimientoPicker.Name = "FechaVencimientoPicker";
+            this.FechaVencimientoPicker.Size = new System.Drawing.Size(200, 20);
+            this.FechaVencimientoPicker.TabIndex = 3;
+            this.FechaVencimientoPicker.ValueChanged += new System.EventHandler(this.FechaVencimientoPicker_ValueChanged);
+            // 
+            // FechaPagoChk
+            // 
+            this.FechaPagoChk.AutoSize = true;
+            this.FechaPagoChk.Location = new System.Drawing.Point(10, 47);
+            this.FechaPagoChk.Margin = new System.Windows.Forms.Padding(2);
+            this.FechaPagoChk.Name = "FechaPagoChk";
+            this.FechaPagoChk.Size = new System.Drawing.Size(83, 17);
+            this.FechaPagoChk.TabIndex = 2;
+            this.FechaPagoChk.Text = "Fecha pago";
+            this.FechaPagoChk.UseVisualStyleBackColor = true;
+            this.FechaPagoChk.CheckedChanged += new System.EventHandler(this.FechaPagoChk_CheckedChanged);
+            // 
+            // FechaVencimientoChk
+            // 
+            this.FechaVencimientoChk.AutoSize = true;
+            this.FechaVencimientoChk.Location = new System.Drawing.Point(10, 15);
+            this.FechaVencimientoChk.Margin = new System.Windows.Forms.Padding(2);
+            this.FechaVencimientoChk.Name = "FechaVencimientoChk";
+            this.FechaVencimientoChk.Size = new System.Drawing.Size(117, 17);
+            this.FechaVencimientoChk.TabIndex = 0;
+            this.FechaVencimientoChk.Text = "Fecha Vencimiento";
+            this.FechaVencimientoChk.UseVisualStyleBackColor = true;
+            this.FechaVencimientoChk.CheckedChanged += new System.EventHandler(this.FechaVencimientoChk_CheckedChanged);
             // 
             // FiltroBtn
             // 
-            this.FiltroBtn.Location = new System.Drawing.Point(721, 10);
+            this.FiltroBtn.Location = new System.Drawing.Point(773, 17);
             this.FiltroBtn.Margin = new System.Windows.Forms.Padding(2);
             this.FiltroBtn.Name = "FiltroBtn";
             this.FiltroBtn.Size = new System.Drawing.Size(76, 32);
             this.FiltroBtn.TabIndex = 10;
             this.FiltroBtn.Text = "Filtrar";
             this.FiltroBtn.UseVisualStyleBackColor = true;
+            this.FiltroBtn.Click += new System.EventHandler(this.FiltroBtn_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.AnioTxt);
             this.groupBox1.Controls.Add(this.AnioChk);
-            this.groupBox1.Location = new System.Drawing.Point(11, 2);
+            this.groupBox1.Location = new System.Drawing.Point(366, 11);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -99,7 +167,7 @@
             // 
             // AnioTxt
             // 
-            this.AnioTxt.Enabled = false;
+            this.AnioTxt.Enabled = true;
             this.AnioTxt.Location = new System.Drawing.Point(69, 15);
             this.AnioTxt.Margin = new System.Windows.Forms.Padding(2);
             this.AnioTxt.Name = "AnioTxt";
@@ -116,20 +184,15 @@
             this.AnioChk.TabIndex = 0;
             this.AnioChk.Text = "Año";
             this.AnioChk.UseVisualStyleBackColor = true;
+            this.AnioChk.CheckedChanged += new System.EventHandler(this.AnioChk_CheckedChanged);
             // 
             // CuotasGrd
             // 
             this.CuotasGrd.AllowUserToAddRows = false;
             this.CuotasGrd.AllowUserToDeleteRows = false;
             this.CuotasGrd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CuotasGrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EstadoCol,
-            this.FechaPagoCol,
-            this.FechaVencimientoCol,
-            this.ImporteCol,
-            this.Impaga,
-            this.Paga});
-            this.CuotasGrd.Location = new System.Drawing.Point(11, 61);
+            this.CuotasGrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {});
+            this.CuotasGrd.Location = new System.Drawing.Point(23, 126);
             this.CuotasGrd.Margin = new System.Windows.Forms.Padding(2);
             this.CuotasGrd.MultiSelect = false;
             this.CuotasGrd.Name = "CuotasGrd";
@@ -137,95 +200,156 @@
             this.CuotasGrd.RowTemplate.Height = 24;
             this.CuotasGrd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CuotasGrd.ShowEditingIcon = false;
-            this.CuotasGrd.Size = new System.Drawing.Size(826, 384);
+            this.CuotasGrd.Size = new System.Drawing.Size(826, 337);
             this.CuotasGrd.TabIndex = 8;
-            /*/ /*
-            // DniCol
+            this.CuotasGrd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CuotasGrd_CellContentClick);
             // 
-            this.DniCol.DataPropertyName = "NroDocumento";
-            this.DniCol.HeaderText = "Dni";
-            this.DniCol.Name = "DniCol";
-            this.DniCol.ReadOnly = true;
+            // Paga
+            //
+            /*this.Paga.DataPropertyName = "Paga";
+            this.Paga.HeaderText = "Paga";
+            this.Paga.Name = "Paga";
+            this.Paga.ReadOnly = true;
+            this.Paga.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Paga.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic; */
             // 
-            // ApellidoCol
+            // Impaga
             // 
-            this.ApellidoCol.DataPropertyName = "Apellido";
-            this.ApellidoCol.HeaderText = "Apellido";
-            this.ApellidoCol.Name = "ApellidoCol";
-            this.ApellidoCol.ReadOnly = true;
-            this.ApellidoCol.Width = 150;
+            this.Impaga.DataPropertyName = "Impaga";
+            this.Impaga.HeaderText = "Impaga";
+            this.Impaga.Name = "Impaga";
+            this.Impaga.ReadOnly = true;
+            this.Impaga.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Impaga.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+                        // 
+            // Impaga
             // 
-            // NombreCol
+            this.Impaga.DataPropertyName = "Impaga";
+            this.Impaga.HeaderText = "Impaga";
+            this.Impaga.Name = "Impaga";
+            this.Impaga.ReadOnly = true;
+            this.Impaga.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Impaga.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            this.NombreCol.DataPropertyName = "Nombres";
-            this.NombreCol.HeaderText = "Nombres";
-            this.NombreCol.Name = "NombreCol";
-            this.NombreCol.ReadOnly = true;
-            this.NombreCol.Width = 150;
+            // groupBox2
             // 
-            // LocCol
+            this.groupBox2.Controls.Add(this.MesTxt);
+            this.groupBox2.Controls.Add(this.MesChk);
+            this.groupBox2.Location = new System.Drawing.Point(366, 50);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(227, 42);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
             // 
-            this.LocCol.HeaderText = "Localidad";
-            this.LocCol.Name = "LocCol";
-            this.LocCol.ReadOnly = true;
+            // MesTxt
             // 
-            // Activo
+            this.MesTxt.Enabled = true;
+            this.MesTxt.Location = new System.Drawing.Point(69, 15);
+            this.MesTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.MesTxt.Name = "MesTxt";
+            this.MesTxt.Size = new System.Drawing.Size(146, 20);
+            this.MesTxt.TabIndex = 1;
             // 
-            this.Activo.DataPropertyName = "Activo";
-            this.Activo.HeaderText = "Activo";
-            this.Activo.Name = "Activo";
-            this.Activo.ReadOnly = true;
-            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // MesChk
             // 
-            // Moroso
+            this.MesChk.AutoSize = true;
+            this.MesChk.Location = new System.Drawing.Point(4, 17);
+            this.MesChk.Margin = new System.Windows.Forms.Padding(2);
+            this.MesChk.Name = "MesChk";
+            this.MesChk.Size = new System.Drawing.Size(46, 17);
+            this.MesChk.TabIndex = 0;
+            this.MesChk.Text = "Mes";
+            this.MesChk.UseVisualStyleBackColor = true;
+            this.MesChk.CheckedChanged += new System.EventHandler(this.MesChk_CheckedChanged);
             // 
-            this.Moroso.DataPropertyName = "Moroso";
-            this.Moroso.HeaderText = "Moroso";
-            this.Moroso.Name = "Moroso";
-            this.Moroso.ReadOnly = true;
-            this.Moroso.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Moroso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.ImporteTxt);
+            this.groupBox4.Controls.Add(this.ImporteChk);
+            this.groupBox4.Location = new System.Drawing.Point(597, 11);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Size = new System.Drawing.Size(137, 42);
+            this.groupBox4.TabIndex = 10;
+            this.groupBox4.TabStop = false;
+            // 
+            // ImporteTxt
+            // 
+            this.ImporteTxt.Enabled = true;
+            this.ImporteTxt.Location = new System.Drawing.Point(69, 15);
+            this.ImporteTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.ImporteTxt.Name = "ImporteTxt";
+            this.ImporteTxt.Size = new System.Drawing.Size(58, 20);
+            this.ImporteTxt.TabIndex = 1;
+            // 
+            // ImporteChk
+            // 
+            this.ImporteChk.AutoSize = true;
+            this.ImporteChk.Location = new System.Drawing.Point(4, 17);
+            this.ImporteChk.Margin = new System.Windows.Forms.Padding(2);
+            this.ImporteChk.Name = "ImporteChk";
+            this.ImporteChk.Size = new System.Drawing.Size(61, 17);
+            this.ImporteChk.TabIndex = 0;
+            this.ImporteChk.Text = "Importe";
+            this.ImporteChk.UseVisualStyleBackColor = true;
+            this.ImporteChk.CheckedChanged += new System.EventHandler(this.ImporteChk_CheckedChanged);
             // 
             // FrmListadoCuotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(853, 484);
+            this.ClientSize = new System.Drawing.Size(872, 515);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.ExportarBtn);
             this.Controls.Add(this.PagaChk);
             this.Controls.Add(this.ImpagaChk);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.FiltroBtn);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.SociosGrd);
+            this.Controls.Add(this.CuotasGrd);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmListadoCuotas";
             this.Text = "FrmListadoCuotas";
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SociosGrd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CuotasGrd)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }*/
+        }
 
-        //#endregion
+        #endregion
 
         private System.Windows.Forms.Button ExportarBtn;
         private System.Windows.Forms.CheckBox PagaChk;
         private System.Windows.Forms.CheckBox ImpagaChk;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.CheckBox FechaVencimientoChk;
         private System.Windows.Forms.Button FiltroBtn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox AnioTxt;
         private System.Windows.Forms.CheckBox AnioChk;
         private System.Windows.Forms.DataGridView CuotasGrd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActSocioCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AnioCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MesCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ImporteCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVencimientoCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaPagoCol;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Paga;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Impaga;
+        private System.Windows.Forms.DateTimePicker FechaPagoPicker;
+        private System.Windows.Forms.DateTimePicker FechaVencimientoPicker;
+        private System.Windows.Forms.CheckBox FechaPagoChk;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox MesTxt;
+        private System.Windows.Forms.CheckBox MesChk;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox ImporteTxt;
+        private System.Windows.Forms.CheckBox ImporteChk;
     }
 }

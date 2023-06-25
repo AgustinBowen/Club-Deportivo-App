@@ -228,5 +228,11 @@ namespace clubApp.Views
             FrmCuotaAM f = new FrmCuotaAM();
             f.ShowBuscar();
         }
+
+        private void CuotaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListadoCuotas f = new FrmListadoCuotas();
+            f.Show();
+        }
     }
 }

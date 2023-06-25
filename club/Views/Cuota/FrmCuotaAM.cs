@@ -27,6 +27,14 @@ namespace clubApp.Views
             this.Show();
         }
 
+        private void LoadCombos()
+        {
+
+            //this.ActSocioCbo.DataSource = ActividadSocio.FindAllStatic(null, (act1, act2) => act1.NroSocio.CompareTo(act2.NroSocio));
+
+            this.ActSocioCbo.DataSource = ORMDB<ActividadSocio>.FindAll(null);
+        }
+
         public override void ConfigurePermiso(PermisoAttribute perm)
         {
             if (perm != null)
@@ -50,7 +58,7 @@ namespace clubApp.Views
             set
             {
                 base.OperacionForm = value;
-
+                LoadCombos();
                 if (value == FrmOperacion.frmAlta)
                 {
                     this.Text = "Ingreso de nueva Cuota...";
@@ -181,7 +189,7 @@ namespace clubApp.Views
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+             
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)

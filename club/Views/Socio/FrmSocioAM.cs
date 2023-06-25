@@ -210,5 +210,9 @@ namespace clubApp.Views
 
         }
 
+        private void LocalidadCbo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

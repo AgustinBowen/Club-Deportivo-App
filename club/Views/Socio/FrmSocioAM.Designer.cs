@@ -117,6 +117,7 @@
             this.LocalidadCbo.TabIndex = 7;
             this.LocalidadCbo.Tag = "CodPostal";
             this.LocalidadCbo.ValueMember = "Id";
+            this.LocalidadCbo.SelectedIndexChanged += new System.EventHandler(this.LocalidadCbo_SelectedIndexChanged);
             // 
             // LocalidadLbl
             // 
