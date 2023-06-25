@@ -216,7 +216,17 @@ namespace clubApp.Views
             FrmListadoCuotas f = new FrmListadoCuotas();
             f.Show();
         }
-        
-        
+
+        private void BuscarCuota_mnu_Click(object sender, EventArgs e)
+        {
+            FrmCuotaBusq f = new FrmCuotaBusq();
+            f.ShowBuscar();
+        }
+
+        private void CuotaAM_mnu_Click(object sender, EventArgs e)
+        {
+            FrmCuotaAM f = new FrmCuotaAM();
+            f.ShowBuscar();
+        }
     }
 }

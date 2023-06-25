@@ -153,6 +153,12 @@
     <Compile Include="Views\Common\CommonView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Cuota\FrmCuotaAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cuota\FrmCuotaAM.Designer.cs">
+      <DependentUpon>FrmCuotaAM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Cuota\FrmCuotaBusq.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +277,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Cuota\FrmCuotaAM.resx">
+      <DependentUpon>FrmCuotaAM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmExportarArchivo.resx">
       <DependentUpon>FrmExportarArchivo.cs</DependentUpon>
     </EmbeddedResource>
