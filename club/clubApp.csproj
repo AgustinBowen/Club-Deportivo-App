@@ -344,7 +344,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\13399208_5205447.jpg" />
     <Content Include="Resources\diego1.ico" />
     <Content Include="references\de\Npgsql.resources.dll" />
     <Content Include="references\es\Npgsql.resources.dll" />
