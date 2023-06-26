@@ -213,14 +213,15 @@
             // ActividadAM_mnu
             // 
             this.ActividadAM_mnu.Name = "ActividadAM_mnu";
-            this.ActividadAM_mnu.Size = new System.Drawing.Size(113, 22);
+            this.ActividadAM_mnu.Size = new System.Drawing.Size(180, 22);
             this.ActividadAM_mnu.Tag = "AltaActividad";
             this.ActividadAM_mnu.Text = "Ingreso";
+            this.ActividadAM_mnu.Click += new System.EventHandler(this.ActividadAM_mnu_Click);
             // 
             // BuscarActividad_mnu
             // 
             this.BuscarActividad_mnu.Name = "BuscarActividad_mnu";
-            this.BuscarActividad_mnu.Size = new System.Drawing.Size(113, 22);
+            this.BuscarActividad_mnu.Size = new System.Drawing.Size(180, 22);
             this.BuscarActividad_mnu.Tag = "ModificaActividad,ConsultaActividad";
             this.BuscarActividad_mnu.Text = "Buscar";
             // 

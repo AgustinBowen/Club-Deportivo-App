@@ -234,5 +234,10 @@ namespace clubApp.Views
             FrmListadoCuotas f = new FrmListadoCuotas();
             f.Show();
         }
+
+        private void ActividadAM_mnu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
