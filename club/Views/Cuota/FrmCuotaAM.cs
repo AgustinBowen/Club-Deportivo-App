@@ -141,19 +141,10 @@ namespace clubApp.Views
 
             cuota = new Cuota();
             cuota.Estado = EstadoTxt.Text;
-
-            try
-            {
-                cuota.Importe = float.Parse(ImporteTxt.Text);
-                cuota.Anio = Convert.ToInt32(AnioTxt.Text);
-                cuota.Mes = Convert.ToInt32(MesTxt.Text);
-                cuota.FechaVenc = Convert.ToDateTime(FechaVencimientoPicker.Text);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("error formato erroneo en importe,año,mes o fecha vencimiento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
-            }
+            cuota.Importe = float.Parse(ImporteTxt.Text);
+            cuota.Anio = Convert.ToInt32(AnioTxt.Text);
+            cuota.Mes = Convert.ToInt32(MesTxt.Text);
+            cuota.FechaVenc = Convert.ToDateTime(FechaVencimientoPicker.Text);
             detalleLog += Newtonsoft.Json.JsonConvert.SerializeObject(cuota);
             // intentar guardar en la Base de datos.
             try
