@@ -237,7 +237,14 @@ namespace clubApp.Views
 
         private void ActividadAM_mnu_Click(object sender, EventArgs e)
         {
+            FrmActividadAM f = new FrmActividadAM();
+            f.Show();
+        }
 
+        private void BuscarActividad_mnu_Click(object sender, EventArgs e)
+        {
+            FrmActividadBusq f = new FrmActividadBusq();
+            f.Show();
         }
     }
 }

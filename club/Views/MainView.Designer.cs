@@ -224,6 +224,7 @@
             this.BuscarActividad_mnu.Size = new System.Drawing.Size(180, 22);
             this.BuscarActividad_mnu.Tag = "ModificaActividad,ConsultaActividad";
             this.BuscarActividad_mnu.Text = "Buscar";
+            this.BuscarActividad_mnu.Click += new System.EventHandler(this.BuscarActividad_mnu_Click);
             // 
             // Cuotas_mnu_top
             // 
