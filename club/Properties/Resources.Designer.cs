@@ -63,16 +63,6 @@ namespace clubApp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _13399208_5205447 {
-            get {
-                object obj = ResourceManager.GetObject("13399208_5205447", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap diego1 {
             get {
                 object obj = ResourceManager.GetObject("diego1", resourceCulture);
