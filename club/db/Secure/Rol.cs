@@ -1,9 +1,6 @@
-﻿using System;
+﻿using clubApp.db.orm;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Reflection;
-using clubApp.db.orm;
 
 namespace clubApp.db
 {
@@ -37,7 +34,7 @@ namespace clubApp.db
 
         public List<Funcion> ListarFuncionesRol()
         {
-            return Funcion.FindAllStatic("codigo in (select cod_funcion from funciones_rol where cod_rol="+ this.Id.ToString()+")", null);
+            return Funcion.FindAllStatic("codigo in (select cod_funcion from funciones_rol where cod_rol=" + this.Id.ToString() + ")", null);
         }
         public List<Rol> FindAll()
         {

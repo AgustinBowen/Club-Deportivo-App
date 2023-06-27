@@ -1,12 +1,5 @@
 ﻿using clubApp.db;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace clubApp.Views
@@ -35,28 +28,123 @@ namespace clubApp.Views
             string criterio = null;
             if (this.AnioChk.Checked)
             {
-                criterio = String.Format("anio = {0}", AnioTxt.Text);
-            }
+                try
+                {
+                    int.Parse(this.AnioTxt.Text);
+                    if (criterio == null)
+                    {
+                        criterio = string.Format("anio = {0}", this.AnioTxt.Text);
+                    }
+                    else
+                    {
+                        criterio += string.Format(" and anio = {0}", this.AnioTxt.Text);
+                    }
+                }
+                catch (FormatException r)
+                {
 
+                }
+            }
             if (this.MesChk.Checked)
             {
-                criterio = String.Format("mes = {0} ", MesTxt.Text);
+                if (criterio == null)
+                {
+                    criterio = string.Format("mes = {0}", this.MesTxt.Text);
+                }
+                else
+                {
+                    criterio += string.Format(" and mes = {0}", this.MesTxt.Text);
+                }
             }
             if (this.ImpagaChk.Checked)
             {
-                criterio = String.Format("estado like '%{0}%'", 'i');
+                ImpagaChk.Text = "i";
+                if (criterio == null)
+                {
+                    criterio = string.Format("estado like '%{0}%'", this.ImpagaChk.Text);
+                }
+                else
+                {
+                    criterio = string.Format(" and estado like '%{0}%'", this.ImpagaChk.Text);
+                }
             }
             if (this.PagaChk.Checked)
             {
-                criterio = String.Format("estado like '%{0}%'", 'p');
+                PagaChk.Text = "p";
+                if (criterio == null)
+                {
+                    criterio = string.Format("estado like '%{0}%'", this.PagaChk.Text);
+                }
+                else
+                {
+                    criterio = string.Format(" and estado like '%{0}%'", this.PagaChk.Text);
+                }
             }
             if (this.AnuladaChk.Checked)
             {
-                criterio = String.Format("estado like '%{0}%'", 'a');
+                AnuladaChk.Text = "a";
+                if (criterio == null)
+                {
+                    criterio = string.Format("estado like '%{0}%'", this.AnuladaChk.Text);
+                }
+                else
+                {
+                    criterio = string.Format(" and estado like '%{0}%'", this.AnuladaChk.Text);
+                }
+            }
+            if (this.AnuladaChk.Checked)
+            {
+                AnuladaChk.Text = "a";
+                if (criterio == null)
+                {
+                    criterio = string.Format("estado like '%{0}%'", this.AnuladaChk.Text);
+                }
+                else
+                {
+                    criterio = string.Format(" and estado like '%{0}%'", this.AnuladaChk.Text);
+                }
+            }
+            if (this.FechaPagoChk.Checked)
+            {
+                if (criterio == null)
+                {
+                    criterio = string.Format("fecha_pago like '%{0}%'", this.FechaPagoPicker);
+                }
+                else
+                {
+                    criterio = string.Format(" and fecha_pago like '%{0}%'", this.FechaPagoPicker);
+                }
             }
             if (this.FechaVencimientoChk.Checked)
             {
-                criterio = String.Format("fecha_venc = '%{0}%'", FechaVencimientoPicker.Value);
+                if (criterio == null)
+                {
+                    criterio = string.Format("fecha_venc like '%{0}%'", this.FechaVencimientoPicker);
+                }
+                else
+                {
+                    criterio = string.Format(" and fecha_pago like '%{0}%'", this.FechaVencimientoPicker);
+                }
+            }
+
+            if (this.ImporteChk.Checked)
+            {
+                try
+                {
+                    int.Parse(this.ImporteTxt.Text);
+                    if (criterio == null)
+                    {
+                        criterio = string.Format("importe = {0}", this.ImporteTxt.Text);
+                    }
+                    else
+                    {
+                        criterio += string.Format(" and importe = {0}", this.ImporteTxt.Text);
+                    }
+                }
+                catch (FormatException r)
+                {
+
+                }
             }
 
             try
@@ -127,7 +215,12 @@ namespace clubApp.Views
 
         private void AnuladaChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.AnuladaChk.Enabled = this.AnuladaChk.Checked;;
+            this.AnuladaChk.Enabled = this.AnuladaChk.Checked;
+        }
+
+        private void ImporteChk_CheckedChanged(object sender, EventArgs e)
+        {
+            this.ImporteChk.Enabled = this.ImporteChk.Checked;
         }
     }
 }

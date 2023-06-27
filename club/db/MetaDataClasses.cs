@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Reflection;
 
 namespace clubApp.db
@@ -18,16 +17,21 @@ namespace clubApp.db
             this.Longitud = 0;
         }
         public string Name { get; set; }
-        public Type Tipo { get { return _tipo; } 
-            set {
+        public Type Tipo
+        {
+            get { return _tipo; }
+            set
+            {
                 if (value == typeof(DateTime))
                     this.Format = "yyyy-M-d hh:m:ss";
-                _tipo = value; } }
+                _tipo = value;
+            }
+        }
         public bool EsClave { get; set; }
         public bool EsAutoGenerado { get; set; }
         public int Longitud { get; set; }
         public bool EsNullable { get; set; }
-        public string Format { get; set; } 
+        public string Format { get; set; }
         public override string ToString()
         {
             return this.Name;
@@ -74,7 +78,7 @@ namespace clubApp.db
             _hasUpdPerm = valHasUpd;
             _hasViewPerm = valHasView;
         }
-        
+
         public string FuncionPermiso { get; set; }
         public string RolUsuario { get; set; }
         public string ClaseBaseForm { get; set; }
@@ -90,37 +94,37 @@ namespace clubApp.db
         {
             PermisoAttribute permRet = new PermisoAttribute();
             var prm = Attribute.GetCustomAttribute(clase, typeof(PermisoAttribute));
-            if(prm!=null)
+            if (prm != null)
             {
                 permRet = prm as PermisoAttribute;
-                bool consulta=false,agrega=false,modifica=false;
+                bool consulta = false, agrega = false, modifica = false;
                 string[] listFunciones = permRet.FuncionPermiso.Split(',');
-                string consultaFunc = null, agregaFunc = null, modificaFunc=null;
-                
+                string consultaFunc = null, agregaFunc = null, modificaFunc = null;
+
                 // ver si puede consultar.
-                if(listFunciones.Where(p=>p.IndexOf("Consulta" + permRet.ClaseBaseForm)!=-1).Count()>0)
-                    consultaFunc = listFunciones.Where(p=>p.IndexOf("Consulta" + permRet.ClaseBaseForm)!=-1).FirstOrDefault();
-                
-                if(consultaFunc!=null)
+                if (listFunciones.Where(p => p.IndexOf("Consulta" + permRet.ClaseBaseForm) != -1).Count() > 0)
+                    consultaFunc = listFunciones.Where(p => p.IndexOf("Consulta" + permRet.ClaseBaseForm) != -1).FirstOrDefault();
+
+                if (consultaFunc != null)
                     consulta = Usuario.UsuarioSys.ListadoFunciones.Find(fc => fc.Nombre == consultaFunc) != null;
 
                 if (listFunciones.Where(p => p.IndexOf("Alta" + permRet.ClaseBaseForm) != -1).Count() > 0)
                     agregaFunc = listFunciones.Where(p => p.IndexOf("Alta" + permRet.ClaseBaseForm) != -1).FirstOrDefault();
-                
+
                 if (agregaFunc != null)
                     agrega = Usuario.UsuarioSys.ListadoFunciones.Find(fc => fc.Nombre == agregaFunc) != null;
 
                 if (listFunciones.Where(p => p.IndexOf("Modifica" + permRet.ClaseBaseForm) != -1).Count() > 0)
                     modificaFunc = listFunciones.Where(p => p.IndexOf("Modifica" + permRet.ClaseBaseForm) != -1).FirstOrDefault();
-                
+
                 if (modificaFunc != null)
-                    modifica = Usuario.UsuarioSys.ListadoFunciones.Find(fc => fc.Nombre == modificaFunc) != null; 
+                    modifica = Usuario.UsuarioSys.ListadoFunciones.Find(fc => fc.Nombre == modificaFunc) != null;
 
                 permRet.setPermInfo(agrega, modifica, consulta);
                 // si tiene Permiso de                 
                 return permRet;
             }
             return permRet;
-        }        
+        }
     }
 }

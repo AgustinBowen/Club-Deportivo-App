@@ -66,7 +66,7 @@
             // 
             // ExportarBtn
             // 
-            this.ExportarBtn.Location = new System.Drawing.Point(765, 468);
+            this.ExportarBtn.Location = new System.Drawing.Point(739, 458);
             this.ExportarBtn.Name = "ExportarBtn";
             this.ExportarBtn.Size = new System.Drawing.Size(84, 26);
             this.ExportarBtn.TabIndex = 14;
@@ -143,9 +143,9 @@
             this.FechaVencimientoChk.Location = new System.Drawing.Point(10, 15);
             this.FechaVencimientoChk.Margin = new System.Windows.Forms.Padding(2);
             this.FechaVencimientoChk.Name = "FechaVencimientoChk";
-            this.FechaVencimientoChk.Size = new System.Drawing.Size(117, 17);
+            this.FechaVencimientoChk.Size = new System.Drawing.Size(116, 17);
             this.FechaVencimientoChk.TabIndex = 0;
-            this.FechaVencimientoChk.Text = "Fecha Vencimiento";
+            this.FechaVencimientoChk.Text = "Fecha vencimiento";
             this.FechaVencimientoChk.UseVisualStyleBackColor = true;
             this.FechaVencimientoChk.CheckedChanged += new System.EventHandler(this.FechaVencimientoChk_CheckedChanged);
             // 
@@ -267,28 +267,63 @@
             this.AnuladaChk.UseVisualStyleBackColor = true;
             this.AnuladaChk.CheckedChanged += new System.EventHandler(this.AnuladaChk_CheckedChanged);
             // 
-            // ProfesoresGrd
+            // CuotasGrd
             // 
             this.CuotasGrd.AllowUserToAddRows = false;
             this.CuotasGrd.AllowUserToDeleteRows = false;
             this.CuotasGrd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CuotasGrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {});
-            this.CuotasGrd.Location = new System.Drawing.Point(23, 111);
+            this.CuotasGrd.Location = new System.Drawing.Point(23, 106);
             this.CuotasGrd.Margin = new System.Windows.Forms.Padding(2);
             this.CuotasGrd.MultiSelect = false;
-            this.CuotasGrd.Name = "ProfesoresGrd";
+            this.CuotasGrd.Name = "CuotasGrd";
             this.CuotasGrd.ReadOnly = true;
             this.CuotasGrd.RowTemplate.Height = 24;
             this.CuotasGrd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CuotasGrd.Size = new System.Drawing.Size(826, 352);
-            this.CuotasGrd.TabIndex = 16;
-
+            this.CuotasGrd.ShowEditingIcon = false;
+            this.CuotasGrd.Size = new System.Drawing.Size(800, 347);
+            this.CuotasGrd.TabIndex = 0;
+            this.CuotasGrd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CuotasGrd_CellContentClick);
+            this.CuotasGrd.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CuotasGrd_ColumnHeaderMouseClick);
+            this.CuotasGrd.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.CuotasGrd_DataBindingComplete);
+            this.CuotasGrd.DoubleClick += new System.EventHandler(this.CuotasGrd_DoubleClick);
+            // 
+            // IdCuota
+            // 
+            this.IdCuota.Name = "IdCuota";
+            // 
+            // Importe
+            // 
+            this.Importe.Name = "Importe";
+            // 
+            // Estado
+            // 
+            this.Estado.Name = "Estado";
+            // 
+            // FechaPago
+            // 
+            this.FechaPago.Name = "FechaPago";
+            // 
+            // FechaVenc
+            // 
+            this.FechaVenc.Name = "FechaVenc";
+            // 
+            // CodActSocio
+            // 
+            this.CodActSocio.Name = "CodActSocio";
+            // 
+            // Anio
+            // 
+            this.Anio.Name = "Anio";
+            // 
+            // Mes
+            // 
+            this.Mes.Name = "Mes";
             // 
             // FrmListadoCuotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 515);
+            this.ClientSize = new System.Drawing.Size(839, 492);
             this.Controls.Add(this.CuotasGrd);
             this.Controls.Add(this.AnuladaChk);
             this.Controls.Add(this.groupBox4);

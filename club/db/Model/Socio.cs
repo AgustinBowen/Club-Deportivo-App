@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace clubApp.db
 {
     [Table(Name = "socio")]
-    public partial class Socio:IComparable
+    public partial class Socio : IComparable
     {
         #region variables locales
         private int _nroDocumento;
@@ -20,8 +17,8 @@ namespace clubApp.db
         private bool _activo;
         private bool _moroso;
         // usado para relacion con la clase Localidad, carga Lazy
-        private Localidad _localidad = null;        
-        #endregion        
+        private Localidad _localidad = null;
+        #endregion
 
         #region propiedades publicas
 
@@ -31,14 +28,14 @@ namespace clubApp.db
             get { return _nroDocumento; }
             set { _nroDocumento = value; }
         }
-        
-        [Propiedad(Name = "nro_socio", Tipo = typeof(int), EsAutoGenerado = true, EsClave = true) ]
+
+        [Propiedad(Name = "nro_socio", Tipo = typeof(int), EsAutoGenerado = true, EsClave = true)]
         public int NroSocio
         {
             get { return _nroSocio; }
             set { _nroSocio = value; }
         }
-        
+
         [Propiedad(Name = "apellido", Tipo = typeof(string), Longitud = 90)]
         public string Apellido
         {
@@ -57,21 +54,22 @@ namespace clubApp.db
         public string Domicilio
         {
             get { return _domicilio; }
-            set { _domicilio= value; }
+            set { _domicilio = value; }
         }
 
-        [Propiedad(Name = "telefono", Tipo = typeof(string), Longitud = 20)]        
+        [Propiedad(Name = "telefono", Tipo = typeof(string), Longitud = 20)]
         public string Telefono
         {
             get { return _telefono; }
             set { _telefono = value; }
         }
-        
+
         [Propiedad(Name = "cod_postal", Tipo = typeof(int))]
         public int CodPostal
         {
             get { return _cod_postal; }
-            set {
+            set
+            {
                 if (value != _cod_postal && value > 0)
                     this._localidad = null;
                 _cod_postal = value;
@@ -84,7 +82,7 @@ namespace clubApp.db
             get { return _observaciones; }
             set { _observaciones = value; }
         }
-        
+
         [Propiedad(Name = "activo", Tipo = typeof(bool))]
         public bool Activo
         {
@@ -113,8 +111,8 @@ namespace clubApp.db
                 return _localidad;
             }
             set { _localidad = value; }
-        }        
-        
+        }
+
         #endregion
 
         public int CompareTo(object obj)

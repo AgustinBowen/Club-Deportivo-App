@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using clubApp.db;
+using System;
 using System.Windows.Forms;
-using clubApp.db;
 
 namespace clubApp.Views
 {
@@ -36,7 +30,7 @@ namespace clubApp.Views
                 }
             }
         }
-        
+
         public override FrmOperacion OperacionForm
         {
             get
@@ -46,7 +40,7 @@ namespace clubApp.Views
             set
             {
                 base.OperacionForm = value;
-                
+
                 if (value == FrmOperacion.frmAlta)
                 {
                     this.Text = "Ingreso de nuevo Profesor...";
@@ -131,7 +125,7 @@ namespace clubApp.Views
                 TelefonoTxt.Focus();
                 return;
             }
-                        
+
             profesor = new Profesor();
             profesor.Apellido = ApellidoTxt.Text;
             profesor.Nombres = NombresTxt.Text;
@@ -144,7 +138,7 @@ namespace clubApp.Views
             }
             catch (Exception)
             {
-                MessageBox.Show("Formato de legajo o dni erroneo","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Formato de legajo o dni erroneo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
             detalleLog += Newtonsoft.Json.JsonConvert.SerializeObject(profesor);

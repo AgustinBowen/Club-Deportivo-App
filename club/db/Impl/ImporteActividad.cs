@@ -1,8 +1,6 @@
-﻿using System;
+﻿using clubApp.db.orm;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using clubApp.db.orm;
 
 namespace clubApp.db
 {
@@ -25,7 +23,7 @@ namespace clubApp.db
             this.CodTipoAct = impact.CodTipoAct;
             this.Anio = impact.Anio;
             this.Mes = impact.Mes;
-            this.Importe = impact.Importe;            
+            this.Importe = impact.Importe;
             this.SetIsObjFromDB();
             return this;
         }

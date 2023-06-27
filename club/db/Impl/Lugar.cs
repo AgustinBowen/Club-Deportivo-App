@@ -1,8 +1,6 @@
-﻿using System;
+﻿using clubApp.db.orm;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using clubApp.db.orm;
 
 namespace clubApp.db
 {
@@ -23,11 +21,11 @@ namespace clubApp.db
             // completar datos en this para dejarlo inicializado
             this.Codigo = lugar.Codigo;
             this.Descripcion = lugar.Descripcion;
-            
+
             this.SetIsObjFromDB();//marcar como que se recupero desde la base.
             return this;
         }
-        public bool     SaveObj()
+        public bool SaveObj()
         {
             if (!this.IsNew)
             {

@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using clubApp.db;
+using System;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using clubApp.db;
-using Newtonsoft;
 
 namespace clubApp.Views
 {
-    [Permiso(ClaseBaseForm="Socio", FuncionPermiso = "AltaSocio,ModificaSocio,ConsultaSocio", RolUsuario = "administrador,operadorSocio,operadorTurno,consulta,operador")]
+    [Permiso(ClaseBaseForm = "Socio", FuncionPermiso = "AltaSocio,ModificaSocio,ConsultaSocio", RolUsuario = "administrador,operadorSocio,operadorTurno,consulta,operador")]
     public partial class FrmSocioAM : FormBase
     {
         // Requerida override para poder agregarle un handler
@@ -38,12 +32,12 @@ namespace clubApp.Views
         }
         private void FrmpSocioAM_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void LoadCombos()
         {
-            this.LocalidadCbo.DataSource =  Localidad.FindAllStatic(null, (loc1, loc2) => loc1.Nombre.CompareTo(loc2.Nombre));
+            this.LocalidadCbo.DataSource = Localidad.FindAllStatic(null, (loc1, loc2) => loc1.Nombre.CompareTo(loc2.Nombre));
 
             //this.LocalidadCbo.DataSource = ORMDB<Localidad>.FindAll(null);
         }
@@ -83,10 +77,10 @@ namespace clubApp.Views
             Socio Socio = null;
             string errMsj = "";
             string operacionLog = "";
-            string detalleLog="";
+            string detalleLog = "";
             MainView.Instance.Cursor = Cursors.WaitCursor;
-                       
-            
+
+
             if (ApellidoTxt.Text == "")
             {
                 MessageBox.Show("Ingrese apellido", "faltan datos..", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -102,7 +96,7 @@ namespace clubApp.Views
                 operacionLog = "ALTA";
                 // cargar la info de la Socio antes de dar de alta.
             }
-            
+
             if (OperacionForm == FrmOperacion.frmModificacion)
             {
                 operacionLog = "MODIFICACION";
@@ -167,7 +161,7 @@ namespace clubApp.Views
             //this.ApellidoTxt.Text = Pac_modif.Apellido;
             FormBase.ShowDataFromModel(this, Cli_modif);
             this.InvokerForm = Invoker;
-            this.CancelarBtn.Click+=new EventHandler(CancelarBtn_Click);
+            this.CancelarBtn.Click += new EventHandler(CancelarBtn_Click);
             this.ShowDialog();
         }
         public void ShowIngresoSocio(FormBase Invoker)
@@ -185,7 +179,7 @@ namespace clubApp.Views
 
         private void FrmSocioAM_Deactivate(object sender, EventArgs e)
         {
-            MainView.Instance.Cursor = Cursors.Default;   
+            MainView.Instance.Cursor = Cursors.Default;
         }
 
         private void DniTxt_KeyPress(object sender, KeyPressEventArgs e)
@@ -194,16 +188,16 @@ namespace clubApp.Views
                (e.KeyChar != '.'))
             {
                 e.Handled = true;
-            }            
+            }
         }
 
         private void ApellidoTxt_TextChanged(object sender, EventArgs e)
         {
-            if(!this.ApellidoTxt.Text.All(c=>  Char.IsLetter(c) || Char.IsWhiteSpace(c)))
+            if (!this.ApellidoTxt.Text.All(c => Char.IsLetter(c) || Char.IsWhiteSpace(c)))
             {
-             
+
             }
-        }   
+        }
 
         private void ActividadesBtn_Click(object sender, EventArgs e)
         {

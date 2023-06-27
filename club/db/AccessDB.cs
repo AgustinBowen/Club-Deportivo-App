@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Npgsql;
 using System.Data;
-using System.Linq;
-using System.Text;
-using Npgsql;
 
 namespace clubApp.db
 {
@@ -15,9 +11,9 @@ namespace clubApp.db
         public static Npgsql.NpgsqlConnection conn = new NpgsqlConnection();
         public static string CadenaConexion
         {
-            get { return System.Configuration.ConfigurationManager.ConnectionStrings["pgsqlContext"].ConnectionString; }            
+            get { return System.Configuration.ConfigurationManager.ConnectionStrings["pgsqlContext"].ConnectionString; }
         }
-        public static DataTable GetExecuteSQL(string sql, bool isTransaction=false)
+        public static DataTable GetExecuteSQL(string sql, bool isTransaction = false)
         {
             DataSet ds = new DataSet();
             if (!isTransaction)
@@ -33,7 +29,7 @@ namespace clubApp.db
             ds.Reset();
             // llenar con la definicion de la consulta
             da.Fill(ds);
-            if(!isTransaction)
+            if (!isTransaction)
                 conn.Close();
             if (ds.Tables.Count > 0)
             {

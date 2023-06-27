@@ -1,19 +1,12 @@
-﻿using System;
+﻿using clubApp.db; // incluir libreria para poder acceder a los objetos de negocios.
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Configuration;
-
-using Npgsql; // Libreria para conectar con PostgreSQL
-using clubApp.db; // incluir libreria para poder acceder a los objetos de negocios.
 
 namespace clubApp.Views
-{    
+{
     public partial class MainView : FormBase
     {
         private Usuario _usuarioActual = null;
@@ -33,24 +26,24 @@ namespace clubApp.Views
             StatusInfoUser.Text = String.Format("Usuario: {0} - {1}", _usuarioActual.UsuarioName, _usuarioActual.FechaLogin); ;
             // mostrar los permisos del usuario en base a los roles, leer cada permiso.
             // Recorrer cada item de Menu, para verificar primero los grupos  y luego cada opcion.
-            var list = this.menuStrip1.Items.Cast < ToolStripMenuItem>().ToList().Where(t=> t.Name.IndexOf("mnu_top") != -1);
+            var list = this.menuStrip1.Items.Cast<ToolStripMenuItem>().ToList().Where(t => t.Name.IndexOf("mnu_top") != -1);
             List<Funcion> listFuncUser = UsuarioActual.ListadoFunciones;
-            bool prmOK=false;
+            bool prmOK = false;
             foreach (var item in list)
-	        {
+            {
                 // verificar el permiso puede incluir listado hacer split.
                 prmOK = false;
                 string perm = item.Tag.ToString();
                 string[] listFunciones = perm.Split(',');
                 for (int i = 0; i < listFunciones.Length; i++)
                 {
-                    prmOK = prmOK || listFuncUser.Find(ff => ff.Nombre == listFunciones[i])!=null;
+                    prmOK = prmOK || listFuncUser.Find(ff => ff.Nombre == listFunciones[i]) != null;
                 }
                 item.Enabled = prmOK;
                 //por cada ItemPrincipal, verificar los SubItems por debajo si tiene permiso.
 
                 var list_subitm = item.DropDownItems.Cast<ToolStripMenuItem>().ToList();
-                                
+
                 foreach (var subitm in list_subitm)
                 {
                     prmOK = false;
@@ -59,18 +52,18 @@ namespace clubApp.Views
                     for (int i = 0; i < listFuncionesSub.Length; i++)
                     {
                         prmOK = prmOK || listFuncUser.Find(ff => ff.Nombre == listFuncionesSub[i]) != null;
-                    }                    
+                    }
                     subitm.Enabled = prmOK;
                 }
             }
             // aplicar permiso a cada submenu.
-            
+
             this.Visible = true;
         }
         private static readonly MainView instance = new MainView();
         static MainView()
         {
-            
+
         }
         private MainView()
         {
@@ -88,7 +81,7 @@ namespace clubApp.Views
         public void ShowMain(FrmLogin loginFrm, Usuario user)
         {
             loginFrm.Dispose();
-            loginFrm= null;
+            loginFrm = null;
             _usuarioActual = user;
             this.Show();
         }
@@ -111,21 +104,21 @@ namespace clubApp.Views
 
         private void IngresoEspecialidadMnu_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         void frm_DoCompleteOperationForm(object Sender, EventArgDom ev)
         {
             if (ev.Status == TipoOperacionStatus.stOK)
             {
-                MessageBox.Show("Operacion realizada correctamente " , "Exito...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Operacion realizada correctamente ", "Exito...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // Verificar si hay Form de Listado para poder actualizar la lista de datos..
             }
             else
             {
-                MessageBox.Show("Ocurrio un error: " + ev.Mensaje,"Error...",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrio un error: " + ev.Mensaje, "Error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }             
+        }
 
         private void IngresoSocioMnu_Click(object sender, EventArgs e)
         {
@@ -166,7 +159,7 @@ namespace clubApp.Views
             frm.ShowBuscar();
         }
 
-        
+
         private void MainView_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Desea salir del sistema?", "salida..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -178,7 +171,8 @@ namespace clubApp.Views
             e.Cancel = true;
         }
 
-        public void ShowBuscar(){
+        public void ShowBuscar()
+        {
 
         }
 
@@ -202,7 +196,7 @@ namespace clubApp.Views
 
         private void ingresoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void buscarToolStripMenuItem_Click_1(object sender, EventArgs e)

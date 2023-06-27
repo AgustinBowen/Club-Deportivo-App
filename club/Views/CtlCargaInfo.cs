@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace clubApp.Views
@@ -20,16 +14,20 @@ namespace clubApp.Views
         {
 
         }
-        
+
         public string Etiqueta
         {
             get { return lblEtiqueta.Text; }
             set { this.lblEtiqueta.Text = value; }
         }
-        public string Texto { get {
-            return this.txtTexto.Text;
-        }
-            set {
+        public string Texto
+        {
+            get
+            {
+                return this.txtTexto.Text;
+            }
+            set
+            {
                 this.txtTexto.Text = value;
             }
         }

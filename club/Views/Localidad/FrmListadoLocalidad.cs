@@ -1,12 +1,7 @@
-﻿using System;
+﻿using clubApp.db;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using clubApp.db;
 
 namespace clubApp.Views
 {
@@ -81,7 +76,7 @@ namespace clubApp.Views
                 }
                 catch (FormatException r)
                 {
-                    
+
                 }
             }
             this.LocalidadGrd.DataSource = Localidad.FindAllStatic(criterio, (p1, p2) => (p1.Nombre).CompareTo(p2.Nombre));

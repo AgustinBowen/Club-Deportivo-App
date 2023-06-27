@@ -1,12 +1,7 @@
-﻿using System;
+﻿using clubApp.db;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using clubApp.db;
 
 namespace clubApp.Views
 {
@@ -23,18 +18,20 @@ namespace clubApp.Views
             this.ApellidoTxt.Enabled = this.ApellidoChk.Checked;
         }
 
-   
-                
+
+
         private void FiltroBtn_Click(object sender, EventArgs e)
         {
             if (this.dniChk.Checked)
             {
-                try{
+                try
+                {
                     int.Parse(this.dniTxt.Text);
                     criterio = string.Format("dni = {0}", this.dniTxt.Text);
                 }
-                catch(FormatException r){
-                    MessageBox.Show("Formato erroneo ingrese dni en numeros","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                catch (FormatException r)
+                {
+                    MessageBox.Show("Formato erroneo ingrese dni en numeros", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             if (this.ApellidoChk.Checked)
@@ -45,7 +42,7 @@ namespace clubApp.Views
                 }
                 else
                 {
-                    criterio += string.Format(" and apellido like '%{0}%'",this.ApellidoTxt.Text);
+                    criterio += string.Format(" and apellido like '%{0}%'", this.ApellidoTxt.Text);
                 }
             }
             if (this.legajoChk.Checked)
@@ -64,10 +61,10 @@ namespace clubApp.Views
                 }
                 catch (FormatException r)
                 {
-                    MessageBox.Show("Formato erroneo ingrese un legajo en numeros","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Formato erroneo ingrese un legajo en numeros", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            this.ProfesoresGrd.DataSource = Profesor.FindAllStatic(criterio, (p1, p2) => (p1.Apellido + p1.Nombres).CompareTo(p2.Apellido + p2.Nombres));            
+            this.ProfesoresGrd.DataSource = Profesor.FindAllStatic(criterio, (p1, p2) => (p1.Apellido + p1.Nombres).CompareTo(p2.Apellido + p2.Nombres));
         }
 
         private void ProfesoresGrd_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -76,7 +73,7 @@ namespace clubApp.Views
             {
                 //rw.Cells[4].Value = (rw.DataBoundItem as Profesor).LocalidadProfesor.Nombre;
                 //rw.Cells[5].Value = (rw.DataBoundItem as Profesor).ListadoEspecialidades;
-               //rw.Cells[4].Value = (rw.DataBoundItem as Profesor).LocalidadProfesor.Nombre;
+                //rw.Cells[4].Value = (rw.DataBoundItem as Profesor).LocalidadProfesor.Nombre;
             }
         }
 
@@ -87,10 +84,10 @@ namespace clubApp.Views
 
         private void ProfesoresGrd_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
-        
+
 
         private void FrmListadoProfesores_Load(object sender, EventArgs e)
         {
@@ -113,7 +110,7 @@ namespace clubApp.Views
             FrmExportarArchivo frm = new FrmExportarArchivo();
             List<Profesor> listaProfesor = Profesor.FindAllStatic(criterio, null);
             frm.ShowExportar(listaProfesor);
-        }      
+        }
 
     }
 }

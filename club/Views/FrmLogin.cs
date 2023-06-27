@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using clubApp.db;
+using System;
 using System.Windows.Forms;
-using clubApp.db;
 
 namespace clubApp.Views
 {
@@ -23,19 +17,19 @@ namespace clubApp.Views
         }
 
         private void IngresarBtn_Click(object sender, EventArgs e)
-        {            
+        {
             try
             {
-                 Usuario.FindUsuario(UsuarioTxt.Text, ClaveTxt.Text);
-                 
+                Usuario.FindUsuario(UsuarioTxt.Text, ClaveTxt.Text);
+
                 // Leer configuracion de permisos del usuario.
             }
-            catch(Exception exp)
-                {
-                    MessageBox.Show(exp.Message, "Error autenticacion...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
-            this.Dispose();            
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message, "Error autenticacion...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            this.Dispose();
             MainView.Instance.ShowUsuario();
         }
     }

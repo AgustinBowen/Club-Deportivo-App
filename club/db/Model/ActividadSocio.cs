@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Reflection;
 
 namespace clubApp.db
 {
@@ -50,7 +46,7 @@ namespace clubApp.db
             get { return _fecha_inicio; }
             set { _fecha_inicio = value; }
         }
-        [Propiedad(Name = "fecha_fin", Tipo = typeof(DateTime?),Format="yyyy-MM-dd" )]
+        [Propiedad(Name = "fecha_fin", Tipo = typeof(DateTime?), Format = "yyyy-MM-dd")]
         public DateTime? FechaFin
         {
             get { return _fecha_fin; }
@@ -62,19 +58,23 @@ namespace clubApp.db
         #region Relaciones con otras entidades
 
         // implementar TipoActividad
-        public Actividad ActividadObj { get{
-            if (_tpAct == null && _cod_act != 0)
+        public Actividad ActividadObj
+        {
+            get
             {
-                var list = Actividad.FindAllStatic("codigo=" + _cod_act.ToString(), (a1,a2)=>a1.TipoActividadObj.Nombre.CompareTo(a2.TipoActividadObj.Nombre));
-                if (list.Count>0)
+                if (_tpAct == null && _cod_act != 0)
                 {
-                    _tpAct =  list [0];
+                    var list = Actividad.FindAllStatic("codigo=" + _cod_act.ToString(), (a1, a2) => a1.TipoActividadObj.Nombre.CompareTo(a2.TipoActividadObj.Nombre));
+                    if (list.Count > 0)
+                    {
+                        _tpAct = list[0];
+                    }
                 }
+                return _tpAct;
+
             }
-            return _tpAct;
-        
-        }}
-        
+        }
+
 
         #endregion
     }

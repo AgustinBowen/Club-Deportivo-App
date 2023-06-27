@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Reflection;
 
 namespace clubApp.db
 {
@@ -13,11 +9,11 @@ namespace clubApp.db
         private int _codigo;
         private int _cod_act_socio;
         private int _anio;
-        private int _mes;        
+        private int _mes;
         private string _estado;
         private float importe;
         private DateTime _fecha_venc;
-        private DateTime _fecha_pago;        
+        private DateTime _fecha_pago;
         private ActividadSocio _actividad_socioObj = null;
         #endregion
 
@@ -50,8 +46,8 @@ namespace clubApp.db
             get { return _mes; }
             set { _mes = value; }
         }
-        
-        [Propiedad(Name = "estado", Tipo = typeof(string), Longitud=1)]
+
+        [Propiedad(Name = "estado", Tipo = typeof(string), Longitud = 1)]
         public string Estado
         {
             get { return _estado; }
@@ -78,7 +74,7 @@ namespace clubApp.db
             get { return _fecha_pago; }
             set { _fecha_pago = value; }
         }
-        
+
         #endregion
         // -- TODO --
         #region Relaciones con otras entidades

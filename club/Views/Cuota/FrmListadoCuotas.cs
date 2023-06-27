@@ -2,11 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace clubApp.Views
@@ -31,7 +26,7 @@ namespace clubApp.Views
 
         private void ImpagaChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.ImpagaChk.Enabled = ImpagaChk.Checked; 
+            this.ImpagaChk.Enabled = ImpagaChk.Checked;
         }
 
         private void FechaVencimientoChk_CheckedChanged(object sender, EventArgs e)
@@ -41,17 +36,17 @@ namespace clubApp.Views
 
         private void FechaPagoChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.FechaPagoChk.Enabled= FechaPagoChk.Checked;
+            this.FechaPagoChk.Enabled = FechaPagoChk.Checked;
         }
 
         private void ImporteChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.ImporteChk.Enabled= ImporteChk.Checked;
+            this.ImporteChk.Enabled = ImporteChk.Checked;
         }
 
         private void MesChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.MesChk.Enabled = MesChk.Checked;   
+            this.MesChk.Enabled = MesChk.Checked;
         }
 
         private void FiltroBtn_Click(object sender, EventArgs e)
@@ -61,40 +56,125 @@ namespace clubApp.Views
             string criterio = null;
             if (this.AnioChk.Checked)
             {
-                int.Parse(this.AnioTxt.Text);
-                criterio = String.Format("anio = {0}", AnioTxt.Text);
-            }
+                try
+                {
+                    int.Parse(this.AnioTxt.Text);
+                    if (criterio == null)
+                    {
+                        criterio = string.Format("anio = {0}", this.AnioTxt.Text);
+                    }
+                    else
+                    {
+                        criterio += string.Format(" and anio = {0}", this.AnioTxt.Text);
+                    }
+                }
+                catch (FormatException r)
+                {
 
+                }
+            }
             if (this.MesChk.Checked)
             {
-                criterio = String.Format("mes = {0} ", MesTxt.Text);
-            }
-            if (this.PagaChk.Checked)
-            {
-                criterio = String.Format("estado like 'p'");
+                if (criterio == null)
+                {
+                    criterio = string.Format("mes = {0}", this.MesTxt.Text);
+                }
+                else
+                {
+                    criterio += string.Format(" and mes = {0}", this.MesTxt.Text);
+                }
             }
             if (this.ImpagaChk.Checked)
             {
-                criterio = String.Format("estado like 'i'");
+                ImpagaChk.Text = "i";
+                if (criterio == null)
+                {
+                    criterio = string.Format("estado like '%{0}%'", this.ImpagaChk.Text);
+                }
+                else
+                {
+                    criterio = string.Format(" and estado like '%{0}%'", this.ImpagaChk.Text);
+                }
+            }
+            if (this.PagaChk.Checked)
+            {
+                PagaChk.Text = "p";
+                if (criterio == null)
+                {
+                    criterio = string.Format("estado like '%{0}%'", this.PagaChk.Text);
+                }
+                else
+                {
+                    criterio = string.Format(" and estado like '%{0}%'", this.PagaChk.Text);
+                }
             }
             if (this.AnuladaChk.Checked)
             {
-                criterio = String.Format("estado = 'a'", FechaPagoPicker.Text);
+                AnuladaChk.Text = "a";
+                if (criterio == null)
+                {
+                    criterio = string.Format("estado like '%{0}%'", this.AnuladaChk.Text);
+                }
+                else
+                {
+                    criterio = string.Format(" and estado like '%{0}%'", this.AnuladaChk.Text);
+                }
             }
-            if (this.ImporteChk.Checked)
+            if (this.AnuladaChk.Checked)
             {
-                int.Parse(this.ImporteTxt.Text);
-                criterio = String.Format("importe = {0}", ImporteTxt.Text);
-            }
-            if (this.FechaVencimientoChk.Checked)
-            {
-                criterio = String.Format("fecha_venc = '%{0}%'", FechaVencimientoPicker.Value);
+                AnuladaChk.Text = "a";
+                if (criterio == null)
+                {
+                    criterio = string.Format("estado like '%{0}%'", this.AnuladaChk.Text);
+                }
+                else
+                {
+                    criterio = string.Format(" and estado like '%{0}%'", this.AnuladaChk.Text);
+                }
             }
             if (this.FechaPagoChk.Checked)
             {
-                criterio = String.Format("fecha_pago = '%{0}%'", FechaPagoPicker.Value);
+                if (criterio == null)
+                {
+                    criterio = string.Format("fecha_pago like '%{0}%'", this.FechaPagoPicker);
+                }
+                else
+                {
+                    criterio = string.Format(" and fecha_pago like '%{0}%'", this.FechaPagoPicker);
+                }
             }
-            this.CuotasGrd.DataSource = Cuota.FindAllStatic(criterio, (c1, c2) => (c1.Anio).CompareTo(c2.Anio));
+            if (this.FechaVencimientoChk.Checked)
+            {
+                if (criterio == null)
+                {
+                    criterio = string.Format("fecha_venc like '%{0}%'", this.FechaVencimientoPicker);
+                }
+                else
+                {
+                    criterio = string.Format(" and fecha_pago like '%{0}%'", this.FechaVencimientoPicker);
+                }
+            }
+
+            if (this.ImporteChk.Checked)
+            {
+                try
+                {
+                    int.Parse(this.ImporteTxt.Text);
+                    if (criterio == null)
+                    {
+                        criterio = string.Format("importe = {0}", this.ImporteTxt.Text);
+                    }
+                    else
+                    {
+                        criterio += string.Format(" and importe = {0}", this.ImporteTxt.Text);
+                    }
+                }
+                catch (FormatException r)
+                {
+
+                }
+            }
+            this.CuotasGrd.DataSource = Cuota.FindAllStatic(criterio, (c1, c2) => (c1.Id).CompareTo(c2.Id));
         }
 
         private void FechaVencimientoPicker_ValueChanged(object sender, EventArgs e)
@@ -137,6 +217,53 @@ namespace clubApp.Views
         private void AnuladaChk_CheckedChanged(object sender, EventArgs e)
         {
             this.AnuladaChk.Enabled = this.AnuladaChk.Checked;
+        }
+
+        private void CuotasGrd_DoubleClick(object sender, EventArgs e)
+        {
+            FrmCuotaAM frmpac = new FrmCuotaAM();
+            Cuota pac = (this.CuotasGrd.SelectedRows[0].DataBoundItem as Cuota);
+            frmpac.ShowModificarCuota(pac);
+        }
+
+        private void CuotasGrd_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewColumn newColumn = CuotasGrd.Columns[e.ColumnIndex];
+            DataGridViewColumn oldColumn = CuotasGrd.SortedColumn;
+            ListSortDirection direction;
+            List<Cuota> listaAux = new List<Cuota>();
+            listaAux = Cuota.FindAllStatic(null, (c1, c2) => (c1.Anio).CompareTo(c2.Anio));
+            var binding = new BindingList<Cuota>(listaAux);
+            var source = new BindingSource(binding, null);
+            this.CuotasGrd.DataSource = source;
+            this.CuotasGrd.AllowUserToOrderColumns = true;
+
+            // If oldColumn is null, then the DataGridView is not sorted.
+            if (oldColumn != null)
+            {
+                // Sort the same column again, reversing the SortOrder.
+                if (oldColumn == newColumn &&
+                    CuotasGrd.SortOrder == SortOrder.Ascending)
+                {
+                    direction = ListSortDirection.Descending;
+                }
+                else
+                {
+                    // Sort a new column and remove the old SortGlyph.
+                    direction = ListSortDirection.Ascending;
+                    oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
+                }
+            }
+            else
+            {
+                direction = ListSortDirection.Ascending;
+            }
+
+            // Sort the selected column.
+            CuotasGrd.Sort(newColumn, direction);
+            newColumn.HeaderCell.SortGlyphDirection =
+                direction == ListSortDirection.Ascending ?
+                SortOrder.Ascending : SortOrder.Descending;
         }
     }
 }

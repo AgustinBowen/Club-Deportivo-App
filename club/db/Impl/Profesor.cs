@@ -1,8 +1,6 @@
-﻿using System;
+﻿using clubApp.db.orm;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using clubApp.db.orm;
 
 namespace clubApp.db
 {
@@ -27,7 +25,7 @@ namespace clubApp.db
             this.Nombres = prof.Nombres;
             this.Domicilio = prof.Domicilio;
             this.Telefono = prof.Telefono;
-            
+
             this.SetIsObjFromDB();
             return this;
         }
@@ -54,9 +52,9 @@ namespace clubApp.db
         }
         public static bool ExisteProfesor(int doc)
         {
-            var list = FindAllStatic("dni=" + doc.ToString(),null);
-            if (list != null && list.Count>0)
-            return true;
+            var list = FindAllStatic("dni=" + doc.ToString(), null);
+            if (list != null && list.Count > 0)
+                return true;
             return false;
         }
     }

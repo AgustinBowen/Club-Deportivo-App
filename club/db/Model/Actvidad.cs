@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace clubApp.db
 {
@@ -35,7 +32,7 @@ namespace clubApp.db
             set { _legajo_profe = value; }
         }
 
-       
+
         [Propiedad(Name = "cod_tipo_act", Tipo = typeof(int))]
         public int CodTipoActividad
         {

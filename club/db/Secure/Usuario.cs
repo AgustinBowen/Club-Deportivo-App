@@ -1,9 +1,7 @@
-﻿using System;
+﻿using clubApp.db.orm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Reflection;
-using clubApp.db.orm;
 
 namespace clubApp.db
 {
@@ -15,8 +13,8 @@ namespace clubApp.db
         private string _usuario;
         private string _clave;
         private DateTime? _fecha_login;
-        private List<Rol> _listRolesUsuario=null;
-        private List<Funcion> _list_Funciones=null;
+        private List<Rol> _listRolesUsuario = null;
+        private List<Funcion> _list_Funciones = null;
         #endregion
 
         #region propiedades publicas
@@ -66,7 +64,7 @@ namespace clubApp.db
             {
                 if (_listRolesUsuario == null)
                 {
-                    _listRolesUsuario = Rol.FindAllStatic("codigo in (select cod_rol from usuario_roles where cod_usuario=" + this.Id.ToString()+")",null);
+                    _listRolesUsuario = Rol.FindAllStatic("codigo in (select cod_rol from usuario_roles where cod_usuario=" + this.Id.ToString() + ")", null);
                 }
                 return _listRolesUsuario;
             }
@@ -83,15 +81,15 @@ namespace clubApp.db
                     foreach (var rol in this.ListadoRoles)
                     {
                         var lfuncs = rol.ListarFuncionesRol();
-                        if( lfuncs !=null)
+                        if (lfuncs != null)
                         {
                             foreach (var func in lfuncs)
-	                        {
-                                if(_list_Funciones.Find(ff=>ff.Nombre==func.Nombre)==null)
+                            {
+                                if (_list_Funciones.Find(ff => ff.Nombre == func.Nombre) == null)
                                 {
                                     _list_Funciones.Add(func);
                                 }
-	                        }
+                            }
                         }
                     }
                 }
@@ -142,7 +140,7 @@ namespace clubApp.db
         }
         public static void FindUsuario(string usuario, string clave)
         {
-            List<Usuario> lista = ORMDB<Usuario>.FindAll(String.Format("usuario='{0}' and clave='{1}'",usuario,clave));
+            List<Usuario> lista = ORMDB<Usuario>.FindAll(String.Format("usuario='{0}' and clave='{1}'", usuario, clave));
             if (lista != null)
             {
                 if (lista.Count > 0)
@@ -175,7 +173,7 @@ namespace clubApp.db
                 }
                 else
                     throw new Exception("Error: No existe el usuario");
-            }            
+            }
         }
         public static bool HasPermiso(string permiso)
         {

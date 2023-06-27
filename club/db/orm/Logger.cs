@@ -1,9 +1,6 @@
-﻿using System;
+﻿using clubApp.db.orm;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Reflection;
-using clubApp.db.orm;
 
 namespace clubApp.db
 {
@@ -36,7 +33,7 @@ namespace clubApp.db
         }
 
         [Propiedad(Name = "objeto", Tipo = typeof(string), Longitud = 80)]
-        public string Objeto 
+        public string Objeto
         {
             get { return _objeto; }
             set { _objeto = value; }
@@ -119,7 +116,7 @@ namespace clubApp.db
             return ORMDB<Logger>.FindbyKey(key);
         }
 
-        public static void SaveLog(string operacion, string objeto,string detalle)
+        public static void SaveLog(string operacion, string objeto, string detalle)
         {
             Logger log = new Logger { UsuarioName = Usuario.UsuarioSys.UsuarioName, Fecha = DateTime.Now, Operacion = operacion, Objeto = objeto, Detalle = detalle };
             log.SaveObj();

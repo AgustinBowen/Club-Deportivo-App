@@ -1,8 +1,6 @@
-﻿using System;
+﻿using clubApp.db.orm;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using clubApp.db.orm;
 
 namespace clubApp.db
 {
@@ -21,7 +19,7 @@ namespace clubApp.db
         {
             var soc = ORMDB<Socio>.FindbyKey(key);
             // completar datos en this para dejarlo inicializado
-            this.NroSocio = soc.NroSocio;    
+            this.NroSocio = soc.NroSocio;
             this.NroDocumento = soc.NroDocumento;
             this.Apellido = soc.Apellido;
             this.Nombres = soc.Nombres;

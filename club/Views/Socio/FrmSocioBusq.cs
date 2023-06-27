@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using clubApp.db;
+using System;
 using System.Windows.Forms;
-using clubApp.db;
 
 namespace clubApp.Views
 {
@@ -34,7 +28,7 @@ namespace clubApp.Views
 
             if (this.LocalidadChk.Checked)
             {
-                if(criterio==null)
+                if (criterio == null)
                     criterio = String.Format("cod_postal={0} ", LocalidadCbo.SelectedValue);
                 else
                     criterio += String.Format(" and cod_postal = {0}", LocalidadCbo.SelectedValue);
@@ -102,8 +96,8 @@ namespace clubApp.Views
         }
 
         private void FrmSocioBusq_Load(object sender, EventArgs e)
-        {            
-            LocalidadCbo.DataSource = Localidad.FindAllStatic(null,(loc1,loc2)=>loc1.Nombre.CompareTo(loc2.Nombre) );
+        {
+            LocalidadCbo.DataSource = Localidad.FindAllStatic(null, (loc1, loc2) => loc1.Nombre.CompareTo(loc2.Nombre));
             LocalidadCbo.SelectedIndex = -1;
         }
 

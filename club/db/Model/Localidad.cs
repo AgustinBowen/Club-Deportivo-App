@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Reflection;
-
-namespace clubApp.db
+﻿namespace clubApp.db
 {
     [Table(Name = "localidad")]
     public partial class Localidad

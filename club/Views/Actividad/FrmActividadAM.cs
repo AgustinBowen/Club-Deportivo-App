@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using clubApp.db;
+using System;
 using System.Windows.Forms;
-using clubApp.db;
 
 namespace clubApp.Views
 {
@@ -42,7 +35,7 @@ namespace clubApp.Views
 
             //this.LocalidadCbo.DataSource = ORMDB<Localidad>.FindAll(null);
         }
-        
+
         private void GuardarBtn_Click(object sender, EventArgs e)
         {
             Actividad actividad = null;
@@ -64,7 +57,7 @@ namespace clubApp.Views
                 detalleLog = "OBJ-Antes:" + actividadLog + " - OBJ-MOD";
             }
 
-                      
+
             if (DateTimeInicio.Text == "")
             {
                 MessageBox.Show("Ingrese fecha Inicio", "Dato(s) faltante(s)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -80,12 +73,12 @@ namespace clubApp.Views
             }
 
             actividad = new Actividad();
-            
-            
+
+
             actividad.FechaDesde = DateTimeInicio.Value;
             actividad.FechaHasta = DateTimePicker1.Value;
 
-            
+
             detalleLog += Newtonsoft.Json.JsonConvert.SerializeObject(actividad);
             // intentar guardar en la Base de datos.
             try
@@ -95,14 +88,14 @@ namespace clubApp.Views
             }
             catch (Exception ex)
             {
-               /* if (Actividad.ExisteActividad(actividad.Id))       // TODO excepción "backend sent unrecognized response type r"
-                {
-                    errMsj = "ya se encuentra registrado un Profesor con el DNI ingresado";
-                }
-                else
-                {
-                    errMsj = "Error: " + ex.Message;
-                }*/
+                /* if (Actividad.ExisteActividad(actividad.Id))       // TODO excepción "backend sent unrecognized response type r"
+                 {
+                     errMsj = "ya se encuentra registrado un Profesor con el DNI ingresado";
+                 }
+                 else
+                 {
+                     errMsj = "Error: " + ex.Message;
+                 }*/
             }
             // si esta configurado, al form invoker enviarle evento de operacion completa
             if (DoCompleteOperationForm != null)
@@ -126,5 +119,5 @@ namespace clubApp.Views
 
         }
     }
- }
+}
 

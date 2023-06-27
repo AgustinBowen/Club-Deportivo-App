@@ -32,6 +32,7 @@
             this.CancelarBtn = new System.Windows.Forms.Button();
             this.GuardarBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ActSocioCbo = new System.Windows.Forms.ComboBox();
             this.FechaVencimientoPicker = new System.Windows.Forms.DateTimePicker();
             this.MesTxt = new System.Windows.Forms.TextBox();
             this.MesLbl = new System.Windows.Forms.Label();
@@ -43,13 +44,12 @@
             this.AnioLbl = new System.Windows.Forms.Label();
             this.ImporteTxt = new System.Windows.Forms.TextBox();
             this.ImporteLbl = new System.Windows.Forms.Label();
-            this.ActSocioCbo = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // CancelarBtn
             // 
-            this.CancelarBtn.Location = new System.Drawing.Point(280, 229);
+            this.CancelarBtn.Location = new System.Drawing.Point(280, 237);
             this.CancelarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.CancelarBtn.Name = "CancelarBtn";
             this.CancelarBtn.Size = new System.Drawing.Size(59, 27);
@@ -60,7 +60,7 @@
             // 
             // GuardarBtn
             // 
-            this.GuardarBtn.Location = new System.Drawing.Point(217, 229);
+            this.GuardarBtn.Location = new System.Drawing.Point(217, 237);
             this.GuardarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.GuardarBtn.Name = "GuardarBtn";
             this.GuardarBtn.Size = new System.Drawing.Size(59, 27);
@@ -87,13 +87,27 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(330, 214);
+            this.groupBox1.Size = new System.Drawing.Size(330, 213);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
+            // ActSocioCbo
+            // 
+            this.ActSocioCbo.DisplayMember = "Nombre";
+            this.ActSocioCbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ActSocioCbo.FormattingEnabled = true;
+            this.ActSocioCbo.Location = new System.Drawing.Point(117, 144);
+            this.ActSocioCbo.Margin = new System.Windows.Forms.Padding(2);
+            this.ActSocioCbo.Name = "ActSocioCbo";
+            this.ActSocioCbo.Size = new System.Drawing.Size(201, 21);
+            this.ActSocioCbo.TabIndex = 14;
+            this.ActSocioCbo.Tag = "id";
+            this.ActSocioCbo.ValueMember = "Id";
+            this.ActSocioCbo.SelectedIndexChanged += new System.EventHandler(this.ActSocioCbo_SelectedIndexChanged);
+            // 
             // FechaVencimientoPicker
             // 
-            this.FechaVencimientoPicker.Location = new System.Drawing.Point(117, 176);
+            this.FechaVencimientoPicker.Location = new System.Drawing.Point(117, 180);
             this.FechaVencimientoPicker.Name = "FechaVencimientoPicker";
             this.FechaVencimientoPicker.Size = new System.Drawing.Size(200, 20);
             this.FechaVencimientoPicker.TabIndex = 17;
@@ -101,17 +115,17 @@
             // 
             // MesTxt
             // 
-            this.MesTxt.Location = new System.Drawing.Point(117, 112);
+            this.MesTxt.Location = new System.Drawing.Point(117, 80);
             this.MesTxt.Margin = new System.Windows.Forms.Padding(2);
             this.MesTxt.Name = "MesTxt";
-            this.MesTxt.Size = new System.Drawing.Size(166, 20);
+            this.MesTxt.Size = new System.Drawing.Size(200, 20);
             this.MesTxt.TabIndex = 4;
             this.MesTxt.Tag = "Mes";
             // 
             // MesLbl
             // 
             this.MesLbl.AutoSize = true;
-            this.MesLbl.Location = new System.Drawing.Point(16, 112);
+            this.MesLbl.Location = new System.Drawing.Point(14, 80);
             this.MesLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MesLbl.Name = "MesLbl";
             this.MesLbl.Size = new System.Drawing.Size(27, 13);
@@ -121,7 +135,7 @@
             // FechaVencimientoLbl
             // 
             this.FechaVencimientoLbl.AutoSize = true;
-            this.FechaVencimientoLbl.Location = new System.Drawing.Point(17, 176);
+            this.FechaVencimientoLbl.Location = new System.Drawing.Point(15, 180);
             this.FechaVencimientoLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FechaVencimientoLbl.Name = "FechaVencimientoLbl";
             this.FechaVencimientoLbl.Size = new System.Drawing.Size(97, 13);
@@ -130,16 +144,16 @@
             // 
             // EstadoTxt
             // 
-            this.EstadoTxt.Location = new System.Drawing.Point(117, 142);
+            this.EstadoTxt.Location = new System.Drawing.Point(117, 110);
             this.EstadoTxt.Margin = new System.Windows.Forms.Padding(2);
             this.EstadoTxt.Name = "EstadoTxt";
-            this.EstadoTxt.Size = new System.Drawing.Size(166, 20);
+            this.EstadoTxt.Size = new System.Drawing.Size(200, 20);
             this.EstadoTxt.TabIndex = 5;
             // 
             // EstadoLbl
             // 
             this.EstadoLbl.AutoSize = true;
-            this.EstadoLbl.Location = new System.Drawing.Point(17, 142);
+            this.EstadoLbl.Location = new System.Drawing.Point(15, 110);
             this.EstadoLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EstadoLbl.Name = "EstadoLbl";
             this.EstadoLbl.Size = new System.Drawing.Size(40, 13);
@@ -149,7 +163,7 @@
             // ActSocioLbl
             // 
             this.ActSocioLbl.AutoSize = true;
-            this.ActSocioLbl.Location = new System.Drawing.Point(16, 18);
+            this.ActSocioLbl.Location = new System.Drawing.Point(16, 147);
             this.ActSocioLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ActSocioLbl.Name = "ActSocioLbl";
             this.ActSocioLbl.Size = new System.Drawing.Size(81, 13);
@@ -158,17 +172,17 @@
             // 
             // AnioTxt
             // 
-            this.AnioTxt.Location = new System.Drawing.Point(117, 78);
+            this.AnioTxt.Location = new System.Drawing.Point(117, 46);
             this.AnioTxt.Margin = new System.Windows.Forms.Padding(2);
             this.AnioTxt.Name = "AnioTxt";
-            this.AnioTxt.Size = new System.Drawing.Size(166, 20);
+            this.AnioTxt.Size = new System.Drawing.Size(200, 20);
             this.AnioTxt.TabIndex = 2;
             this.AnioTxt.Tag = "Año";
             // 
             // AnioLbl
             // 
             this.AnioLbl.AutoSize = true;
-            this.AnioLbl.Location = new System.Drawing.Point(16, 81);
+            this.AnioLbl.Location = new System.Drawing.Point(14, 49);
             this.AnioLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AnioLbl.Name = "AnioLbl";
             this.AnioLbl.Size = new System.Drawing.Size(26, 13);
@@ -177,48 +191,37 @@
             // 
             // ImporteTxt
             // 
-            this.ImporteTxt.Location = new System.Drawing.Point(117, 47);
+            this.ImporteTxt.Location = new System.Drawing.Point(117, 15);
             this.ImporteTxt.Margin = new System.Windows.Forms.Padding(2);
             this.ImporteTxt.Name = "ImporteTxt";
-            this.ImporteTxt.Size = new System.Drawing.Size(166, 20);
+            this.ImporteTxt.Size = new System.Drawing.Size(200, 20);
             this.ImporteTxt.TabIndex = 1;
             this.ImporteTxt.Tag = "Importe";
             // 
             // ImporteLbl
             // 
             this.ImporteLbl.AutoSize = true;
-            this.ImporteLbl.Location = new System.Drawing.Point(16, 47);
+            this.ImporteLbl.Location = new System.Drawing.Point(14, 15);
             this.ImporteLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ImporteLbl.Name = "ImporteLbl";
             this.ImporteLbl.Size = new System.Drawing.Size(42, 13);
             this.ImporteLbl.TabIndex = 0;
             this.ImporteLbl.Text = "Importe";
             // 
-            // ActSocioCbo
-            // 
-            this.ActSocioCbo.DisplayMember = "Nombre";
-            this.ActSocioCbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ActSocioCbo.FormattingEnabled = true;
-            this.ActSocioCbo.Location = new System.Drawing.Point(117, 15);
-            this.ActSocioCbo.Margin = new System.Windows.Forms.Padding(2);
-            this.ActSocioCbo.Name = "ActSocioCbo";
-            this.ActSocioCbo.Size = new System.Drawing.Size(166, 21);
-            this.ActSocioCbo.TabIndex = 14;
-            this.ActSocioCbo.Tag = "id";
-            this.ActSocioCbo.ValueMember = "Id";
-            this.ActSocioCbo.SelectedIndexChanged += new System.EventHandler(this.ActSocioCbo_SelectedIndexChanged);
-            // 
             // FrmCuotaAM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 319);
+            this.ClientSize = new System.Drawing.Size(348, 277);
             this.Controls.Add(this.CancelarBtn);
             this.Controls.Add(this.GuardarBtn);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCuotaAM";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCuotaAM";
+            this.Deactivate += new System.EventHandler(this.FrmCuotaAM_Deactivate);
+            this.Load += new System.EventHandler(this.FrmpCuotaAM_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

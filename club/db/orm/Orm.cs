@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace clubApp.db.orm
+﻿namespace clubApp.db.orm
 {
     public delegate void ValidarClaseDelegate(string mensaje);
 
-    public abstract class BaseClass 
-    {        
+    public abstract class BaseClass
+    {
         private bool _isNew;
 
         public bool IsNew
         {
-            get { return _isNew; }            
+            get { return _isNew; }
         }
 
         public BaseClass()

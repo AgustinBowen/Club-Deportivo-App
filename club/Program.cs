@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using clubApp.Views;
+using System;
 using System.Windows.Forms;
-using clubApp.Views;
 
 namespace clubApp
 {
@@ -16,7 +14,7 @@ namespace clubApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run( MainView.Instance); // uso de la unica instancia admitida en el sistema.
+            Application.Run(MainView.Instance); // uso de la unica instancia admitida en el sistema.
         }
     }
 }

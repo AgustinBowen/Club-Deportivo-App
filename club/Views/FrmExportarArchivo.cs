@@ -1,13 +1,9 @@
-﻿using System;
+﻿using clubApp.db;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.IO;
-using clubApp.db;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace clubApp.Views
 {
@@ -20,7 +16,8 @@ namespace clubApp.Views
             ConfigGuardar();
         }
 
-        public void ShowExportar(List<Socio> lista){
+        public void ShowExportar(List<Socio> lista)
+        {
             this._lista = lista.ToList<object>();
             this.Show();
         }
@@ -58,7 +55,7 @@ namespace clubApp.Views
         //Falta auditoria
 
 
-        public void ConfigGuardar() 
+        public void ConfigGuardar()
         {
             this.saveFileDialog1.DefaultExt = "txt";
             this.saveFileDialog1.FileName = String.Format("{0}", DateTime.Today.ToString("yyyy-MM-dd"));

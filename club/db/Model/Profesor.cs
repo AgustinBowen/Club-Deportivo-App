@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace clubApp.db
+﻿namespace clubApp.db
 {
     [Table(Name = "profesor")]
     public partial class Profesor
@@ -14,10 +9,10 @@ namespace clubApp.db
         private string _apellido;
         private string _nombres;
         private string _domicilio;
-        private string _telefono;                                   
-           
-        
-        #endregion        
+        private string _telefono;
+
+
+        #endregion
 
         #region propiedades publicas
 
@@ -53,20 +48,20 @@ namespace clubApp.db
         public string Domicilio
         {
             get { return _domicilio; }
-            set { _domicilio= value; }
+            set { _domicilio = value; }
         }
 
-        [Propiedad(Name = "telefono", Tipo = typeof(string), Longitud = 20)]        
+        [Propiedad(Name = "telefono", Tipo = typeof(string), Longitud = 20)]
         public string Telefono
         {
             get { return _telefono; }
             set { _telefono = value; }
         }
-    
 
-       
-        #endregion  
 
-       
+
+        #endregion
+
+
     }
 }

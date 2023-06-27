@@ -1,9 +1,6 @@
-﻿using System;
+﻿using clubApp.db.orm;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Reflection;
-using clubApp.db.orm;
 
 namespace clubApp.db
 {
@@ -75,7 +72,7 @@ namespace clubApp.db
             {
                 if (this.ValidacionFuncionRolGuardar != null)
                 {
-                    
+
                 }
             }
             return ORMDB<FuncionRol>.SaveObject(this);

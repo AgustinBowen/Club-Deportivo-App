@@ -1,8 +1,6 @@
-﻿using System;
+﻿using clubApp.db.orm;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using clubApp.db.orm;
 
 namespace clubApp.db
 {
@@ -47,7 +45,7 @@ namespace clubApp.db
         public static List<Horario> FindAllStatic(string criterio, Comparison<Horario> compara)
         {
             var lista = ORMDB<Horario>.FindAll(criterio);
-            if(compara!=null)
+            if (compara != null)
                 lista.Sort(compara);
             return lista;
         }

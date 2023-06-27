@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using clubApp.db;
 using clubApp.db.orm;
-using clubApp.db;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace clubApp.Views
 {
     public enum FrmOperacion
     {
-        frmAlta=1,
-        frmModificacion=2,
-        frmConsulta=3
+        frmAlta = 1,
+        frmModificacion = 2,
+        frmConsulta = 3
     };
     public enum TipoOperacionStatus
     {
-        stOK =1,
+        stOK = 1,
         stError = 2
     }
     public class EventArgDom : EventArgs
@@ -29,30 +27,30 @@ namespace clubApp.Views
     // Delegado Generico para poder mandar Mensaje Generico a formulario invocador del form.
     public delegate void FormEvent(object Sender, EventArgDom ev);
 
-    
-    public class FormBase: Form
+
+    public class FormBase : Form
     {
-        public static void LoadComboBox(dynamic list, ComboBox cbo, string displayMap="Nombre", string codigoMap="Id" ,  bool addSeleccion = false)
+        public static void LoadComboBox(dynamic list, ComboBox cbo, string displayMap = "Nombre", string codigoMap = "Id", bool addSeleccion = false)
         {
             cbo.DisplayMember = displayMap;
             cbo.ValueMember = codigoMap;
             cbo.DataSource = list;
-            cbo.SelectedIndex = -1;            
+            cbo.SelectedIndex = -1;
         }
         // ATENCION...Cada Formulario debe sobreescribir este evento para poder enlazarlo a un metodo handler..  Disparado desde Boton GUARDAR.
-        public virtual event FormEvent DoCompleteOperationForm = delegate { }; 
+        public virtual event FormEvent DoCompleteOperationForm = delegate { };
         public virtual FrmOperacion OperacionForm { get; set; }
         public virtual void ConfigurePermiso(PermisoAttribute perm)
         {
             // hay que redefinir en cada Form  para ver los permisos
         }
         private List<Control> ctls = null;
-        public virtual void Reload(){}
+        public virtual void Reload() { }
         public FormBase InvokerForm;
         private PermisoAttribute _perm;
         public FormBase()
         {
-            this.Load += new EventHandler(FormBase_Load);            
+            this.Load += new EventHandler(FormBase_Load);
         }
 
         public static void SoloConsulta(FormBase frm)
@@ -64,10 +62,10 @@ namespace clubApp.Views
             {
                 if (item.GetType() == typeof(GroupBox))
                 {
-                    foreach (Control itm  in (item as GroupBox).Controls)
+                    foreach (Control itm in (item as GroupBox).Controls)
                     {
-                        if(itm.Tag != null && itm.Tag.ToString() != "") 
-                        {                            
+                        if (itm.Tag != null && itm.Tag.ToString() != "")
+                        {
                             ctls.Add(itm);
                         }
                     }
@@ -81,12 +79,12 @@ namespace clubApp.Views
                     }
                     else
                         if (item is Button && item.Name == "CancelarBtn")
-                        {
-                            item.Text = "Cerrar";
-                        }
-                            
+                    {
+                        item.Text = "Cerrar";
+                    }
+
                 }
-             }
+            }
 
             foreach (Control item in ctls)
             {
@@ -104,14 +102,14 @@ namespace clubApp.Views
         {
             var cfgPerm = MetaDataFormBaseClass.ConfigPermisoForm(this.GetType());
             _perm = cfgPerm as PermisoAttribute;
-            
+
             if (cfgPerm != null)
             {
                 PermisoAttribute prmInfo = (cfgPerm as PermisoAttribute);
                 this.ConfigurePermiso(prmInfo);
             }
         }
-        
+
         public static void ShowDataFromModel(FormBase frm, BaseClass obj)
         {
             var props = MetaDataClass.GetProps(obj.GetType());
@@ -121,12 +119,12 @@ namespace clubApp.Views
             {
                 if (item.GetType() == typeof(GroupBox))
                 {
-                    foreach (Control itm  in (item as GroupBox).Controls)
+                    foreach (Control itm in (item as GroupBox).Controls)
                     {
                         if (itm.Tag != null && itm.Tag.ToString() != "")
                         {
                             ctls.Add(itm);
-                        }   
+                        }
                     }
                 }
                 else
@@ -137,26 +135,26 @@ namespace clubApp.Views
                         ctls.Add(item);
                     }
                 }
-             }
+            }
             foreach (var prop in props)
             {
-                dynamic data="";
+                dynamic data = "";
                 PropiedadAttribute propAt = (prop.GetCustomAttributes(typeof(PropiedadAttribute), true)[0] as PropiedadAttribute);
-                data = prop.GetValue(obj, null);                    
-                
+                data = prop.GetValue(obj, null);
+
                 foreach (Control item in ctls)
                 {
-                     // Tipos de controles: comunes a setear.
-                     // TextBox
-                     // ComboBox
-                     // CheckBox
-                     // DatePicker
+                    // Tipos de controles: comunes a setear.
+                    // TextBox
+                    // ComboBox
+                    // CheckBox
+                    // DatePicker
                     // Verificar Conjunto de datos Mapeados
 
                     if (item.GetType() == typeof(TextBox))
                     {
-                        if(item.Tag.ToString() == prop.Name)
-                            (item as TextBox).Text = String.Format("{0}", (data == null?"":data));
+                        if (item.Tag.ToString() == prop.Name)
+                            (item as TextBox).Text = String.Format("{0}", (data == null ? "" : data));
                     }
                     if (item.GetType() == typeof(ComboBox))
                     {
@@ -170,14 +168,14 @@ namespace clubApp.Views
                     if (item.GetType() == typeof(DateTimePicker))
                     {
                         if (item.Tag.ToString() == prop.Name)
-                          (item as DateTimePicker).Value= data;
+                            (item as DateTimePicker).Value = data;
                     }
                     if (item.GetType() == typeof(CheckBox))
                     {
                         if (item.Tag.ToString() == prop.Name)
-                          (item as CheckBox).Checked = data;
+                            (item as CheckBox).Checked = data;
                     }
-                }    
+                }
             }
         }
     }

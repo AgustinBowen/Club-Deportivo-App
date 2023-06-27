@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Reflection;
-
-namespace clubApp.db
+﻿namespace clubApp.db
 {
     [Table(Name = "importe_actividad")]
     public partial class ImporteActividad
@@ -15,7 +9,7 @@ namespace clubApp.db
         private int _anio;
         private int _mes;
         private float _importe;
-        private TipoActividad _tipo_actividad=null;
+        private TipoActividad _tipo_actividad = null;
         #endregion
 
         #region propiedades publicas

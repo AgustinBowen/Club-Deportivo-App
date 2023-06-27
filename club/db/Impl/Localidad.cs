@@ -1,8 +1,6 @@
-﻿using System;
+﻿using clubApp.db.orm;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using clubApp.db.orm;
 
 namespace clubApp.db
 {
@@ -15,7 +13,7 @@ namespace clubApp.db
         }
         public List<Localidad> FindAll(string criterio)
         {
-            return ORMDB<Localidad>.FindAll(criterio); 
+            return ORMDB<Localidad>.FindAll(criterio);
         }
         public Localidad FindbyKey(params object[] key)
         {
@@ -33,7 +31,7 @@ namespace clubApp.db
                 if (this.ValidacionLocalidadGuardar != null)
                 {
                     // Validaciones de los datos que deben estar cargados para tener una tupla de datos valida
-                    if(Nombre == "" )
+                    if (Nombre == "")
                         ValidacionLocalidadGuardar("No se puede poner Nombre vacio");
                 }
             }
