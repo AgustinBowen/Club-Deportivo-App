@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListadoLocalidad));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.CodPostalTxt = new System.Windows.Forms.TextBox();
             this.CodPostalChk = new System.Windows.Forms.CheckBox();
@@ -59,7 +60,6 @@
             // 
             // CodPostalTxt
             // 
-            this.CodPostalTxt.Enabled = true;
             this.CodPostalTxt.Location = new System.Drawing.Point(99, 15);
             this.CodPostalTxt.Margin = new System.Windows.Forms.Padding(2);
             this.CodPostalTxt.Name = "CodPostalTxt";
@@ -94,7 +94,6 @@
             // 
             // NombreTxt
             // 
-            this.NombreTxt.Enabled = true;
             this.NombreTxt.Location = new System.Drawing.Point(69, 15);
             this.NombreTxt.Margin = new System.Windows.Forms.Padding(2);
             this.NombreTxt.Name = "NombreTxt";
@@ -178,6 +177,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.LocalidadGrd);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmListadoLocalidad";
             this.Text = "FrmListadoLocalidad";
             this.groupBox2.ResumeLayout(false);

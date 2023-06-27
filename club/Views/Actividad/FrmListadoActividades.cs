@@ -2,7 +2,7 @@
 
 namespace clubApp.Views
 {
-    public partial class FrmListadoActividades : Form
+    public partial class FrmListadoActividades : FormBase
     {
         public FrmListadoActividades()
         {

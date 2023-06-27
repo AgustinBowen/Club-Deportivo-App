@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLocalidadBusq));
             this.CodPostalTxt = new System.Windows.Forms.TextBox();
             this.CodPostalChk = new System.Windows.Forms.CheckBox();
             this.NombreTxt = new System.Windows.Forms.TextBox();
@@ -117,6 +118,7 @@
             this.Controls.Add(this.CodPostalChk);
             this.Controls.Add(this.NombreTxt);
             this.Controls.Add(this.NombreChk);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLocalidadBusq";
             this.Text = "FrmLocalidadBusq";
             this.Activated += new System.EventHandler(this.FrmLocalidadBusq_Activated_1);

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLocalidadList));
             this.CerrarBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LocalidadGrd = new System.Windows.Forms.DataGridView();
@@ -107,6 +108,7 @@
             this.ClientSize = new System.Drawing.Size(335, 325);
             this.Controls.Add(this.CerrarBtn);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLocalidadList";
             this.Text = "FrmLocalidadList";
             this.groupBox1.ResumeLayout(false);

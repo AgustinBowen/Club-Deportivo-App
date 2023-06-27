@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmActividadAM));
             this.CancelarBtn = new System.Windows.Forms.Button();
             this.GuardarBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.DateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DateTimeInicio = new System.Windows.Forms.DateTimePicker();
+            this.DateTimeFin = new System.Windows.Forms.Label();
+            this.CodTipoActividad = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.ObservacionesTxt = new System.Windows.Forms.TextBox();
-            this.DateTimeInicio = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.CodTipoActividad = new System.Windows.Forms.ComboBox();
-            this.DateTimeFin = new System.Windows.Forms.Label();
-            this.DateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ObservacionesTxt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             // 
             // GuardarBtn
             // 
-            this.GuardarBtn.Location = new System.Drawing.Point(197, 381);
+            this.GuardarBtn.Location = new System.Drawing.Point(216, 381);
             this.GuardarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.GuardarBtn.Name = "GuardarBtn";
             this.GuardarBtn.Size = new System.Drawing.Size(59, 27);
@@ -77,17 +78,66 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.ObservacionesTxt);
-            this.groupBox1.Location = new System.Drawing.Point(59, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(298, 349);
+            this.groupBox1.Size = new System.Drawing.Size(326, 353);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DisplayMember = "Nombre";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(87, 78);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 21);
+            this.comboBox1.TabIndex = 23;
+            this.comboBox1.Tag = "CodTipoActividad";
+            this.comboBox1.ValueMember = "Id";
+            // 
+            // DateTimePicker1
+            // 
+            this.DateTimePicker1.Location = new System.Drawing.Point(87, 186);
+            this.DateTimePicker1.Name = "DateTimePicker1";
+            this.DateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.DateTimePicker1.TabIndex = 22;
+            // 
+            // DateTimeInicio
+            // 
+            this.DateTimeInicio.Location = new System.Drawing.Point(87, 135);
+            this.DateTimeInicio.Name = "DateTimeInicio";
+            this.DateTimeInicio.Size = new System.Drawing.Size(200, 20);
+            this.DateTimeInicio.TabIndex = 0;
+            // 
+            // DateTimeFin
+            // 
+            this.DateTimeFin.AutoSize = true;
+            this.DateTimeFin.Location = new System.Drawing.Point(7, 186);
+            this.DateTimeFin.Name = "DateTimeFin";
+            this.DateTimeFin.Size = new System.Drawing.Size(54, 13);
+            this.DateTimeFin.TabIndex = 21;
+            this.DateTimeFin.Text = "Fecha Fin";
+            // 
+            // CodTipoActividad
+            // 
+            this.CodTipoActividad.DisplayMember = "Nombre";
+            this.CodTipoActividad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CodTipoActividad.FormattingEnabled = true;
+            this.CodTipoActividad.Location = new System.Drawing.Point(87, 18);
+            this.CodTipoActividad.Margin = new System.Windows.Forms.Padding(2);
+            this.CodTipoActividad.Name = "CodTipoActividad";
+            this.CodTipoActividad.Size = new System.Drawing.Size(200, 21);
+            this.CodTipoActividad.TabIndex = 20;
+            this.CodTipoActividad.Tag = "CodTipoActividad";
+            this.CodTipoActividad.ValueMember = "Id";
+            this.CodTipoActividad.SelectedIndexChanged += new System.EventHandler(this.CodTipoActividad_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 133);
+            this.label5.Location = new System.Drawing.Point(10, 78);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 19;
@@ -96,7 +146,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 295);
+            this.label4.Location = new System.Drawing.Point(4, 240);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 13);
             this.label4.TabIndex = 18;
@@ -105,86 +155,37 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 190);
+            this.label3.Location = new System.Drawing.Point(7, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 17;
             this.label3.Text = "Fecha Inicio";
             // 
-            // ObservacionesTxt
-            // 
-            this.ObservacionesTxt.Location = new System.Drawing.Point(114, 292);
-            this.ObservacionesTxt.Name = "ObservacionesTxt";
-            this.ObservacionesTxt.Size = new System.Drawing.Size(100, 20);
-            this.ObservacionesTxt.TabIndex = 15;
-            // 
-            // DateTimeInicio
-            // 
-            this.DateTimeInicio.Location = new System.Drawing.Point(98, 190);
-            this.DateTimeInicio.Name = "DateTimeInicio";
-            this.DateTimeInicio.Size = new System.Drawing.Size(200, 20);
-            this.DateTimeInicio.TabIndex = 0;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 76);
+            this.label2.Location = new System.Drawing.Point(7, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 16;
             this.label2.Text = "Tipo Actividad";
             // 
-            // CodTipoActividad
+            // ObservacionesTxt
             // 
-            this.CodTipoActividad.DisplayMember = "Nombre";
-            this.CodTipoActividad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CodTipoActividad.FormattingEnabled = true;
-            this.CodTipoActividad.Location = new System.Drawing.Point(107, 73);
-            this.CodTipoActividad.Margin = new System.Windows.Forms.Padding(2);
-            this.CodTipoActividad.Name = "CodTipoActividad";
-            this.CodTipoActividad.Size = new System.Drawing.Size(157, 21);
-            this.CodTipoActividad.TabIndex = 20;
-            this.CodTipoActividad.Tag = "CodTipoActividad";
-            this.CodTipoActividad.ValueMember = "Id";
-            this.CodTipoActividad.SelectedIndexChanged += new System.EventHandler(this.CodTipoActividad_SelectedIndexChanged);
-            // 
-            // DateTimeFin
-            // 
-            this.DateTimeFin.AutoSize = true;
-            this.DateTimeFin.Location = new System.Drawing.Point(27, 241);
-            this.DateTimeFin.Name = "DateTimeFin";
-            this.DateTimeFin.Size = new System.Drawing.Size(54, 13);
-            this.DateTimeFin.TabIndex = 21;
-            this.DateTimeFin.Text = "Fecha Fin";
-            // 
-            // DateTimePicker1
-            // 
-            this.DateTimePicker1.Location = new System.Drawing.Point(98, 241);
-            this.DateTimePicker1.Name = "DateTimePicker1";
-            this.DateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.DateTimePicker1.TabIndex = 22;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DisplayMember = "Nombre";
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(107, 133);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(157, 21);
-            this.comboBox1.TabIndex = 23;
-            this.comboBox1.Tag = "CodTipoActividad";
-            this.comboBox1.ValueMember = "Id";
+            this.ObservacionesTxt.Location = new System.Drawing.Point(87, 237);
+            this.ObservacionesTxt.Name = "ObservacionesTxt";
+            this.ObservacionesTxt.Size = new System.Drawing.Size(200, 20);
+            this.ObservacionesTxt.TabIndex = 15;
             // 
             // FrmActividadAM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 450);
+            this.ClientSize = new System.Drawing.Size(349, 422);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CancelarBtn);
             this.Controls.Add(this.GuardarBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmActividadAM";
             this.Text = "FrmActividadAM";
             this.Load += new System.EventHandler(this.FrmActividadAM_Load);

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 namespace clubApp.Views
 
 {
-    public partial class FrmActividadBusq : Form
+    public partial class FrmActividadBusq : FormBase
     {
         public FrmActividadBusq()
         {

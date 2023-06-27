@@ -307,6 +307,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Actividad\FrmActividadAM.resx">
+      <DependentUpon>FrmActividadAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Actividad\FrmActividadBusq.resx">
+      <DependentUpon>FrmActividadBusq.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Cuota\FrmCuotaAM.resx">
       <DependentUpon>FrmCuotaAM.cs</DependentUpon>
     </EmbeddedResource>

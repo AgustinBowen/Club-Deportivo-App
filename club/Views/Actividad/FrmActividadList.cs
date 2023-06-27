@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace clubApp.Views
 {
-    public partial class FrmActividadList : Form
+    public partial class FrmActividadList : FormBase
     {
         public FrmActividadList()
         {
