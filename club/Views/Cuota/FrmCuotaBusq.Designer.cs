@@ -28,47 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCuotaBusq));
-            this.ActSocioCbo = new System.Windows.Forms.ComboBox();
-            this.ActSocioChk = new System.Windows.Forms.CheckBox();
             this.CancelarBtn = new System.Windows.Forms.Button();
             this.BuscarBtn = new System.Windows.Forms.Button();
             this.MesTxt = new System.Windows.Forms.TextBox();
             this.MesChk = new System.Windows.Forms.CheckBox();
-            this.EstadoTxt = new System.Windows.Forms.TextBox();
-            this.EstadoChk = new System.Windows.Forms.CheckBox();
             this.AnioTxt = new System.Windows.Forms.TextBox();
             this.AnioChk = new System.Windows.Forms.CheckBox();
+            this.FechaVencimientoPicker = new System.Windows.Forms.DateTimePicker();
+            this.FechaVencimientoChk = new System.Windows.Forms.CheckBox();
+            this.FechaPagoChk = new System.Windows.Forms.CheckBox();
+            this.FechaPagoPicker = new System.Windows.Forms.DateTimePicker();
+            this.PagaChk = new System.Windows.Forms.CheckBox();
+            this.AnuladaChk = new System.Windows.Forms.CheckBox();
+            this.ImpagaChk = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
-            // 
-            // ActSocioCbo
-            // 
-            this.ActSocioCbo.DisplayMember = "Nombre";
-            this.ActSocioCbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ActSocioCbo.Enabled = false;
-            this.ActSocioCbo.FormattingEnabled = true;
-            this.ActSocioCbo.Location = new System.Drawing.Point(260, 47);
-            this.ActSocioCbo.Margin = new System.Windows.Forms.Padding(2);
-            this.ActSocioCbo.Name = "ActSocioCbo";
-            this.ActSocioCbo.Size = new System.Drawing.Size(182, 21);
-            this.ActSocioCbo.TabIndex = 21;
-            this.ActSocioCbo.ValueMember = "Id";
-            // 
-            // ActSocioChk
-            // 
-            this.ActSocioChk.AutoSize = true;
-            this.ActSocioChk.Location = new System.Drawing.Point(158, 49);
-            this.ActSocioChk.Margin = new System.Windows.Forms.Padding(2);
-            this.ActSocioChk.Name = "ActSocioChk";
-            this.ActSocioChk.Size = new System.Drawing.Size(98, 17);
-            this.ActSocioChk.TabIndex = 20;
-            this.ActSocioChk.Text = "Actividad socio";
-            this.ActSocioChk.UseVisualStyleBackColor = true;
-            this.ActSocioChk.CheckedChanged += new System.EventHandler(this.ActSocioChk_CheckedChanged);
             // 
             // CancelarBtn
             // 
-            this.CancelarBtn.Location = new System.Drawing.Point(442, 98);
+            this.CancelarBtn.Location = new System.Drawing.Point(540, 130);
             this.CancelarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.CancelarBtn.Name = "CancelarBtn";
             this.CancelarBtn.Size = new System.Drawing.Size(58, 27);
@@ -79,7 +56,7 @@
             // 
             // BuscarBtn
             // 
-            this.BuscarBtn.Location = new System.Drawing.Point(354, 98);
+            this.BuscarBtn.Location = new System.Drawing.Point(478, 130);
             this.BuscarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.BuscarBtn.Name = "BuscarBtn";
             this.BuscarBtn.Size = new System.Drawing.Size(58, 27);
@@ -109,27 +86,6 @@
             this.MesChk.UseVisualStyleBackColor = true;
             this.MesChk.CheckedChanged += new System.EventHandler(this.MesChk_CheckedChanged);
             // 
-            // EstadoTxt
-            // 
-            this.EstadoTxt.Enabled = false;
-            this.EstadoTxt.Location = new System.Drawing.Point(260, 11);
-            this.EstadoTxt.Margin = new System.Windows.Forms.Padding(2);
-            this.EstadoTxt.Name = "EstadoTxt";
-            this.EstadoTxt.Size = new System.Drawing.Size(121, 20);
-            this.EstadoTxt.TabIndex = 15;
-            // 
-            // EstadoChk
-            // 
-            this.EstadoChk.AutoSize = true;
-            this.EstadoChk.Location = new System.Drawing.Point(158, 13);
-            this.EstadoChk.Margin = new System.Windows.Forms.Padding(2);
-            this.EstadoChk.Name = "EstadoChk";
-            this.EstadoChk.Size = new System.Drawing.Size(59, 17);
-            this.EstadoChk.TabIndex = 14;
-            this.EstadoChk.Text = "Estado";
-            this.EstadoChk.UseVisualStyleBackColor = true;
-            this.EstadoChk.CheckedChanged += new System.EventHandler(this.EstadoChk_CheckedChanged);
-            // 
             // AnioTxt
             // 
             this.AnioTxt.Enabled = false;
@@ -151,22 +107,100 @@
             this.AnioChk.UseVisualStyleBackColor = true;
             this.AnioChk.CheckedChanged += new System.EventHandler(this.AnioChk_CheckedChanged);
             // 
+            // FechaVencimientoPicker
+            // 
+            this.FechaVencimientoPicker.Location = new System.Drawing.Point(277, 11);
+            this.FechaVencimientoPicker.Name = "FechaVencimientoPicker";
+            this.FechaVencimientoPicker.Size = new System.Drawing.Size(200, 20);
+            this.FechaVencimientoPicker.TabIndex = 20;
+            this.FechaVencimientoPicker.ValueChanged += new System.EventHandler(this.FechaVencimientoPicker_ValueChanged);
+            // 
+            // FechaVencimientoChk
+            // 
+            this.FechaVencimientoChk.AutoSize = true;
+            this.FechaVencimientoChk.Location = new System.Drawing.Point(156, 13);
+            this.FechaVencimientoChk.Margin = new System.Windows.Forms.Padding(2);
+            this.FechaVencimientoChk.Name = "FechaVencimientoChk";
+            this.FechaVencimientoChk.Size = new System.Drawing.Size(116, 17);
+            this.FechaVencimientoChk.TabIndex = 21;
+            this.FechaVencimientoChk.Text = "Fecha vencimiento";
+            this.FechaVencimientoChk.UseVisualStyleBackColor = true;
+            this.FechaVencimientoChk.CheckedChanged += new System.EventHandler(this.FechaVencimientoChk_CheckedChanged);
+            // 
+            // FechaPagoChk
+            // 
+            this.FechaPagoChk.AutoSize = true;
+            this.FechaPagoChk.Location = new System.Drawing.Point(156, 49);
+            this.FechaPagoChk.Margin = new System.Windows.Forms.Padding(2);
+            this.FechaPagoChk.Name = "FechaPagoChk";
+            this.FechaPagoChk.Size = new System.Drawing.Size(83, 17);
+            this.FechaPagoChk.TabIndex = 23;
+            this.FechaPagoChk.Text = "Fecha pago";
+            this.FechaPagoChk.UseVisualStyleBackColor = true;
+            this.FechaPagoChk.CheckedChanged += new System.EventHandler(this.FechaPagoChk_CheckedChanged);
+            // 
+            // FechaPagoPicker
+            // 
+            this.FechaPagoPicker.Location = new System.Drawing.Point(277, 46);
+            this.FechaPagoPicker.Name = "FechaPagoPicker";
+            this.FechaPagoPicker.Size = new System.Drawing.Size(200, 20);
+            this.FechaPagoPicker.TabIndex = 22;
+            this.FechaPagoPicker.ValueChanged += new System.EventHandler(this.FechaPagoPicker_ValueChanged);
+            // 
+            // PagaChk
+            // 
+            this.PagaChk.AutoSize = true;
+            this.PagaChk.Location = new System.Drawing.Point(495, 14);
+            this.PagaChk.Margin = new System.Windows.Forms.Padding(2);
+            this.PagaChk.Name = "PagaChk";
+            this.PagaChk.Size = new System.Drawing.Size(51, 17);
+            this.PagaChk.TabIndex = 24;
+            this.PagaChk.Text = "Paga";
+            this.PagaChk.UseVisualStyleBackColor = true;
+            this.PagaChk.CheckedChanged += new System.EventHandler(this.PagaChk_CheckedChanged);
+            // 
+            // AnuladaChk
+            // 
+            this.AnuladaChk.AutoSize = true;
+            this.AnuladaChk.Location = new System.Drawing.Point(495, 87);
+            this.AnuladaChk.Margin = new System.Windows.Forms.Padding(2);
+            this.AnuladaChk.Name = "AnuladaChk";
+            this.AnuladaChk.Size = new System.Drawing.Size(65, 17);
+            this.AnuladaChk.TabIndex = 25;
+            this.AnuladaChk.Text = "Anulada";
+            this.AnuladaChk.UseVisualStyleBackColor = true;
+            this.AnuladaChk.CheckedChanged += new System.EventHandler(this.AnuladaChk_CheckedChanged);
+            // 
+            // ImpagaChk
+            // 
+            this.ImpagaChk.AutoSize = true;
+            this.ImpagaChk.Location = new System.Drawing.Point(495, 49);
+            this.ImpagaChk.Margin = new System.Windows.Forms.Padding(2);
+            this.ImpagaChk.Name = "ImpagaChk";
+            this.ImpagaChk.Size = new System.Drawing.Size(61, 17);
+            this.ImpagaChk.TabIndex = 26;
+            this.ImpagaChk.Text = "Impaga";
+            this.ImpagaChk.UseVisualStyleBackColor = true;
+            this.ImpagaChk.CheckedChanged += new System.EventHandler(this.ImpagaChk_CheckedChanged);
+            // 
             // FrmCuotaBusq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 140);
-            this.Controls.Add(this.ActSocioCbo);
-            this.Controls.Add(this.ActSocioChk);
+            this.ClientSize = new System.Drawing.Size(609, 168);
+            this.Controls.Add(this.ImpagaChk);
+            this.Controls.Add(this.AnuladaChk);
+            this.Controls.Add(this.PagaChk);
+            this.Controls.Add(this.FechaPagoChk);
+            this.Controls.Add(this.FechaPagoPicker);
+            this.Controls.Add(this.FechaVencimientoChk);
+            this.Controls.Add(this.FechaVencimientoPicker);
             this.Controls.Add(this.CancelarBtn);
             this.Controls.Add(this.BuscarBtn);
             this.Controls.Add(this.MesTxt);
             this.Controls.Add(this.MesChk);
-            this.Controls.Add(this.EstadoTxt);
-            this.Controls.Add(this.EstadoChk);
             this.Controls.Add(this.AnioTxt);
             this.Controls.Add(this.AnioChk);
-            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCuotaBusq";
             this.Text = "FrmCuotaBusq";
             this.ResumeLayout(false);
@@ -175,16 +209,18 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox ActSocioCbo;
-        private System.Windows.Forms.CheckBox ActSocioChk;
         private System.Windows.Forms.Button CancelarBtn;
         private System.Windows.Forms.Button BuscarBtn;
         private System.Windows.Forms.TextBox MesTxt;
         private System.Windows.Forms.CheckBox MesChk;
-        private System.Windows.Forms.TextBox EstadoTxt;
-        private System.Windows.Forms.CheckBox EstadoChk;
         private System.Windows.Forms.TextBox AnioTxt;
         private System.Windows.Forms.CheckBox AnioChk;
+        private System.Windows.Forms.DateTimePicker FechaVencimientoPicker;
+        private System.Windows.Forms.CheckBox FechaVencimientoChk;
+        private System.Windows.Forms.CheckBox FechaPagoChk;
+        private System.Windows.Forms.DateTimePicker FechaPagoPicker;
+        private System.Windows.Forms.CheckBox PagaChk;
+        private System.Windows.Forms.CheckBox AnuladaChk;
+        private System.Windows.Forms.CheckBox ImpagaChk;
     }
 }

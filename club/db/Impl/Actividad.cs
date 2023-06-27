@@ -26,7 +26,7 @@ namespace clubApp.db
             this.LegajoProfe = act.LegajoProfe;
             this.FechaDesde = act.FechaDesde;
             this.FechaHasta = act.FechaHasta;
-
+       
             this.SetIsObjFromDB();
             return this;
         }
@@ -46,10 +46,9 @@ namespace clubApp.db
         public static List<Actividad> FindAllStatic(string criterio, Comparison<Actividad> compara)
         {
             var lista = ORMDB<Actividad>.FindAll(criterio);
-            if (compara != null)
+            if(compara!=null)
                 lista.Sort(compara);
             return lista;
         }
-
     }
 }

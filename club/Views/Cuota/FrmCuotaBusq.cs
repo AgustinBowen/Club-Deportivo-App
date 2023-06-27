@@ -42,9 +42,21 @@ namespace clubApp.Views
             {
                 criterio = String.Format("mes = {0} ", MesTxt.Text);
             }
-            if (this.EstadoChk.Checked)
+            if (this.ImpagaChk.Checked)
             {
-                criterio = String.Format("estado like '%{0}%'", EstadoTxt.Text);
+                criterio = String.Format("estado like '%{0}%'", 'i');
+            }
+            if (this.PagaChk.Checked)
+            {
+                criterio = String.Format("estado like '%{0}%'", 'p');
+            }
+            if (this.AnuladaChk.Checked)
+            {
+                criterio = String.Format("estado like '%{0}%'", 'a');
+            }
+            if (this.FechaVencimientoChk.Checked)
+            {
+                criterio = String.Format("fecha_venc = '%{0}%'", FechaVencimientoPicker.Value);
             }
 
             try
@@ -76,19 +88,46 @@ namespace clubApp.Views
             this.AnioTxt.Enabled = this.AnioChk.Checked;
         }
 
-        private void EstadoChk_CheckedChanged(object sender, EventArgs e)
-        {
-            this.EstadoTxt.Enabled = this.EstadoChk.Checked;
-        }
 
         private void MesChk_CheckedChanged(object sender, EventArgs e)
         {
             this.MesTxt.Enabled = this.MesChk.Checked;
         }
 
-        private void ActSocioChk_CheckedChanged(object sender, EventArgs e)
+
+        private void FechaVencimientoChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.ActSocioCbo.Enabled = this.ActSocioChk.Checked;
+            this.FechaPagoChk.Enabled = this.FechaPagoChk.Checked;
+        }
+
+        private void FechaPagoChk_CheckedChanged(object sender, EventArgs e)
+        {
+            this.FechaVencimientoChk.Enabled = this.FechaVencimientoChk.Enabled;
+        }
+
+        private void FechaVencimientoPicker_ValueChanged(object sender, EventArgs e)
+        {
+            this.FechaVencimientoPicker.Value = FechaVencimientoPicker.Value;
+        }
+
+        private void FechaPagoPicker_ValueChanged(object sender, EventArgs e)
+        {
+            this.FechaPagoPicker.Value = FechaPagoPicker.Value;
+        }
+
+        private void PagaChk_CheckedChanged(object sender, EventArgs e)
+        {
+            this.PagaChk.Enabled = this.PagaChk.Checked;
+        }
+
+        private void ImpagaChk_CheckedChanged(object sender, EventArgs e)
+        {
+            this.ImpagaChk.Enabled = this.ImpagaChk.Checked;
+        }
+
+        private void AnuladaChk_CheckedChanged(object sender, EventArgs e)
+        {
+            this.AnuladaChk.Enabled = this.AnuladaChk.Checked;;
         }
     }
 }

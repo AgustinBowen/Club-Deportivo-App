@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CerrarBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CuotasGrd = new System.Windows.Forms.DataGridView();
-            this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActividadSocio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,18 +73,18 @@
             this.CuotasGrd.AllowUserToDeleteRows = false;
             this.CuotasGrd.AllowUserToResizeColumns = false;
             this.CuotasGrd.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CuotasGrd.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CuotasGrd.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.CuotasGrd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CuotasGrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColId,
+            this.Id,
             this.ActividadSocio,
             this.Estado,
             this.Anio,
             this.Mes,
             this.Importe,
-            this.FechaPago,
-            this.FechaVencimiento});
+            this.FechaVencimiento,
+            this.FechaPago,});
             this.CuotasGrd.Location = new System.Drawing.Point(5, 17);
             this.CuotasGrd.Margin = new System.Windows.Forms.Padding(2);
             this.CuotasGrd.MultiSelect = false;
@@ -98,14 +98,16 @@
             // 
             // ColId
             // 
-            this.ColId.DataPropertyName = "Id Cuota";
-            this.ColId.HeaderText = "Id Cuota";
-            this.ColId.Name = "ColId";
-            this.ColId.ReadOnly = true;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Codigo cuota";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
             // ActividadSocio
             // 
-            this.ActividadSocio.Name = "ActividadSocio";
+            this.ActividadSocio.DataPropertyName = "CodActSocio";
+            this.ActividadSocio.HeaderText = "Actividad socio";
+            this.ActividadSocio.Name = "CodActSocio";
             this.ActividadSocio.ReadOnly = true;
             // 
             // Estado
@@ -142,20 +144,21 @@
             this.Importe.ReadOnly = true;
             this.Importe.Width = 80;
             // 
+            // FechaVencimiento
+            // 
+            this.FechaVencimiento.DataPropertyName = "FechaVenc";
+            this.FechaVencimiento.HeaderText = "Fecha vencimiento";
+            this.FechaVencimiento.Name = "FechaVenc";
+            this.FechaVencimiento.ReadOnly = true;
+            this.FechaVencimiento.Width = 80;
+            // 
             // FechaPago
             // 
             this.FechaPago.DataPropertyName = "FechaPago";
             this.FechaPago.HeaderText = "Fecha Pago";
             this.FechaPago.Name = "FechaPago";
             this.FechaPago.ReadOnly = true;
-            this.FechaPago.Width = 80;
-            // 
-            // FechaVencimiento
-            // 
-            this.FechaVencimiento.DataPropertyName = "FechaVencimiento";
-            this.FechaVencimiento.HeaderText = "Fecha vencimiento";
-            this.FechaVencimiento.Name = "FechaVencimiento";
-            this.FechaVencimiento.ReadOnly = true;
+            this.FechaPago.Width = 101;
             // 
             // FrmCuotaList
             // 
@@ -177,7 +180,7 @@
         private System.Windows.Forms.Button CerrarBtn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView CuotasGrd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActividadSocio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mes;

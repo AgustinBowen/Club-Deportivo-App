@@ -47,12 +47,6 @@ namespace clubApp.db
                 lista.Sort(compara);
             return lista;
         }
-
-        public static Localidad FindByKeyStatic(params object[] key)
-        {
-            return ORMDB<Localidad>.FindbyKey(key);
-        }
-
         public static bool ExisteLocalidad(int cp)
         {
             var list = FindAllStatic("id=" + cp.ToString(), null);
@@ -60,9 +54,10 @@ namespace clubApp.db
                 return true;
             return false;
         }
-        public override string ToString()
+
+        public static Localidad FindByKeyStatic(params object[] key)
         {
-            return string.Format("{0} - {1}",this._id,this._nombre);
+            return ORMDB<Localidad>.FindbyKey(key);
         }
     }
 }

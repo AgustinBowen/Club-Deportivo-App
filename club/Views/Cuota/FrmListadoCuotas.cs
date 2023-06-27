@@ -88,13 +88,11 @@ namespace clubApp.Views
             }
             if (this.FechaVencimientoChk.Checked)
             {
-                Convert.ToDateTime(this.FechaVencimientoPicker.Text);
-                criterio = String.Format("fecha_venc = {0}", FechaVencimientoPicker.Text);
+                criterio = String.Format("fecha_venc = '%{0}%'", FechaVencimientoPicker.Value);
             }
-            if (this.FechaVencimientoChk.Checked)
+            if (this.FechaPagoChk.Checked)
             {
-                Convert.ToDateTime(this.FechaPagoPicker.Text);
-                criterio = String.Format("fecha_pago = {0}", FechaPagoPicker.Text);
+                criterio = String.Format("fecha_pago = '%{0}%'", FechaPagoPicker.Value);
             }
             this.CuotasGrd.DataSource = Cuota.FindAllStatic(criterio, (c1, c2) => (c1.Anio).CompareTo(c2.Anio));
         }

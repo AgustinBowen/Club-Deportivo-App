@@ -213,7 +213,7 @@
             // ActividadAM_mnu
             // 
             this.ActividadAM_mnu.Name = "ActividadAM_mnu";
-            this.ActividadAM_mnu.Size = new System.Drawing.Size(180, 22);
+            this.ActividadAM_mnu.Size = new System.Drawing.Size(113, 22);
             this.ActividadAM_mnu.Tag = "AltaActividad";
             this.ActividadAM_mnu.Text = "Ingreso";
             this.ActividadAM_mnu.Click += new System.EventHandler(this.ActividadAM_mnu_Click);
@@ -221,7 +221,7 @@
             // BuscarActividad_mnu
             // 
             this.BuscarActividad_mnu.Name = "BuscarActividad_mnu";
-            this.BuscarActividad_mnu.Size = new System.Drawing.Size(180, 22);
+            this.BuscarActividad_mnu.Size = new System.Drawing.Size(113, 22);
             this.BuscarActividad_mnu.Tag = "ModificaActividad,ConsultaActividad";
             this.BuscarActividad_mnu.Text = "Buscar";
             this.BuscarActividad_mnu.Click += new System.EventHandler(this.BuscarActividad_mnu_Click);
@@ -456,10 +456,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1119, 656);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.status);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;

@@ -17,7 +17,7 @@ namespace clubApp.db
         private string _estado;
         private float importe;
         private DateTime _fecha_venc;
-        private DateTime? _fecha_pago;        
+        private DateTime _fecha_pago;        
         private ActividadSocio _actividad_socioObj = null;
         #endregion
 
@@ -72,8 +72,8 @@ namespace clubApp.db
             set { _fecha_venc = value; }
         }
 
-        [Propiedad(Name = "fecha_pago", Tipo = typeof(DateTime?))]
-        public DateTime? FechaPago
+        [Propiedad(Name = "fecha_pago", Tipo = typeof(DateTime))]
+        public DateTime FechaPago
         {
             get { return _fecha_pago; }
             set { _fecha_pago = value; }

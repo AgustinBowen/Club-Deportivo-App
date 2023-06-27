@@ -14,6 +14,7 @@ namespace clubApp.db
         private int _legajo_profe;
         private DateTime _fecha_desde;
         private DateTime? _fecha_hasta;
+        private TipoActividad _tpAct;
 
         private TipoActividad _tipo_actividad = null;
         #endregion
@@ -56,7 +57,22 @@ namespace clubApp.db
         // -- TODO --
         #region Relaciones con otras entidades
 
-        // implementar TipoActividad
+        public TipoActividad TipoActividadObj
+        {
+            get
+            {
+                if (_tpAct == null && _cod_tipo_act != 0)
+                {
+                    var list = TipoActividad.FindAllStatic("codigo=" + _cod_tipo_act.ToString(), (ta1, ta2) => ta1.Nombre.CompareTo(ta2.Nombre));
+                    if (list != null)
+                    {
+                        _tpAct = list[0];
+                    }
+                }
+                return _tpAct;
+
+            }
+        }
 
         #endregion
     }

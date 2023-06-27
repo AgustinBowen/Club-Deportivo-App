@@ -29,9 +29,6 @@ namespace clubApp.Views
 
         private void LoadCombos()
         {
-
-            var listaActividades = ActividadSocio.FindAllStatic(null, (act1, act2) => act1.NroSocio.CompareTo(act2.NroSocio));
-
             this.ActSocioCbo.DataSource = ActividadSocio.FindAllStatic(null, (act1, act2) => act1.NroSocio.CompareTo(act2.NroSocio));
 
             //this.ActSocioCbo.DataSource = ORMDB<ActividadSocio>.FindAll(null);
@@ -64,6 +61,7 @@ namespace clubApp.Views
                 if (value == FrmOperacion.frmAlta)
                 {
                     this.Text = "Ingreso de nueva Cuota...";
+                    this.ActSocioCbo.SelectedIndex = -1;
                 }
                 if (value == FrmOperacion.frmModificacion)
                 {
@@ -140,11 +138,12 @@ namespace clubApp.Views
             }
 
             cuota = new Cuota();
+            cuota.CodActSocio = 1;//Convert.ToInt32(ActSocioCbo.SelectedValue);
             cuota.Estado = EstadoTxt.Text;
             cuota.Importe = float.Parse(ImporteTxt.Text);
             cuota.Anio = Convert.ToInt32(AnioTxt.Text);
             cuota.Mes = Convert.ToInt32(MesTxt.Text);
-            cuota.FechaVenc = Convert.ToDateTime(FechaVencimientoPicker.Text);
+            cuota.FechaVenc = FechaVencimientoPicker.Value;
             detalleLog += Newtonsoft.Json.JsonConvert.SerializeObject(cuota);
             // intentar guardar en la Base de datos.
             try
@@ -155,6 +154,7 @@ namespace clubApp.Views
             catch (Exception ex)
             {
                 errMsj = "Error: " + ex.Message;
+                MessageBox.Show(errMsj);
             }
             // si esta configurado, al form invoker enviarle evento de operacion completa
             if (DoCompleteOperationForm != null)
@@ -200,7 +200,7 @@ namespace clubApp.Views
         {
             ShowInfoCuotaInForm(Pac_modif, Invoker);
         }
-        public void ShowModificarSocio(Cuota Pac_modif)
+        public void ShowModificarCuota(Cuota Pac_modif)
         {
             ShowInfoCuotaInForm(Pac_modif, null);
         }

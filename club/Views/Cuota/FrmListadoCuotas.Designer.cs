@@ -41,7 +41,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AnioTxt = new System.Windows.Forms.TextBox();
             this.AnioChk = new System.Windows.Forms.CheckBox();
-            this.CuotasGrd = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.MesTxt = new System.Windows.Forms.TextBox();
             this.MesChk = new System.Windows.Forms.CheckBox();
@@ -49,11 +48,20 @@
             this.ImporteTxt = new System.Windows.Forms.TextBox();
             this.ImporteChk = new System.Windows.Forms.CheckBox();
             this.AnuladaChk = new System.Windows.Forms.CheckBox();
+            this.CuotasGrd = new System.Windows.Forms.DataGridView();
+            this.IdCuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaVenc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodActSocio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CuotasGrd)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CuotasGrd)).BeginInit();
             this.SuspendLayout();
             // 
             // ExportarBtn
@@ -184,23 +192,6 @@
             this.AnioChk.UseVisualStyleBackColor = true;
             this.AnioChk.CheckedChanged += new System.EventHandler(this.AnioChk_CheckedChanged);
             // 
-            // CuotasGrd
-            // 
-            this.CuotasGrd.AllowUserToAddRows = false;
-            this.CuotasGrd.AllowUserToDeleteRows = false;
-            this.CuotasGrd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CuotasGrd.Location = new System.Drawing.Point(23, 126);
-            this.CuotasGrd.Margin = new System.Windows.Forms.Padding(2);
-            this.CuotasGrd.MultiSelect = false;
-            this.CuotasGrd.Name = "CuotasGrd";
-            this.CuotasGrd.ReadOnly = true;
-            this.CuotasGrd.RowTemplate.Height = 24;
-            this.CuotasGrd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CuotasGrd.ShowEditingIcon = false;
-            this.CuotasGrd.Size = new System.Drawing.Size(826, 337);
-            this.CuotasGrd.TabIndex = 8;
-            this.CuotasGrd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CuotasGrd_CellContentClick);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.MesTxt);
@@ -276,11 +267,29 @@
             this.AnuladaChk.UseVisualStyleBackColor = true;
             this.AnuladaChk.CheckedChanged += new System.EventHandler(this.AnuladaChk_CheckedChanged);
             // 
+            // ProfesoresGrd
+            // 
+            this.CuotasGrd.AllowUserToAddRows = false;
+            this.CuotasGrd.AllowUserToDeleteRows = false;
+            this.CuotasGrd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CuotasGrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {});
+            this.CuotasGrd.Location = new System.Drawing.Point(23, 111);
+            this.CuotasGrd.Margin = new System.Windows.Forms.Padding(2);
+            this.CuotasGrd.MultiSelect = false;
+            this.CuotasGrd.Name = "ProfesoresGrd";
+            this.CuotasGrd.ReadOnly = true;
+            this.CuotasGrd.RowTemplate.Height = 24;
+            this.CuotasGrd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.CuotasGrd.Size = new System.Drawing.Size(826, 352);
+            this.CuotasGrd.TabIndex = 16;
+
+            // 
             // FrmListadoCuotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 515);
+            this.Controls.Add(this.CuotasGrd);
             this.Controls.Add(this.AnuladaChk);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
@@ -290,7 +299,6 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.FiltroBtn);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.CuotasGrd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmListadoCuotas";
             this.Text = "FrmListadoCuotas";
@@ -298,11 +306,11 @@
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CuotasGrd)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CuotasGrd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,7 +327,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox AnioTxt;
         private System.Windows.Forms.CheckBox AnioChk;
-        private System.Windows.Forms.DataGridView CuotasGrd;
         private System.Windows.Forms.DateTimePicker FechaPagoPicker;
         private System.Windows.Forms.DateTimePicker FechaVencimientoPicker;
         private System.Windows.Forms.CheckBox FechaPagoChk;
@@ -330,5 +337,14 @@
         private System.Windows.Forms.TextBox ImporteTxt;
         private System.Windows.Forms.CheckBox ImporteChk;
         private System.Windows.Forms.CheckBox AnuladaChk;
+        private System.Windows.Forms.DataGridView CuotasGrd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCuota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Anio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVenc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodActSocio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

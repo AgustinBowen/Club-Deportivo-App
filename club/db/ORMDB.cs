@@ -140,7 +140,7 @@ namespace clubApp.db
                     sql = String.Format("insert into {0} ({1}) values ({2}) RETURNING {3};", table, String.Join(",", props.Select(pd => (pd.GetCustomAttributes(false)[0] as PropiedadAttribute).Name).ToList()), String.Join(",", listValues), propKey);
                 else
                     sql = String.Format("insert into {0} ({1}) values ({2});", table, String.Join(",", props.Select(pd => (pd.GetCustomAttributes(false)[0] as PropiedadAttribute).Name).ToList()), String.Join(",", listValues));
-
+                sql = sql.Replace("'0001-00-01'", "null");
                 // verificar en la insercion que se devuelva dato: Id de la nueva tupla para guardar en la instancia.
             }
             else

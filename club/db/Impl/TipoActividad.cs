@@ -47,6 +47,11 @@ namespace clubApp.db
                 lista.Sort(compara);
             return lista;
         }
+        public static List<TipoActividad> FindAllStatic(string criterio)
+        {
+            var lista = ORMDB<TipoActividad>.FindAll(criterio);
+            return lista;
+        }
 
         public static TipoActividad FindByKeyStatic(params object[] key)
         {
