@@ -65,7 +65,7 @@ namespace clubApp.Views
                 }
                 else
                 {
-                    criterio = string.Format(" and estado like '%{0}%'", this.ImpagaChk.Text);
+                    criterio += string.Format(" and estado like '%{0}%'", this.ImpagaChk.Text);
                 }
             }
             if (this.PagaChk.Checked)
@@ -77,7 +77,7 @@ namespace clubApp.Views
                 }
                 else
                 {
-                    criterio = string.Format(" and estado like '%{0}%'", this.PagaChk.Text);
+                    criterio += string.Format(" and estado like '%{0}%'", this.PagaChk.Text);
                 }
             }
             if (this.AnuladaChk.Checked)
@@ -89,7 +89,7 @@ namespace clubApp.Views
                 }
                 else
                 {
-                    criterio = string.Format(" and estado like '%{0}%'", this.AnuladaChk.Text);
+                    criterio += string.Format(" and estado like '%{0}%'", this.AnuladaChk.Text);
                 }
             }
             if (this.AnuladaChk.Checked)
@@ -101,29 +101,29 @@ namespace clubApp.Views
                 }
                 else
                 {
-                    criterio = string.Format(" and estado like '%{0}%'", this.AnuladaChk.Text);
+                    criterio += string.Format(" and estado like '%{0}%'", this.AnuladaChk.Text);
                 }
             }
             if (this.FechaPagoChk.Checked)
             {
                 if (criterio == null)
                 {
-                    criterio = string.Format("fecha_pago like '%{0}%'", this.FechaPagoPicker);
+                    criterio = string.Format("fecha_pago = '%{0}%'", this.FechaPagoPicker.Value);
                 }
                 else
                 {
-                    criterio = string.Format(" and fecha_pago like '%{0}%'", this.FechaPagoPicker);
+                    criterio += string.Format(" and fecha_pago = '%{0}%'", this.FechaPagoPicker.Value);
                 }
             }
             if (this.FechaVencimientoChk.Checked)
             {
                 if (criterio == null)
                 {
-                    criterio = string.Format("fecha_venc like '%{0}%'", this.FechaVencimientoPicker);
+                    criterio = string.Format("fecha_venc = '%{0}%'", this.FechaVencimientoPicker.Value);
                 }
                 else
                 {
-                    criterio = string.Format(" and fecha_pago like '%{0}%'", this.FechaVencimientoPicker);
+                    criterio += string.Format(" and fecha_venc = '%{0}%'", this.FechaVencimientoPicker.Value);
                 }
             }
 
