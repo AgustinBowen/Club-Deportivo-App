@@ -240,5 +240,7 @@ namespace clubApp.Views
             FrmActividadBusq f = new FrmActividadBusq();
             f.Show();
         }
+
+
     }
 }

@@ -1,5 +1,7 @@
 ﻿using clubApp.db;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace clubApp.Views
@@ -22,13 +24,16 @@ namespace clubApp.Views
 
         private void FrmpCuotaAM_Load(object sender, EventArgs e)
         {
-
+            LoadCombos();
         }
 
         private void LoadCombos()
         {
-            this.ActSocioCbo.DataSource = ActividadSocio.FindAllStatic(null, (act1, act2) => act1.NroSocio.CompareTo(act2.NroSocio));
-
+            List<ActividadSocio> actividadSocio = ActividadSocio.FindAllStatic(null, (act1, act2) => act1.NroSocio.CompareTo(act2.NroSocio));
+            this.ActSocioCbo.DataSource = actividadSocio.Select(act => act.NroSocio).ToList();
+            this.ActSocioCbo.DataSource = actividadSocio;
+            this.ActSocioCbo.DisplayMember = "Nombres";
+            this.ActSocioCbo.ValueMember = "NroSocio";
             //this.ActSocioCbo.DataSource = ORMDB<ActividadSocio>.FindAll(null);
         }
 

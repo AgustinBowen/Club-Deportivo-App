@@ -239,7 +239,7 @@
             // CuotaAM_mnu
             // 
             this.CuotaAM_mnu.Name = "CuotaAM_mnu";
-            this.CuotaAM_mnu.Size = new System.Drawing.Size(113, 22);
+            this.CuotaAM_mnu.Size = new System.Drawing.Size(180, 22);
             this.CuotaAM_mnu.Tag = "AltaCuota";
             this.CuotaAM_mnu.Text = "Ingreso";
             this.CuotaAM_mnu.Click += new System.EventHandler(this.CuotaAM_mnu_Click);
@@ -247,7 +247,7 @@
             // BuscarCuota_mnu
             // 
             this.BuscarCuota_mnu.Name = "BuscarCuota_mnu";
-            this.BuscarCuota_mnu.Size = new System.Drawing.Size(113, 22);
+            this.BuscarCuota_mnu.Size = new System.Drawing.Size(180, 22);
             this.BuscarCuota_mnu.Tag = "ModificaCuota,ConsultaCuota";
             this.BuscarCuota_mnu.Text = "Buscar";
             this.BuscarCuota_mnu.Click += new System.EventHandler(this.BuscarCuota_mnu_Click);
