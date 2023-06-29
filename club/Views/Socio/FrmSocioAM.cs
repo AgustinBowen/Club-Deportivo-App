@@ -201,7 +201,7 @@ namespace clubApp.Views
 
         private void ActividadesBtn_Click(object sender, EventArgs e)
         {
-
+            new FrmInscripcion().Show();
         }
 
         private void LocalidadCbo_SelectedIndexChanged(object sender, EventArgs e)

@@ -48,5 +48,11 @@ namespace clubApp.db
                 lista.Sort(compara);
             return lista;
         }
+        public override string ToString()
+        {
+            Profesor pro = new Profesor();
+            pro.FindbyKey(this._legajo_profe);
+            return string.Format("{0} - {1}",pro.Nombres, this.FechaDesde.ToShortTimeString());
+        }
     }
 }

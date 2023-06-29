@@ -166,6 +166,7 @@
             this.TipoActivAM_mnu.Size = new System.Drawing.Size(113, 22);
             this.TipoActivAM_mnu.Tag = "AltaTipoActividad";
             this.TipoActivAM_mnu.Text = "Ingreso";
+            this.TipoActivAM_mnu.Click += new System.EventHandler(this.TipoActivAM_mnu_Click);
             // 
             // BuscarTipoAct_mnu
             // 
@@ -173,6 +174,7 @@
             this.BuscarTipoAct_mnu.Size = new System.Drawing.Size(113, 22);
             this.BuscarTipoAct_mnu.Tag = "ModificaTipoActividad,ConsultaTipoActividad";
             this.BuscarTipoAct_mnu.Text = "Buscar";
+            this.BuscarTipoAct_mnu.Click += new System.EventHandler(this.BuscarTipoAct_mnu_Click);
             // 
             // Localidades_mnu_top
             // 
@@ -187,7 +189,7 @@
             // LocalidadAM_mnu
             // 
             this.LocalidadAM_mnu.Name = "LocalidadAM_mnu";
-            this.LocalidadAM_mnu.Size = new System.Drawing.Size(113, 22);
+            this.LocalidadAM_mnu.Size = new System.Drawing.Size(180, 22);
             this.LocalidadAM_mnu.Tag = "AltaLocalidad";
             this.LocalidadAM_mnu.Text = "Ingreso";
             this.LocalidadAM_mnu.Click += new System.EventHandler(this.LocalidadAM_mnu_Click);
@@ -195,7 +197,7 @@
             // BuscarLocalidad_mnu
             // 
             this.BuscarLocalidad_mnu.Name = "BuscarLocalidad_mnu";
-            this.BuscarLocalidad_mnu.Size = new System.Drawing.Size(113, 22);
+            this.BuscarLocalidad_mnu.Size = new System.Drawing.Size(180, 22);
             this.BuscarLocalidad_mnu.Tag = "ModificaLocalidad,ConsultaLocalidad";
             this.BuscarLocalidad_mnu.Text = "Buscar";
             this.BuscarLocalidad_mnu.Click += new System.EventHandler(this.BuscarLocalidad_mnu_Click);
@@ -213,7 +215,7 @@
             // ActividadAM_mnu
             // 
             this.ActividadAM_mnu.Name = "ActividadAM_mnu";
-            this.ActividadAM_mnu.Size = new System.Drawing.Size(113, 22);
+            this.ActividadAM_mnu.Size = new System.Drawing.Size(180, 22);
             this.ActividadAM_mnu.Tag = "AltaActividad";
             this.ActividadAM_mnu.Text = "Ingreso";
             this.ActividadAM_mnu.Click += new System.EventHandler(this.ActividadAM_mnu_Click);
@@ -221,7 +223,7 @@
             // BuscarActividad_mnu
             // 
             this.BuscarActividad_mnu.Name = "BuscarActividad_mnu";
-            this.BuscarActividad_mnu.Size = new System.Drawing.Size(113, 22);
+            this.BuscarActividad_mnu.Size = new System.Drawing.Size(180, 22);
             this.BuscarActividad_mnu.Tag = "ModificaActividad,ConsultaActividad";
             this.BuscarActividad_mnu.Text = "Buscar";
             this.BuscarActividad_mnu.Click += new System.EventHandler(this.BuscarActividad_mnu_Click);
@@ -239,7 +241,7 @@
             // CuotaAM_mnu
             // 
             this.CuotaAM_mnu.Name = "CuotaAM_mnu";
-            this.CuotaAM_mnu.Size = new System.Drawing.Size(180, 22);
+            this.CuotaAM_mnu.Size = new System.Drawing.Size(113, 22);
             this.CuotaAM_mnu.Tag = "AltaCuota";
             this.CuotaAM_mnu.Text = "Ingreso";
             this.CuotaAM_mnu.Click += new System.EventHandler(this.CuotaAM_mnu_Click);
@@ -247,7 +249,7 @@
             // BuscarCuota_mnu
             // 
             this.BuscarCuota_mnu.Name = "BuscarCuota_mnu";
-            this.BuscarCuota_mnu.Size = new System.Drawing.Size(180, 22);
+            this.BuscarCuota_mnu.Size = new System.Drawing.Size(113, 22);
             this.BuscarCuota_mnu.Tag = "ModificaCuota,ConsultaCuota";
             this.BuscarCuota_mnu.Text = "Buscar";
             this.BuscarCuota_mnu.Click += new System.EventHandler(this.BuscarCuota_mnu_Click);

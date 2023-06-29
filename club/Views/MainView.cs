@@ -196,13 +196,12 @@ namespace clubApp.Views
 
         private void ingresoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+         
         }
 
         private void buscarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            FrmCuotaBusq f = new FrmCuotaBusq();
-            f.Show();
+            
         }
 
         private void HorariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -239,6 +238,16 @@ namespace clubApp.Views
         {
             FrmActividadBusq f = new FrmActividadBusq();
             f.Show();
+        }
+
+        private void BuscarTipoAct_mnu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TipoActivAM_mnu_Click(object sender, EventArgs e)
+        {
+
         }
 
 
