@@ -149,14 +149,15 @@ namespace clubApp.Views
         {
             if (true)
             {
-                if (this.CboTipoActividad.SelectedIndex >0)
+                if (this.CboTipoActividad.SelectedIndex >=0)
                 {
-                    if (this.CboActividad.SelectedIndex >0)
+                    if (this.CboActividad.SelectedIndex >=0)
                     {
                         ActividadSocio actSoc = new ActividadSocio();
                         actSoc.NroSocio = (this.SociosGrd.SelectedRows[0].DataBoundItem as Socio).NroSocio;
                         actSoc.CodActividad = (this.CboActividad.SelectedItem as Actividad).Id;
                         actSoc.FechaInicio = DateTime.Now;
+                        actSoc.FechaFin = null;
                         try
                         {
                             actSoc.SaveObj();
