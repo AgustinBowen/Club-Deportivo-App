@@ -130,11 +130,8 @@ namespace clubApp.Views
                 string criterioAux = string.Format("nombre = '{0}'",this.CboTipoActividad.Text);
                 this.CboActividad.Enabled = true;
                 List<TipoActividad> listAux = TipoActividad.FindAllStatic(criterioAux, null);
-                if (listAux.Count > 1)
+                if (listAux.Count > 0)
                 {
-                }
-                else
-                { 
                     criterioAux = string.Format("cod_tipo_act = {0}", listAux[0].Id);
                     this.CboActividad.DataSource = Actividad.FindAllStatic(criterioAux, null);
                 }
