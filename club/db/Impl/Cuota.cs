@@ -50,6 +50,11 @@ namespace clubApp.db
             return lista;
         }
 
+        public override bool Equals(object obj)
+        {
+            return (this.CodActSocio == (obj as Cuota).CodActSocio) && ((this._mes+this.Anio) == ((obj as Cuota).Mes + (obj as Cuota).Anio));
+        }
+
         public override string ToString()
         {
             Cuota cuota = new Cuota();

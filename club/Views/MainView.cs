@@ -250,6 +250,48 @@ namespace clubApp.Views
 
         }
 
+        private void Cuotas_mnu_top_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void generarCutoasMensualesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<Cuota> listaCuotasExistentes = Cuota.FindAllStatic(null,null);
+            List<Cuota> listaCuotasCreadas = new List<Cuota>();
+            List<Socio> listaSocios = Socio.FindAllStatic("activo = true",null);
+            foreach (Socio socAux in listaSocios)
+            {
+                string criterio = string.Format("nro_socio = {0} and fecha_fin < fecha_inicio ", socAux.NroSocio);
+                List<ActividadSocio> listaActividades = ActividadSocio.FindAllStatic(criterio, null);
+                if (listaActividades.Count >0)
+                {
+                    foreach (ActividadSocio actSocAux in listaActividades)
+                    {
+                        Cuota cuotaAux = new Cuota();
+                        cuotaAux.Anio = DateTime.Now.Year;
+                        cuotaAux.Mes = DateTime.Now.Month;
+                        cuotaAux.CodActSocio = actSocAux.Id;
+                        cuotaAux.Estado = "i";
+                        cuotaAux.FechaVenc = DateTime.Now.AddMonths(1);
+                        if (!listaCuotasExistentes.Contains(cuotaAux))
+                        {
+                            listaCuotasCreadas.Add(cuotaAux);
+                        }
+                    }
+                }
+ 
+            }
+            MessageBox.Show(string.Format("Se crearon {0} cuotas", listaCuotasCreadas.Count), "Cuotas Procesadas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            foreach (Cuota aux in listaCuotasCreadas)
+            {
+                aux.SaveObj();
+            }
+        }
     }
 }
