@@ -49,5 +49,25 @@ namespace clubApp.db
                 lista.Sort(compara);
             return lista;
         }
+
+        public override string ToString()
+        {
+            Cuota cuota = new Cuota();
+            cuota.FindbyKey(this.Id);
+            return string.Format("IdCuota:{0} - " +
+                                  "Codigo actividad socio:{1} - " +
+                                  "Año:{2} - " +
+                                  "Mes:{3} - " +
+                                  "Estado:{4} - " +
+                                  "Fecha vencimiento:{5} - " +
+                                  "Fecha pago:{6}", 
+                                  cuota.Id,
+                                  cuota.CodActSocio,
+                                  cuota.Anio,
+                                  cuota.Mes,
+                                  cuota.Estado,
+                                  cuota.FechaVenc.ToLongDateString(),
+                                  cuota.FechaPago.ToLongDateString());
+        }
     }
 }

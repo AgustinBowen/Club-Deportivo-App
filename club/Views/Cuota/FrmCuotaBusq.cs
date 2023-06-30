@@ -185,12 +185,12 @@ namespace clubApp.Views
 
         private void FechaVencimientoChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.FechaPagoChk.Enabled = this.FechaPagoChk.Checked;
+            this.FechaVencimientoPicker.Enabled = this.FechaVencimientoChk.Checked;
         }
 
         private void FechaPagoChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.FechaVencimientoChk.Enabled = this.FechaVencimientoChk.Enabled;
+            this.FechaPagoPicker.Enabled = this.FechaPagoChk.Checked;
         }
 
         private void FechaVencimientoPicker_ValueChanged(object sender, EventArgs e)
@@ -205,22 +205,22 @@ namespace clubApp.Views
 
         private void PagaChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.PagaChk.Enabled = this.PagaChk.Checked;
+            
         }
 
         private void ImpagaChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.ImpagaChk.Enabled = this.ImpagaChk.Checked;
+           
         }
 
         private void AnuladaChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.AnuladaChk.Enabled = this.AnuladaChk.Checked;
+            
         }
 
         private void ImporteChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.ImporteChk.Enabled = this.ImporteChk.Checked;
+            this.ImporteTxt.Enabled = this.ImporteChk.Checked;
         }
     }
 }

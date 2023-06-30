@@ -112,6 +112,7 @@
             // 
             // FechaPagoPicker
             // 
+            this.FechaPagoPicker.Enabled = false;
             this.FechaPagoPicker.Location = new System.Drawing.Point(125, 53);
             this.FechaPagoPicker.Name = "FechaPagoPicker";
             this.FechaPagoPicker.Size = new System.Drawing.Size(200, 20);
@@ -119,6 +120,7 @@
             // 
             // FechaVencimientoPicker
             // 
+            this.FechaVencimientoPicker.Enabled = false;
             this.FechaVencimientoPicker.Location = new System.Drawing.Point(124, 15);
             this.FechaVencimientoPicker.Name = "FechaVencimientoPicker";
             this.FechaVencimientoPicker.Size = new System.Drawing.Size(200, 20);
@@ -174,6 +176,7 @@
             // 
             // AnioTxt
             // 
+            this.AnioTxt.Enabled = false;
             this.AnioTxt.Location = new System.Drawing.Point(69, 15);
             this.AnioTxt.Margin = new System.Windows.Forms.Padding(2);
             this.AnioTxt.Name = "AnioTxt";
@@ -206,6 +209,7 @@
             // 
             // MesTxt
             // 
+            this.MesTxt.Enabled = false;
             this.MesTxt.Location = new System.Drawing.Point(69, 15);
             this.MesTxt.Margin = new System.Windows.Forms.Padding(2);
             this.MesTxt.Name = "MesTxt";
@@ -238,6 +242,7 @@
             // 
             // ImporteTxt
             // 
+            this.ImporteTxt.Enabled = false;
             this.ImporteTxt.Location = new System.Drawing.Point(69, 15);
             this.ImporteTxt.Margin = new System.Windows.Forms.Padding(2);
             this.ImporteTxt.Name = "ImporteTxt";

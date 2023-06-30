@@ -119,5 +119,15 @@ namespace clubApp.Views
                 direction == ListSortDirection.Ascending ?
                 SortOrder.Ascending : SortOrder.Descending;*/
         }
+
+        private void ActivoChk_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MorosoChk_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

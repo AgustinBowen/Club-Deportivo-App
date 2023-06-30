@@ -16,37 +16,37 @@ namespace clubApp.Views
 
         private void AnioChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.AnioChk.Enabled = AnioChk.Checked;
+            this.AnioTxt.Enabled = AnioChk.Checked;
         }
 
         private void PagaChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.PagaChk.Enabled = PagaChk.Checked;
+            
         }
 
         private void ImpagaChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.ImpagaChk.Enabled = ImpagaChk.Checked;
+            
         }
 
         private void FechaVencimientoChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.FechaVencimientoChk.Enabled = FechaVencimientoChk.Checked;
+            this.FechaVencimientoPicker.Enabled = this.FechaVencimientoChk.Checked;
         }
 
         private void FechaPagoChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.FechaPagoChk.Enabled = FechaPagoChk.Checked;
+            this.FechaPagoPicker.Enabled = this.FechaPagoChk.Checked;
         }
 
         private void ImporteChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.ImporteChk.Enabled = ImporteChk.Checked;
+            this.ImporteTxt.Enabled = ImporteChk.Checked;
         }
 
         private void MesChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.MesChk.Enabled = MesChk.Checked;
+            this.MesTxt.Enabled = MesChk.Checked;
         }
 
         private void FiltroBtn_Click(object sender, EventArgs e)
@@ -91,6 +91,10 @@ namespace clubApp.Views
                 {
                     criterio = string.Format("estado like '%{0}%'", this.ImpagaChk.Text);
                 }
+                else if (criterio.Contains("estado"))
+                {
+                    criterio += string.Format(" or estado like '%{0}%'", this.ImpagaChk.Text);
+                }
                 else
                 {
                     criterio += string.Format(" and estado like '%{0}%'", this.ImpagaChk.Text);
@@ -103,6 +107,10 @@ namespace clubApp.Views
                 {
                     criterio = string.Format("estado like '%{0}%'", this.PagaChk.Text);
                 }
+                else if(criterio.Contains("estado")) 
+                {
+                    criterio += string.Format(" or estado like '%{0}%'", this.PagaChk.Text);
+                }
                 else
                 {
                     criterio += string.Format(" and estado like '%{0}%'", this.PagaChk.Text);
@@ -114,6 +122,10 @@ namespace clubApp.Views
                 if (criterio == null)
                 {
                     criterio = string.Format("estado like '%{0}%'", this.AnuladaChk.Text);
+                }
+                else if (criterio.Contains("estado"))
+                {
+                    criterio += string.Format(" or estado like '%{0}%'", this.AnuladaChk.Text);
                 }
                 else
                 {
@@ -216,7 +228,7 @@ namespace clubApp.Views
 
         private void AnuladaChk_CheckedChanged(object sender, EventArgs e)
         {
-            this.AnuladaChk.Enabled = this.AnuladaChk.Checked;
+            
         }
 
         private void CuotasGrd_DoubleClick(object sender, EventArgs e)

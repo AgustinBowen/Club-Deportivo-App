@@ -215,6 +215,7 @@
             this.MorosoChk.TabIndex = 5;
             this.MorosoChk.Text = "Moroso";
             this.MorosoChk.UseVisualStyleBackColor = true;
+            this.MorosoChk.CheckedChanged += new System.EventHandler(this.MorosoChk_CheckedChanged);
             // 
             // ActivoChk
             // 
@@ -225,6 +226,7 @@
             this.ActivoChk.TabIndex = 6;
             this.ActivoChk.Text = "Activo";
             this.ActivoChk.UseVisualStyleBackColor = true;
+            this.ActivoChk.CheckedChanged += new System.EventHandler(this.ActivoChk_CheckedChanged);
             // 
             // ExportarBtn
             // 

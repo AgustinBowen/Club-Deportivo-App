@@ -112,6 +112,7 @@
             // 
             // FechaVencimientoPicker
             // 
+            this.FechaVencimientoPicker.Enabled = false;
             this.FechaVencimientoPicker.Location = new System.Drawing.Point(267, 8);
             this.FechaVencimientoPicker.Name = "FechaVencimientoPicker";
             this.FechaVencimientoPicker.Size = new System.Drawing.Size(214, 20);
@@ -144,6 +145,7 @@
             // 
             // FechaPagoPicker
             // 
+            this.FechaPagoPicker.Enabled = false;
             this.FechaPagoPicker.Location = new System.Drawing.Point(267, 43);
             this.FechaPagoPicker.Name = "FechaPagoPicker";
             this.FechaPagoPicker.Size = new System.Drawing.Size(214, 20);
