@@ -115,6 +115,7 @@ namespace clubApp.Views
             LoadComboBox(TipoActividad.FindAllStatic(null, (l1, l2) => l1.Nombre.CompareTo(l2.Nombre)), this.CboTipoActividad, addSeleccion: true);
             this.SociosGrd.AutoGenerateColumns = false;
             this.SociosGrd.DataSource = Socio.FindAllStatic(null, (p1, p2) => (p1.Apellido + p1.Nombres).CompareTo(p2.Apellido + p2.Nombres));
+            this.CboTipoActividad.SelectedIndex = -1;
         }
 
         private void CboActividad_SelectedIndexChanged(object sender, EventArgs e)
@@ -124,19 +125,22 @@ namespace clubApp.Views
 
         private void CboTipoActividad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.CboTipoActividad.SelectedIndex > 0)
+            if (this.CboTipoActividad.SelectedIndex > -1)
             {
                 string criterioAux = string.Format("nombre = '{0}'",this.CboTipoActividad.Text);
                 this.CboActividad.Enabled = true;
                 List<TipoActividad> listAux = TipoActividad.FindAllStatic(criterioAux, null);
                 if (listAux.Count > 1)
                 {
-                    this.CboActividad.Enabled = false;
                 }
                 else
-                {
+                { 
                     criterioAux = string.Format("cod_tipo_act = {0}", listAux[0].Id);
                     this.CboActividad.DataSource = Actividad.FindAllStatic(criterioAux, null);
+                }
+                if (Actividad.FindAllStatic(criterioAux, null) == null)
+                {
+                    this.CboActividad.Enabled = false;
                 }
             }
         }
