@@ -87,64 +87,53 @@ namespace clubApp.Views
             }
             if (this.ImpagaChk.Checked)
             {
-                ImpagaChk.Text = "i";
+                var estado = "i";
                 if (criterio == null)
                 {
-                    criterio = string.Format("estado like '%{0}%'", this.ImpagaChk.Text);
+                    criterio = string.Format("estado like '%{0}%'", estado);
                 }
                 else if (criterio.Contains("estado"))
                 {
-                    criterio += string.Format(" or estado like '%{0}%'", this.ImpagaChk.Text);
+                    criterio += string.Format(" or estado like '%{0}%'", estado);
                 }
                 else
                 {
-                    criterio += string.Format(" and estado like '%{0}%'", this.ImpagaChk.Text);
+                    criterio += string.Format(" and estado like '%{0}%'", estado);
                 }
             }
             if (this.PagaChk.Checked)
             {
-                PagaChk.Text = "p";
+                var estado = "p";
                 if (criterio == null)
                 {
-                    criterio = string.Format("estado like '%{0}%'", this.PagaChk.Text);
+                    criterio = string.Format("estado like '%{0}%'", estado);
                 }
                 else if(criterio.Contains("estado")) 
                 {
-                    criterio += string.Format(" or estado like '%{0}%'", this.PagaChk.Text);
+                    criterio += string.Format(" or estado like '%{0}%'", estado);
                 }
                 else
                 {
-                    criterio += string.Format(" and estado like '%{0}%'", this.PagaChk.Text);
+                    criterio += string.Format(" and estado like '%{0}%'", estado);
                 }
             }
             if (this.AnuladaChk.Checked)
             {
-                AnuladaChk.Text = "a";
+                var estado = "a";
                 if (criterio == null)
                 {
-                    criterio = string.Format("estado like '%{0}%'", this.AnuladaChk.Text);
+                    criterio = string.Format("estado like '%{0}%'", estado);
                 }
                 else if (criterio.Contains("estado"))
                 {
-                    criterio += string.Format(" or estado like '%{0}%'", this.AnuladaChk.Text);
+                    criterio += string.Format(" or estado like '%{0}%'", estado);
                 }
                 else
                 {
-                    criterio += string.Format(" and estado like '%{0}%'", this.AnuladaChk.Text);
+                    criterio += string.Format(" and estado like '%{0}%'", estado);
                 }
             }
-            if (this.AnuladaChk.Checked)
-            {
-                AnuladaChk.Text = "a";
-                if (criterio == null)
-                {
-                    criterio = string.Format("estado like '%{0}%'", this.AnuladaChk.Text);
-                }
-                else
-                {
-                    criterio += string.Format(" and estado like '%{0}%'", this.AnuladaChk.Text);
-                }
-            }
+        
             if (this.FechaPagoChk.Checked)
             {
                 if (criterio == null)
