@@ -59,20 +59,9 @@ namespace clubApp.db
         {
             Cuota cuota = new Cuota();
             cuota.FindbyKey(this.Id);
-            return string.Format("IdCuota:{0} - " +
-                                  "Codigo actividad socio:{1} - " +
-                                  "Año:{2} - " +
-                                  "Mes:{3} - " +
-                                  "Estado:{4} - " +
-                                  "Fecha vencimiento:{5} - " +
-                                  "Fecha pago:{6}", 
-                                  cuota.Id,
-                                  cuota.CodActSocio,
-                                  cuota.Anio,
-                                  cuota.Mes,
-                                  cuota.Estado,
-                                  cuota.FechaVenc.ToLongDateString(),
-                                  cuota.FechaPago.ToLongDateString());
+            return string.Format("{0} - {1} - {2} - {3} - {4} - {5} - {6} - {7}",
+                                         cuota.Id, cuota.CodActSocio, cuota.Anio, cuota.Mes, cuota.Estado,
+                                         cuota.Importe, cuota.FechaVenc.ToShortDateString(), cuota.FechaPago.ToShortDateString());
         }
     }
 }
