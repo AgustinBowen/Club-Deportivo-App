@@ -114,7 +114,7 @@ namespace clubApp.Views
             LoadComboBox(Localidad.FindAllStatic(null, (l1, l2) => l1.Nombre.CompareTo(l2.Nombre)), this.LocalidadCbo, addSeleccion: true);
             LoadComboBox(TipoActividad.FindAllStatic(null, (l1, l2) => l1.Nombre.CompareTo(l2.Nombre)), this.CboTipoActividad, addSeleccion: true);
             this.SociosGrd.AutoGenerateColumns = false;
-            this.SociosGrd.DataSource = Socio.FindAllStatic(null, (p1, p2) => (p1.Apellido + p1.Nombres).CompareTo(p2.Apellido + p2.Nombres));
+            this.SociosGrd.DataSource = Socio.FindAllStatic("activo = true", (p1, p2) => (p1.Apellido + p1.Nombres).CompareTo(p2.Apellido + p2.Nombres));
             this.CboTipoActividad.SelectedIndex = -1;
         }
 

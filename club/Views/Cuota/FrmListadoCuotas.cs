@@ -54,7 +54,7 @@ namespace clubApp.Views
         {
             MainView.Instance.Cursor = Cursors.WaitCursor;
             // verificar si hay multiples opciones a usar como filtro que elija alguna, si son dos campos, no hace falta.            
-            string criterio = null;
+            criterio = null;
             if (this.AnioChk.Checked)
             {
                 try
@@ -266,6 +266,11 @@ namespace clubApp.Views
             newColumn.HeaderCell.SortGlyphDirection =
                 direction == ListSortDirection.Ascending ?
                 SortOrder.Ascending : SortOrder.Descending;
+        }
+
+        private void FrmListadoCuotas_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

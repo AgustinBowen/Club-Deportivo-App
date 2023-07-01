@@ -217,6 +217,9 @@ namespace clubApp.Views
             this.OperacionForm = FrmOperacion.frmModificacion;
             _Cuota_modif = Cuo_modif;
             CuotaLog = Newtonsoft.Json.JsonConvert.SerializeObject(_Cuota_modif);
+            _Cuota_modif.Id = Cuo_modif.Id;
+            this.AnioTxt.Text = string.Format("{0}",Cuo_modif.Anio);
+            this.EstadoTxt.Text = Cuo_modif.Estado;
             // cargar cada control con informacion de la cuota....
             //this.ApellidoTxt.Text = Pac_modif.Apellido; //ESTO ES UN EJEMPLO NOMAS
             FormBase.ShowDataFromModel(this, Cuo_modif);

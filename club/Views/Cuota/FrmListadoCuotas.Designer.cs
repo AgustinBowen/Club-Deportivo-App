@@ -342,6 +342,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmListadoCuotas";
             this.Text = "FrmListadoCuotas";
+            this.Load += new System.EventHandler(this.FrmListadoCuotas_Load_1);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
