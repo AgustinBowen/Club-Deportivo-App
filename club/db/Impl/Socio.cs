@@ -53,5 +53,10 @@ namespace clubApp.db
                 lista.Sort(compara);
             return lista;
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0} - {1}",this.Nombres,this.Apellido);
+        }
     }
 }

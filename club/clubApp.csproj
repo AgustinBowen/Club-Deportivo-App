@@ -319,6 +319,12 @@
     <EmbeddedResource Include="Views\Actividad\FrmActividadBusq.resx">
       <DependentUpon>FrmActividadBusq.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Actividad\FrmActividadList.resx">
+      <DependentUpon>FrmActividadList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Actividad\FrmListadoActividades.resx">
+      <DependentUpon>FrmListadoActividades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Cuota\FrmCuotaAM.resx">
       <DependentUpon>FrmCuotaAM.cs</DependentUpon>
     </EmbeddedResource>

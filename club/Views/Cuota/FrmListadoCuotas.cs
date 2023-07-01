@@ -213,7 +213,7 @@ namespace clubApp.Views
         private void FrmListadoCuotas_Load(object sender, EventArgs e)
         {
             this.CuotasGrd.AutoGenerateColumns = false;
-            this.CuotasGrd.DataSource = Cuota.FindAllStatic(null, (c1, c2) => (c1.Anio).CompareTo(c2.Anio));
+            this.CuotasGrd.DataSource = Cuota.FindAllStatic(null,null);
         }
 
         private void AnuladaChk_CheckedChanged(object sender, EventArgs e)

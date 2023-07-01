@@ -49,14 +49,14 @@
             this.ImporteChk = new System.Windows.Forms.CheckBox();
             this.AnuladaChk = new System.Windows.Forms.CheckBox();
             this.CuotasGrd = new System.Windows.Forms.DataGridView();
-            this.IdCuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaVenc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodActSocio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCuotaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImporteCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaPagoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaVencCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodActSocioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MesCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -291,38 +291,73 @@
             this.CuotasGrd.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CuotasGrd_ColumnHeaderMouseClick);
             this.CuotasGrd.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.CuotasGrd_DataBindingComplete);
             this.CuotasGrd.DoubleClick += new System.EventHandler(this.CuotasGrd_DoubleClick);
+            this.CuotasGrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
+            {
+                this.IdCuotaCol,
+                this.AnioCol,
+                this.MesCol,
+                this.ImporteCol,
+                this.FechaVencCol,
+                this.FechaPagoCol,
+                this.CodActSocioCol,
+                this.EstadoCol,
+            });
             // 
             // IdCuota
             // 
-            this.IdCuota.Name = "IdCuota";
+            this.IdCuotaCol.DataPropertyName = "Id";
+            this.IdCuotaCol.HeaderText = "ID Cuota";
+            this.IdCuotaCol.Name = "IdCuotaCol";
+            this.IdCuotaCol.ReadOnly = true;
             // 
             // Importe
             // 
-            this.Importe.Name = "Importe";
+            this.ImporteCol.DataPropertyName = "Importe";
+            this.ImporteCol.HeaderText = "Importe";
+            this.ImporteCol.Name = "ImporteCol";
+            this.ImporteCol.ReadOnly = true;
             // 
             // Estado
             // 
-            this.Estado.Name = "Estado";
+            this.EstadoCol.DataPropertyName = "Estado";
+            this.EstadoCol.HeaderText = "Estado";
+            this.EstadoCol.Name = "EstadoCol";
+            this.EstadoCol.ReadOnly = true;
             // 
             // FechaPago
             // 
-            this.FechaPago.Name = "FechaPago";
+            this.FechaPagoCol.DataPropertyName = "FechaPago";
+            this.FechaPagoCol.HeaderText = "Fecha pago";
+            this.FechaPagoCol.Name = "FechaPagoCol";
+            this.FechaPagoCol.ReadOnly = true;
             // 
             // FechaVenc
             // 
-            this.FechaVenc.Name = "FechaVenc";
+            this.FechaVencCol.DataPropertyName = "FechaVenc";
+            this.FechaVencCol.HeaderText = "Fecha vencimiento";
+            this.FechaVencCol.Name = "FechaVencimientoCol";
+            this.FechaVencCol.ReadOnly = true;
             // 
             // CodActSocio
             // 
-            this.CodActSocio.Name = "CodActSocio";
+            this.CodActSocioCol.DataPropertyName = "CodActSocio";
+            this.CodActSocioCol.HeaderText = "Actividad socio";
+            this.CodActSocioCol.Name = "CodActSocioCol";
+            this.CodActSocioCol.ReadOnly = true;
             // 
             // Anio
             // 
-            this.Anio.Name = "Anio";
+            this.AnioCol.DataPropertyName = "Anio";
+            this.AnioCol.HeaderText = "Año";
+            this.AnioCol.Name = "AnioCol";
+            this.AnioCol.ReadOnly = true;
             // 
             // Mes
             // 
-            this.Mes.Name = "Mes";
+            this.MesCol.DataPropertyName = "Mes";
+            this.MesCol.HeaderText = "Mes";
+            this.MesCol.Name = "MesCol";
+            this.MesCol.ReadOnly = true;
             // 
             // FrmListadoCuotas
             // 
@@ -379,13 +414,13 @@
         private System.Windows.Forms.CheckBox ImporteChk;
         private System.Windows.Forms.CheckBox AnuladaChk;
         private System.Windows.Forms.DataGridView CuotasGrd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCuota;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Anio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVenc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaPago;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodActSocio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCuotaCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AnioCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MesCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ImporteCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVencCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaPagoCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodActSocioCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCol;
     }
 }

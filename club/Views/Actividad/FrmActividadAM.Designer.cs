@@ -32,22 +32,18 @@
             this.CancelarBtn = new System.Windows.Forms.Button();
             this.GuardarBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.DateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.ProfesorCbo = new System.Windows.Forms.ComboBox();
             this.DateTimeInicio = new System.Windows.Forms.DateTimePicker();
-            this.DateTimeFin = new System.Windows.Forms.Label();
             this.CodTipoActividad = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ObservacionesTxt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // CancelarBtn
             // 
-            this.CancelarBtn.Location = new System.Drawing.Point(279, 381);
+            this.CancelarBtn.Location = new System.Drawing.Point(281, 189);
             this.CancelarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.CancelarBtn.Name = "CancelarBtn";
             this.CancelarBtn.Size = new System.Drawing.Size(59, 27);
@@ -57,7 +53,7 @@
             // 
             // GuardarBtn
             // 
-            this.GuardarBtn.Location = new System.Drawing.Point(216, 381);
+            this.GuardarBtn.Location = new System.Drawing.Point(218, 189);
             this.GuardarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.GuardarBtn.Name = "GuardarBtn";
             this.GuardarBtn.Size = new System.Drawing.Size(59, 27);
@@ -68,41 +64,30 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.DateTimePicker1);
+            this.groupBox1.Controls.Add(this.ProfesorCbo);
             this.groupBox1.Controls.Add(this.DateTimeInicio);
-            this.groupBox1.Controls.Add(this.DateTimeFin);
             this.groupBox1.Controls.Add(this.CodTipoActividad);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.ObservacionesTxt);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(326, 353);
+            this.groupBox1.Size = new System.Drawing.Size(326, 171);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
-            // comboBox1
+            // ProfesorCbo
             // 
-            this.comboBox1.DisplayMember = "Nombre";
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(87, 78);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 23;
-            this.comboBox1.Tag = "CodTipoActividad";
-            this.comboBox1.ValueMember = "Id";
-            // 
-            // DateTimePicker1
-            // 
-            this.DateTimePicker1.Location = new System.Drawing.Point(87, 186);
-            this.DateTimePicker1.Name = "DateTimePicker1";
-            this.DateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.DateTimePicker1.TabIndex = 22;
+            this.ProfesorCbo.DisplayMember = "Nombre";
+            this.ProfesorCbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ProfesorCbo.FormattingEnabled = true;
+            this.ProfesorCbo.Location = new System.Drawing.Point(87, 78);
+            this.ProfesorCbo.Margin = new System.Windows.Forms.Padding(2);
+            this.ProfesorCbo.Name = "ProfesorCbo";
+            this.ProfesorCbo.Size = new System.Drawing.Size(200, 21);
+            this.ProfesorCbo.TabIndex = 23;
+            this.ProfesorCbo.Tag = "CodTipoActividad";
+            this.ProfesorCbo.ValueMember = "Id";
             // 
             // DateTimeInicio
             // 
@@ -110,15 +95,6 @@
             this.DateTimeInicio.Name = "DateTimeInicio";
             this.DateTimeInicio.Size = new System.Drawing.Size(200, 20);
             this.DateTimeInicio.TabIndex = 0;
-            // 
-            // DateTimeFin
-            // 
-            this.DateTimeFin.AutoSize = true;
-            this.DateTimeFin.Location = new System.Drawing.Point(7, 186);
-            this.DateTimeFin.Name = "DateTimeFin";
-            this.DateTimeFin.Size = new System.Drawing.Size(54, 13);
-            this.DateTimeFin.TabIndex = 21;
-            this.DateTimeFin.Text = "Fecha Fin";
             // 
             // CodTipoActividad
             // 
@@ -143,15 +119,6 @@
             this.label5.TabIndex = 19;
             this.label5.Text = "Profesor";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 240);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Observaciones";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -170,18 +137,11 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Tipo Actividad";
             // 
-            // ObservacionesTxt
-            // 
-            this.ObservacionesTxt.Location = new System.Drawing.Point(87, 237);
-            this.ObservacionesTxt.Name = "ObservacionesTxt";
-            this.ObservacionesTxt.Size = new System.Drawing.Size(200, 20);
-            this.ObservacionesTxt.TabIndex = 15;
-            // 
             // FrmActividadAM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 422);
+            this.ClientSize = new System.Drawing.Size(348, 227);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CancelarBtn);
             this.Controls.Add(this.GuardarBtn);
@@ -200,14 +160,10 @@
         private System.Windows.Forms.Button GuardarBtn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox ObservacionesTxt;
         private System.Windows.Forms.DateTimePicker DateTimeInicio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox CodTipoActividad;
-        private System.Windows.Forms.DateTimePicker DateTimePicker1;
-        private System.Windows.Forms.Label DateTimeFin;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ProfesorCbo;
     }
 }

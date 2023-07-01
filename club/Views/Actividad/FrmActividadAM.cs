@@ -27,12 +27,12 @@ namespace clubApp.Views
 
         private void FrmActividadAM_Load(object sender, EventArgs e)
         {
-
+            LoadCombos();
         }
         private void LoadCombos()
         {
             this.CodTipoActividad.DataSource = TipoActividad.FindAllStatic(null, (loc1, loc2) => loc1.Nombre.CompareTo(loc2.Nombre));
-
+            this.ProfesorCbo.DataSource = Profesor.FindAllStatic(null, (p1, p2) => p1.Legajo.CompareTo(p2.Legajo));
             //this.LocalidadCbo.DataSource = ORMDB<Localidad>.FindAll(null);
         }
 
@@ -65,20 +65,10 @@ namespace clubApp.Views
                 return;
             }
 
-            if (ObservacionesTxt.Text == "")
-            {
-                MessageBox.Show("Ingrese Observacion", "Dato(s) faltante(s)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                ObservacionesTxt.Focus();
-                return;
-            }
-
             actividad = new Actividad();
-
-
+            actividad.CodTipoActividad = (this.CodTipoActividad.SelectedItem as TipoActividad).Id;
+            actividad.LegajoProfe = (this.ProfesorCbo.SelectedItem as Profesor).Legajo;
             actividad.FechaDesde = DateTimeInicio.Value;
-            actividad.FechaHasta = DateTimePicker1.Value;
-
-
             detalleLog += Newtonsoft.Json.JsonConvert.SerializeObject(actividad);
             // intentar guardar en la Base de datos.
             try
@@ -88,14 +78,7 @@ namespace clubApp.Views
             }
             catch (Exception ex)
             {
-                /* if (Actividad.ExisteActividad(actividad.Id))       // TODO excepción "backend sent unrecognized response type r"
-                 {
-                     errMsj = "ya se encuentra registrado un Profesor con el DNI ingresado";
-                 }
-                 else
-                 {
-                     errMsj = "Error: " + ex.Message;
-                 }*/
+                MessageBox.Show(ex.ToString());
             }
             // si esta configurado, al form invoker enviarle evento de operacion completa
             if (DoCompleteOperationForm != null)

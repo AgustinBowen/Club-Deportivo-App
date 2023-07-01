@@ -49,5 +49,10 @@ namespace clubApp.db
         {
             return ORMDB<ActividadSocio>.FindbyKey(key);
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0} - {1}", this.NroSocio, this.ActividadObj.TipoActividadObj.Nombre);
+        }
     }
 }

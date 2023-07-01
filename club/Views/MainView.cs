@@ -293,5 +293,10 @@ namespace clubApp.Views
                 aux.SaveObj();
             }
         }
+
+        private void ActividadesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new FrmListadoActividades().Show();
+        }
     }
 }
