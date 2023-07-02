@@ -1,12 +1,6 @@
 ﻿using clubApp.db;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace clubApp.Views
@@ -67,7 +61,7 @@ namespace clubApp.Views
 
         }
 
-       
+
         private void SociosGrd_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {/*
             DataGridViewColumn newColumn = SociosGrd.Columns[e.ColumnIndex];
@@ -127,7 +121,7 @@ namespace clubApp.Views
         {
             if (this.CboTipoActividad.SelectedIndex > -1)
             {
-                string criterioAux = string.Format("nombre = '{0}'",this.CboTipoActividad.Text);
+                string criterioAux = string.Format("nombre = '{0}'", this.CboTipoActividad.Text);
                 this.CboActividad.Enabled = true;
                 List<TipoActividad> listAux = TipoActividad.FindAllStatic(criterioAux, null);
                 if (listAux.Count > 0)
@@ -146,9 +140,9 @@ namespace clubApp.Views
         {
             if (true)
             {
-                if (this.CboTipoActividad.SelectedIndex >=0)
+                if (this.CboTipoActividad.SelectedIndex >= 0)
                 {
-                    if (this.CboActividad.SelectedIndex >=0)
+                    if (this.CboActividad.SelectedIndex >= 0)
                     {
                         ActividadSocio actSoc = new ActividadSocio();
                         actSoc.NroSocio = (this.SociosGrd.SelectedRows[0].DataBoundItem as Socio).NroSocio;
@@ -163,7 +157,7 @@ namespace clubApp.Views
                         {
                             MessageBox.Show("error");
                         }
-                        MessageBox.Show("Socio Inscripto","Logrado",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        MessageBox.Show("Socio Inscripto", "Logrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }

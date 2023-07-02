@@ -29,6 +29,33 @@ namespace clubApp.Views
         {
             LoadCombos();
         }
+        public override FrmOperacion OperacionForm
+        {
+            get
+            {
+                return base.OperacionForm;
+            }
+            set
+            {
+                base.OperacionForm = value;
+                LoadCombos();
+                if (value == FrmOperacion.frmAlta)
+                {
+                    this.Text = "Ingreso de nueva Actividad...";
+                    this.CodTipoActividad.SelectedIndex = -1;
+                }
+                if (value == FrmOperacion.frmModificacion)
+                {
+                    this.Text = "Actualizacion de datos de Actividad...";
+                }
+                if (value == FrmOperacion.frmConsulta)
+                {
+                    this.Text = "Consulta de datos de Actividad...";
+                    this.GuardarBtn.Visible = false;
+                }
+
+            }
+        }
         private void LoadCombos()
         {
             this.CodTipoActividad.DataSource = TipoActividad.FindAllStatic(null, (loc1, loc2) => loc1.Nombre.CompareTo(loc2.Nombre));
@@ -100,6 +127,32 @@ namespace clubApp.Views
         private void CodTipoActividad_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        private void ShowInfoActividadInForm(Actividad Act_modif, FormBase Invoker)
+        {
+            this.OperacionForm = FrmOperacion.frmModificacion;
+            _actividad_modif = Act_modif;
+            actividadLog = Newtonsoft.Json.JsonConvert.SerializeObject(_actividad_modif);
+            _actividad_modif.Id = Act_modif.Id;
+            // cargar cada control con informacion de la cuota....
+            FormBase.ShowDataFromModel(this, Act_modif);
+            this.InvokerForm = Invoker;
+            this.CancelarBtn.Click += new EventHandler(CancelarBtn_Click);
+            this.ShowDialog();
+        }
+
+        public void ShowModificarActividad(FormBase Invoker, Actividad Pac_modif)
+        {
+            ShowInfoActividadInForm(Pac_modif, Invoker);
+        }
+        public void ShowModificarActividad(Actividad Pac_modif)
+        {
+            ShowInfoActividadInForm(Pac_modif, null);
+        }
+
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

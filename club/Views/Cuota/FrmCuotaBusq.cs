@@ -205,17 +205,17 @@ namespace clubApp.Views
 
         private void PagaChk_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ImpagaChk_CheckedChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void AnuladaChk_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ImporteChk_CheckedChanged(object sender, EventArgs e)

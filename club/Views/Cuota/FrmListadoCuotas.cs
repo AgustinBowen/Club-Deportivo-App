@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
-using System.Reflection;
 
 namespace clubApp.Views
 {
@@ -22,12 +21,12 @@ namespace clubApp.Views
 
         private void PagaChk_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ImpagaChk_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void FechaVencimientoChk_CheckedChanged(object sender, EventArgs e)
@@ -108,7 +107,7 @@ namespace clubApp.Views
                 {
                     criterio = string.Format("estado like '%{0}%'", estado);
                 }
-                else if(criterio.Contains("estado")) 
+                else if (criterio.Contains("estado"))
                 {
                     criterio += string.Format(" or estado like '%{0}%'", estado);
                 }
@@ -133,7 +132,7 @@ namespace clubApp.Views
                     criterio += string.Format(" and estado like '%{0}%'", estado);
                 }
             }
-        
+
             if (this.FechaPagoChk.Checked)
             {
                 if (criterio == null)
@@ -213,12 +212,12 @@ namespace clubApp.Views
         private void FrmListadoCuotas_Load(object sender, EventArgs e)
         {
             this.CuotasGrd.AutoGenerateColumns = false;
-            this.CuotasGrd.DataSource = Cuota.FindAllStatic(null,null);
+            this.CuotasGrd.DataSource = Cuota.FindAllStatic(criterio, (c1, c2) => (c1.Id).CompareTo(c2.Id));
         }
 
         private void AnuladaChk_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void CuotasGrd_DoubleClick(object sender, EventArgs e)

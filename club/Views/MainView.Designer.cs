@@ -344,7 +344,7 @@
             // SociosToolStripMenuItem
             // 
             this.SociosToolStripMenuItem.Name = "SociosToolStripMenuItem";
-            this.SociosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SociosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.SociosToolStripMenuItem.Tag = "ConsultaSocio";
             this.SociosToolStripMenuItem.Text = "Socios";
             this.SociosToolStripMenuItem.Click += new System.EventHandler(this.ListadoSocioMnu_Click);
@@ -352,7 +352,7 @@
             // ProfesorsToolStripMenuItem
             // 
             this.ProfesorsToolStripMenuItem.Name = "ProfesorsToolStripMenuItem";
-            this.ProfesorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ProfesorsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.ProfesorsToolStripMenuItem.Tag = "ConsultaProfesor";
             this.ProfesorsToolStripMenuItem.Text = "Profesor";
             this.ProfesorsToolStripMenuItem.Click += new System.EventHandler(this.ListadoProfesors_Click);
@@ -360,7 +360,7 @@
             // localidadesToolStripMenuItem1
             // 
             this.localidadesToolStripMenuItem1.Name = "localidadesToolStripMenuItem1";
-            this.localidadesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.localidadesToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.localidadesToolStripMenuItem1.Tag = "ConsultaLocalidad";
             this.localidadesToolStripMenuItem1.Text = "Localidades";
             this.localidadesToolStripMenuItem1.Click += new System.EventHandler(this.localidadesToolStripMenuItem1_Click);
@@ -368,7 +368,7 @@
             // ActividadesToolStripMenuItem1
             // 
             this.ActividadesToolStripMenuItem1.Name = "ActividadesToolStripMenuItem1";
-            this.ActividadesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.ActividadesToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.ActividadesToolStripMenuItem1.Tag = "ConsultaActividad";
             this.ActividadesToolStripMenuItem1.Text = "Actividades";
             this.ActividadesToolStripMenuItem1.Click += new System.EventHandler(this.ActividadesToolStripMenuItem1_Click);
@@ -376,7 +376,7 @@
             // HorariosToolStripMenuItem
             // 
             this.HorariosToolStripMenuItem.Name = "HorariosToolStripMenuItem";
-            this.HorariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.HorariosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.HorariosToolStripMenuItem.Tag = "ConsultaHorario";
             this.HorariosToolStripMenuItem.Text = "Horarios";
             this.HorariosToolStripMenuItem.Click += new System.EventHandler(this.HorariosToolStripMenuItem_Click);
@@ -384,14 +384,14 @@
             // auditoriaToolStripMenuItem
             // 
             this.auditoriaToolStripMenuItem.Name = "auditoriaToolStripMenuItem";
-            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.auditoriaToolStripMenuItem.Tag = "ConsultaAuditoria";
             this.auditoriaToolStripMenuItem.Text = "Auditoria";
             // 
             // CuotaToolStripMenuItem
             // 
             this.CuotaToolStripMenuItem.Name = "CuotaToolStripMenuItem";
-            this.CuotaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CuotaToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.CuotaToolStripMenuItem.Tag = "ConsultaCuota";
             this.CuotaToolStripMenuItem.Text = "Cuota";
             this.CuotaToolStripMenuItem.Click += new System.EventHandler(this.CuotaToolStripMenuItem_Click);
@@ -399,7 +399,7 @@
             // TipoActividadToolStripMenuItem1
             // 
             this.TipoActividadToolStripMenuItem1.Name = "TipoActividadToolStripMenuItem1";
-            this.TipoActividadToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.TipoActividadToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.TipoActividadToolStripMenuItem1.Tag = "ConsultaTipoActividad";
             this.TipoActividadToolStripMenuItem1.Text = "Tipo Actividad";
             // 

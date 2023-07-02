@@ -52,7 +52,7 @@ namespace clubApp.db
         {
             Profesor pro = new Profesor();
             pro.FindbyKey(this._legajo_profe);
-            return string.Format("{0} - {1}",pro.Nombres, this.FechaDesde.ToShortTimeString());
+            return string.Format("{0} - {1}", pro.Nombres, this.FechaDesde.ToShortTimeString());
         }
     }
 }

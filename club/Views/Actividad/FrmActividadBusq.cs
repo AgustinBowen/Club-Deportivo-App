@@ -30,8 +30,8 @@ namespace clubApp.Views
             this.comboProfesor.Enabled = false;
             this.comboCodTipoActividad.Enabled = false;
         }
-               
-        
+
+
         private void buscar_Click(object sender, EventArgs e)
         {
             MainView.Instance.Cursor = Cursors.WaitCursor;
@@ -41,7 +41,7 @@ namespace clubApp.Views
             {
                 criterio = String.Format("cod_tipo_act = {0}", (this.comboCodTipoActividad.SelectedItem as TipoActividad).Id);
             }
-            
+
             if (this.profesorCHK.Checked)
             {
                 if (criterio == null)
@@ -56,7 +56,7 @@ namespace clubApp.Views
 
             try
             {
-                var lista = Actividad.FindAllStatic(criterio,null);
+                var lista = Actividad.FindAllStatic(criterio, null);
                 MainView.Instance.Cursor = Cursors.Default;
 
                 if (lista.Count == 0)

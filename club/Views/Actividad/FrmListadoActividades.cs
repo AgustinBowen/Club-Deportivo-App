@@ -17,7 +17,7 @@ namespace clubApp.Views
             MainView.Instance.Cursor = Cursors.WaitCursor;
             // verificar si hay multiples opciones a usar como filtro que elija alguna, si son dos campos, no hace falta.            
             criterio = null;
-            
+
 
             if (this.FechaInicioChk.Checked)
             {
@@ -80,12 +80,9 @@ namespace clubApp.Views
             LoadCombos();
             this.comboProfesor.Enabled = false;
             this.comboCodTipoActividad.Enabled = false;
+            this.actividadGrd.AutoGenerateColumns = false;
+            this.actividadGrd.DataSource = Actividad.FindAllStatic(criterio, (a1, a2) => (a1.Id).CompareTo(a2.Id));
         }
-
-    
-
-      
-
         private void tipoActividadCHK_CheckedChanged(object sender, EventArgs e)
         {
             this.comboCodTipoActividad.Enabled = this.tipoActividadCHK.Checked;
@@ -104,6 +101,17 @@ namespace clubApp.Views
         private void FechaFinChk_CheckedChanged(object sender, EventArgs e)
         {
             this.FechaHastaPicker.Enabled = this.FechaFinChk.Checked;
+        }
+
+        private void actividadGrd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void actividadGrd_DoubleClick(object sender, EventArgs e)
+        {
+            FrmActividadAM frmpac = new FrmActividadAM();
+            Actividad pac = (this.actividadGrd.SelectedRows[0].DataBoundItem as Actividad);
+            frmpac.ShowModificarActividad(pac);
         }
     }
 }

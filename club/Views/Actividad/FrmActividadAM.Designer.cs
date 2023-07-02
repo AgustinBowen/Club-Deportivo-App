@@ -50,6 +50,7 @@
             this.CancelarBtn.TabIndex = 12;
             this.CancelarBtn.Text = "&Cancelar";
             this.CancelarBtn.UseVisualStyleBackColor = true;
+            this.CancelarBtn.Click += new System.EventHandler(this.CancelarBtn_Click);
             // 
             // GuardarBtn
             // 

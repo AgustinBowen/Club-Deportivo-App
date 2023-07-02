@@ -196,12 +196,12 @@ namespace clubApp.Views
 
         private void ingresoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-         
+
         }
 
         private void buscarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void HorariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -262,14 +262,14 @@ namespace clubApp.Views
 
         private void generarCutoasMensualesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            List<Cuota> listaCuotasExistentes = Cuota.FindAllStatic(null,null);
+            List<Cuota> listaCuotasExistentes = Cuota.FindAllStatic(null, null);
             List<Cuota> listaCuotasCreadas = new List<Cuota>();
-            List<Socio> listaSocios = Socio.FindAllStatic("activo = true",null);
+            List<Socio> listaSocios = Socio.FindAllStatic("activo = true", null);
             foreach (Socio socAux in listaSocios)
             {
                 string criterio = string.Format("nro_socio = {0} and fecha_fin < fecha_inicio ", socAux.NroSocio);
                 List<ActividadSocio> listaActividades = ActividadSocio.FindAllStatic(criterio, null);
-                if (listaActividades.Count >0)
+                if (listaActividades.Count > 0)
                 {
                     foreach (ActividadSocio actSocAux in listaActividades)
                     {
@@ -285,7 +285,7 @@ namespace clubApp.Views
                         }
                     }
                 }
- 
+
             }
             MessageBox.Show(string.Format("Se crearon {0} cuotas", listaCuotasCreadas.Count), "Cuotas Procesadas", MessageBoxButtons.OK, MessageBoxIcon.Information);
             foreach (Cuota aux in listaCuotasCreadas)

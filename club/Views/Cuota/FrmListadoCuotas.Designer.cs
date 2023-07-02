@@ -294,13 +294,13 @@
             this.CuotasGrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
             {
                 this.IdCuotaCol,
+                this.CodActSocioCol,
                 this.AnioCol,
                 this.MesCol,
+                this.EstadoCol,
                 this.ImporteCol,
                 this.FechaVencCol,
                 this.FechaPagoCol,
-                this.CodActSocioCol,
-                this.EstadoCol,
             });
             // 
             // IdCuota
