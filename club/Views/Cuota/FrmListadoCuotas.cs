@@ -302,8 +302,9 @@ namespace clubApp.Views
 
         private void FrmListadoCuotas_Load_1(object sender, EventArgs e)
         {
-            this.CuotasGrd.AutoGenerateColumns = false;
-            this.CuotasGrd.DataSource = Cuota.FindAllStatic(criterio, (c1, c2) => (c1.Id).CompareTo(c2.Id));
+            bindingList = new BindingList<Cuota>(Cuota.FindAllStatic(criterio, (p1, p2) => (p1.Id).CompareTo(p2.Id)));
+            bindingSource = new BindingSource(bindingList, null);
+            this.CuotasGrd.DataSource = bindingSource;
         }
 
         private void PagarBtn_Click(object sender, EventArgs e)

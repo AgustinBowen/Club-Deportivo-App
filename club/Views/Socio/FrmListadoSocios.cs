@@ -47,7 +47,7 @@ namespace clubApp.Views
         private void FiltroBtn_Click(object sender, EventArgs e)
         {
             //
-
+            criterio = null;
             if (this.LocalidadChk.Checked && this.LocalidadCbo.SelectedIndex != -1)
             {
                 if (criterio != null)
@@ -57,7 +57,35 @@ namespace clubApp.Views
                 else
                     criterio = "cod_postal= " + LocalidadCbo.SelectedValue;
             }
-            
+            if (this.MorosoChk.Checked)
+            {
+                if (criterio != null)
+                {
+                    criterio += " and moroso is true";
+                }
+                else
+                    criterio = "moroso is true ";
+            }
+            if (this.ActivoChk.Checked)
+            {
+                if (criterio != null)
+                {
+                    criterio += " and activo is true";
+                }
+                else
+                    criterio = "activo is true ";
+            }
+            if (this.ApellidoChk.Checked)
+            {
+                if (criterio != null)
+                {
+                    criterio += string.Format("and Apellido like '%{0}%'",this.ApellidoTxt);
+                }
+                else
+                    criterio = string.Format("Apellido like '%{0}%'", this.ApellidoTxt);
+            }
+
+
             bindingList = new BindingList<Socio>(Socio.FindAllStatic(criterio, (p1, p2) => (p1.Nombres).CompareTo(p2.Nombres)));
             bindingSource = new BindingSource(bindingList, null);
             this.SociosGrd.DataSource = bindingSource;
@@ -86,12 +114,12 @@ namespace clubApp.Views
         private void ExportarBtn_Click(object sender, EventArgs e)
         {
             FrmExportarArchivo frm = new FrmExportarArchivo();
-            List<Socio> listaSocio = Socio.FindAllStatic(criterio, null);
+            List<Socio> listaSocio = bindingList.ToList();
             frm.ShowExportar(listaSocio);
         }
         private void SociosGrd_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-           Comparison<Socio> comparacion = (p1, p2) => (p1.Nombres).CompareTo(p2.Nombres);
+           Comparison<Socio> comparacion = (p1, p2) => (p1.NroDocumento).CompareTo(p2.NroDocumento);
                 if (acendente)
                 {
                     switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
@@ -102,7 +130,22 @@ namespace clubApp.Views
                         case "Apellido":
                             comparacion = (p1, p2) => (p1.Apellido).CompareTo(p2.Apellido);
                             break;
-                        default:
+                         case "Nombres":
+                            comparacion = (p1, p2) => (p1.Nombres).CompareTo(p2.Nombres);
+                            break;
+                    case "Telefono":
+                        comparacion = (p1, p2) => (p1.Telefono).CompareTo(p2.Telefono);
+                        break;
+                    case "CodPostal":
+                        comparacion = (p1, p2) => (p1.CodPostal).CompareTo(p2.CodPostal);
+                        break;
+                    case "Activo":
+                        comparacion = (p1, p2) => (p1.Activo).CompareTo(p2.Activo);
+                        break;
+                    case "Moroso":
+                        comparacion = (p1, p2) => (p1.Moroso).CompareTo(p2.Moroso);
+                        break;
+                    default:
                             break;
                     }
                     acendente = false;
@@ -117,8 +160,25 @@ namespace clubApp.Views
                         case "Apellido":
                             comparacion = (p1, p2) => (p2.Apellido).CompareTo(p1.Apellido);
                             break;
-                        default:
+                        break;
+                    case "Nombres":
+                        comparacion = (p1, p2) => (p2.Nombres).CompareTo(p1.Nombres);
+                        break;
+                    case "Telefono":
+                        comparacion = (p1, p2) => (p2.Telefono).CompareTo(p1.Telefono);
+                        break;
+                    case "CodPostal":
+                        comparacion = (p1, p2) => (p2.CodPostal).CompareTo(p1.CodPostal);
+                        break;
+                    case "Activo":
+                        comparacion = (p1, p2) => (p2.Activo).CompareTo(p1.Activo);
+                        break;
+                    case "Moroso":
+                        comparacion = (p1, p2) => (p2.Moroso).CompareTo(p1.Moroso);
+                        break;
+                    default:
                             break;
+
                     }
                     acendente = true;
                 }
