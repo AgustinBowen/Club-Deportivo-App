@@ -116,22 +116,39 @@ namespace clubApp.Views
             }
             if (acendente)
             {
-                List<Localidad> listAux = bindingList.ToList();
-                listAux.Sort(comparacion);
-                bindingList = new BindingList<Localidad>(listAux);
-                bindingSource = new BindingSource(bindingList,null);
-                LocalidadGrd.DataSource = bindingSource;
+                switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
+                {
+                    case "id":
+                        comparacion = (p1, p2) => (p2.Id).CompareTo(p1.Id);
+                        break;
+                    case "Nombre":
+                        comparacion = (p1, p2) => (p2.Nombre).CompareTo(p1.Nombre);
+                        break;
+                    default:
+                        break;
+                }
                 acendente = false;
             }
             else
             {
-                List<Localidad> listAux = bindingList.ToList();
-                listAux.Sort(comparacion);
-                bindingList = new BindingList<Localidad>(listAux);
-                bindingSource = new BindingSource(bindingList, null);
-                LocalidadGrd.DataSource = bindingSource;
+                switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
+                {
+                    case "id":
+                        comparacion = (p1, p2) => (p1.Id).CompareTo(p2.Id);
+                        break;
+                    case "Nombre":
+                        comparacion = (p1, p2) => (p1.Nombre).CompareTo(p2.Nombre);
+                        break;
+                    default:
+                        break;
+                }
                 acendente = true;
             }
+            List<Localidad> listAux = bindingList.ToList();
+            listAux.Sort(comparacion);
+            bindingList = new BindingList<Localidad>(listAux);
+            bindingSource = new BindingSource(bindingList, null);
+            LocalidadGrd.DataSource = bindingSource;
         }
 
         private void FrmListadoLocalidad_Load(object sender, EventArgs e)
