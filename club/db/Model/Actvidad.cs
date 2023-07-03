@@ -10,7 +10,7 @@ namespace clubApp.db
         private int _cod_tipo_act;
         private int _legajo_profe;
         private DateTime _fecha_desde;
-        private DateTime? _fecha_hasta;
+        private DateTime _fecha_hasta;
         private TipoActividad _tpAct;
 
         private TipoActividad _tipo_actividad = null;
@@ -39,12 +39,14 @@ namespace clubApp.db
             get { return _cod_tipo_act; }
             set { _cod_tipo_act = value; }
         }
+        [Propiedad(Name = "fecha_desde", Tipo = typeof(DateTime))]
         public DateTime FechaDesde
         {
             get { return _fecha_desde; }
             set { _fecha_desde = value; }
         }
-        public DateTime? FechaHasta
+        [Propiedad(Name = "fecha_fin", Tipo = typeof(DateTime))]
+        public DateTime FechaHasta
         {
             get { return _fecha_hasta; }
             set { _fecha_hasta = value; }
