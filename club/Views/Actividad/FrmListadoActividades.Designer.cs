@@ -89,6 +89,8 @@
             this.actividadGrd.Size = new System.Drawing.Size(561, 237);
             this.actividadGrd.TabIndex = 0;
             this.actividadGrd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.actividadGrd_CellContentClick);
+            this.actividadGrd.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.actividadGrd_CellContentDoubleClick);
+            this.actividadGrd.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.actividadGrd_ColumnHeaderMouseClick);
             // 
             // CodActividadCol
             // 
@@ -133,6 +135,7 @@
             this.ExportarBtn.TabIndex = 15;
             this.ExportarBtn.Text = "Exportar";
             this.ExportarBtn.UseVisualStyleBackColor = false;
+            this.ExportarBtn.Click += new System.EventHandler(this.ExportarBtn_Click);
             // 
             // FiltroBtn
             // 

@@ -103,17 +103,6 @@ namespace clubApp.Views
         private void LocalidadGrd_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             Comparison<Localidad> comparacion = (p1, p2) => (p1.Nombre).CompareTo(p2.Nombre);
-            switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
-            {
-                case "id":
-                    comparacion = (p1, p2) => (p1.Id).CompareTo(p2.Id);
-                    break;
-                case "Nombre":
-                    comparacion = (p1, p2) => (p1.Nombre).CompareTo(p2.Nombre);
-                    break;  
-                default:
-                    break;
-            }
             if (acendente)
             {
                 switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)

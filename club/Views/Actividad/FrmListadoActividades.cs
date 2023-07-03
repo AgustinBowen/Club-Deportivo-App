@@ -1,12 +1,18 @@
 ﻿using clubApp.db;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace clubApp.Views
 {
     public partial class FrmListadoActividades : FormBase
     {
+        BindingList<Actividad> bindingList;
+        BindingSource bindingSource;
         string criterio = null;
+        bool acendente;
         public FrmListadoActividades()
         {
             InitializeComponent();
@@ -112,6 +118,59 @@ namespace clubApp.Views
             FrmActividadAM frmpac = new FrmActividadAM();
             Actividad pac = (this.actividadGrd.SelectedRows[0].DataBoundItem as Actividad);
             frmpac.ShowModificarActividad(pac);
+        }
+
+        private void ExportarBtn_Click(object sender, EventArgs e)
+        {
+            FrmExportarArchivo frm = new FrmExportarArchivo();
+            List<Actividad> listaActividad = bindingList.ToList();
+            frm.ShowExportar(listaActividad);
+        }
+
+        private void actividadGrd_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+        
+        }
+
+      
+        private void actividadGrd_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Comparison<Actividad> comparacion = (p1, p2) => (p1.Id).CompareTo(p2.Id);
+            if (acendente)
+            {
+                switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
+                {
+                    case "CodTipoActividad":
+                        comparacion = (p1, p2) => (p1.CodTipoActividad).CompareTo(p2.CodTipoActividad);
+                        break;
+                    case "LegajoProfe":
+                        comparacion = (p1, p2) => (p1.LegajoProfe).CompareTo(p2.LegajoProfe);
+                        break;
+                    default:
+                        break;
+                }
+                acendente = false;
+            }
+            else
+            {
+                switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
+                {
+                    case "CodTipoActividad":
+                        comparacion = (p1, p2) => (p2.CodTipoActividad).CompareTo(p1.CodTipoActividad);
+                        break;
+                    case "LegajoProfe":
+                        comparacion = (p1, p2) => (p2.LegajoProfe).CompareTo(p1.LegajoProfe);
+                        break;
+                    default:
+                        break;
+                }
+                acendente = true;
+            }
+            List<Actividad> listAux = bindingList.ToList();
+            listAux.Sort(comparacion);
+            bindingList = new BindingList<Actividad>(listAux);
+            bindingSource = new BindingSource(bindingList, null);
+            actividadGrd.DataSource = bindingSource;
         }
     }
 }
