@@ -181,6 +181,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmListadoLocalidad";
             this.Text = "FrmListadoLocalidad";
+            this.Load += new System.EventHandler(this.FrmListadoLocalidad_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);

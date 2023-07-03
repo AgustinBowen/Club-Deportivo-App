@@ -102,10 +102,22 @@ namespace clubApp.Views
 
         private void LocalidadGrd_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            Comparison<Localidad> comparacion = (p1, p2) => (p1.Nombre).CompareTo(p2.Nombre);
+            switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
+            {
+                case "id":
+                    comparacion = (p1, p2) => (p1.Id).CompareTo(p2.Id);
+                    break;
+                case "Nombre":
+                    comparacion = (p1, p2) => (p1.Nombre).CompareTo(p2.Nombre);
+                    break;  
+                default:
+                    break;
+            }
             if (acendente)
             {
                 List<Localidad> listAux = bindingList.ToList();
-                listAux = listAux.OrderBy(x => x.Id).ToList();
+                listAux.Sort(comparacion);
                 bindingList = new BindingList<Localidad>(listAux);
                 bindingSource = new BindingSource(bindingList,null);
                 LocalidadGrd.DataSource = bindingSource;
@@ -114,12 +126,19 @@ namespace clubApp.Views
             else
             {
                 List<Localidad> listAux = bindingList.ToList();
-                listAux = listAux.OrderByDescending(x => x.Id).ToList();
+                listAux.Sort(comparacion);
                 bindingList = new BindingList<Localidad>(listAux);
                 bindingSource = new BindingSource(bindingList, null);
                 LocalidadGrd.DataSource = bindingSource;
                 acendente = true;
             }
+        }
+
+        private void FrmListadoLocalidad_Load(object sender, EventArgs e)
+        {
+            bindingList = new BindingList<Localidad>(Localidad.FindAllStatic(criterio, (p1, p2) => (p1.Nombre).CompareTo(p2.Nombre)));
+            bindingSource = new BindingSource(bindingList, null);
+            this.LocalidadGrd.DataSource = bindingSource;
         }
     }
 }
