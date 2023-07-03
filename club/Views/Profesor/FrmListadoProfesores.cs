@@ -1,13 +1,18 @@
 ﻿using clubApp.db;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace clubApp.Views
 {
     public partial class FrmListadoProfesores : FormBase
     {
+        BindingList<Profesor> bindingList;
+        BindingSource bindingSource;
         string criterio = null;
+        bool acendente;
         public FrmListadoProfesores()
         {
             InitializeComponent();
@@ -91,8 +96,9 @@ namespace clubApp.Views
 
         private void FrmListadoProfesores_Load(object sender, EventArgs e)
         {
-            this.ProfesoresGrd.AutoGenerateColumns = false;
-            this.ProfesoresGrd.DataSource = Profesor.FindAllStatic(null, (p1, p2) => (p1.Apellido + p1.Nombres).CompareTo(p2.Apellido + p2.Nombres));
+            bindingList = new BindingList<Profesor>(Profesor.FindAllStatic(criterio, (p1, p2) => (p1.Legajo).CompareTo(p2.Legajo)));
+            bindingSource = new BindingSource(bindingList, null);
+            this.ProfesoresGrd.DataSource = bindingSource;
         }
 
         private void legajoChk_CheckedChanged(object sender, EventArgs e)
@@ -111,6 +117,68 @@ namespace clubApp.Views
             List<Profesor> listaProfesor = Profesor.FindAllStatic(criterio, null);
             frm.ShowExportar(listaProfesor);
         }
-
+        private void ProfesoresGrd_ColumnHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Comparison<Profesor> comparacion = (p1, p2) => (p1.Legajo).CompareTo(p2.Legajo);
+            if (acendente)
+            {
+                switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
+                {
+                    case "Legajo":
+                        comparacion = (p1, p2) => (p2.Legajo).CompareTo(p1.Legajo);
+                        break;
+                    case "Nombres":
+                        comparacion = (p1, p2) => (p2.Nombres).CompareTo(p1.Nombres);
+                        break;
+                    case "NroDocumento":
+                        comparacion = (p1, p2) => (p2.NroDocumento).CompareTo(p1.NroDocumento);
+                        break;
+                    case "Apellido":
+                        comparacion = (p1, p2) => (p2.Apellido).CompareTo(p1.Apellido);
+                        break;
+                    case "Domicilio":
+                        comparacion = (p1, p2) => (p2.Domicilio).CompareTo(p1.Domicilio);
+                        break;
+                    case "Telefono":
+                        comparacion = (p1, p2) => (p2.Telefono).CompareTo(p1.Telefono);
+                        break;
+                    default:
+                        break;
+                }
+                acendente = false;
+            }
+            else
+            {
+                switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
+                {
+                    case "Legajo":
+                        comparacion = (p1, p2) => (p1.Legajo).CompareTo(p2.Legajo);
+                        break;
+                    case "Nombres":
+                        comparacion = (p1, p2) => (p1.Nombres).CompareTo(p2.Nombres);
+                        break;
+                    case "NroDocumento":
+                        comparacion = (p1, p2) => (p1.NroDocumento).CompareTo(p2.NroDocumento);
+                        break;
+                    case "Apellido":
+                        comparacion = (p1, p2) => (p1.Apellido).CompareTo(p2.Apellido);
+                        break;
+                    case "Domicilio":
+                        comparacion = (p1, p2) => (p1.Domicilio).CompareTo(p2.Domicilio);
+                        break;
+                    case "Telefono":
+                        comparacion = (p1, p2) => (p1.Telefono).CompareTo(p2.Telefono);
+                        break;
+                    default:
+                        break;
+                }
+                acendente = true;
+            }
+            List<Profesor> listAux = bindingList.ToList();
+            listAux.Sort(comparacion);
+            bindingList = new BindingList<Profesor>(listAux);
+            bindingSource = new BindingSource(bindingList, null);
+            ProfesoresGrd.DataSource = bindingSource;
+        }
     }
 }
