@@ -250,6 +250,18 @@ namespace clubApp.Views
                     case "FechaPago":
                         comparacion = (p1, p2) => (p1.FechaPago).CompareTo(p2.FechaPago);
                         break;
+                    case "Anio":
+                        comparacion = (p1, p2) => (p1.Anio).CompareTo(p2.Anio);
+                        break;
+                    case "Mes":
+                        comparacion = (p1, p2) => (p1.Mes).CompareTo(p2.Mes);
+                        break;
+                    case "CodActSocio":
+                        comparacion = (p1, p2) => (p1.CodActSocio).CompareTo(p2.CodActSocio);
+                        break;
+                    case "Id":
+                        comparacion = (p1, p2) => (p1.Id).CompareTo(p2.Id);
+                        break;
                     default:
                         break;
                 }
@@ -267,6 +279,18 @@ namespace clubApp.Views
                         break;
                     case "FechaPago":
                         comparacion = (p1, p2) => (p2.FechaPago).CompareTo(p1.FechaPago);
+                        break;
+                    case "Anio":
+                        comparacion = (p1, p2) => (p2.Anio).CompareTo(p1.Anio);
+                        break;
+                    case "Mes":
+                        comparacion = (p1, p2) => (p2.Mes).CompareTo(p1.Mes);
+                        break;
+                    case "CodActSocio":
+                        comparacion = (p1, p2) => (p2.CodActSocio).CompareTo(p1.CodActSocio);
+                        break;
+                    case "Id":
+                        comparacion = (p1, p2) => (p2.Id).CompareTo(p1.Id);
                         break;
                     default:
                         break;

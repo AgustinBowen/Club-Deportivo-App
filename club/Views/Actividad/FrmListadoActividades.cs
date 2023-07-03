@@ -149,6 +149,15 @@ namespace clubApp.Views
                     case "LegajoProfe":
                         comparacion = (p1, p2) => (p1.LegajoProfe).CompareTo(p2.LegajoProfe);
                         break;
+                    case "FechaDesde": 
+                        comparacion = (p1, p2) => (p1.FechaDesde).CompareTo(p2.FechaDesde);
+                        break;
+                    case "FechaHasta":
+                        comparacion = (p1, p2) => (p1.FechaHasta).CompareTo(p2.FechaHasta);
+                        break;
+                    case "Id":
+                        comparacion = (p1, p2) => (p1.Id).CompareTo(p2.Id);
+                        break;
                     default:
                         break;
                 }
@@ -164,8 +173,18 @@ namespace clubApp.Views
                     case "LegajoProfe":
                         comparacion = (p1, p2) => (p2.LegajoProfe).CompareTo(p1.LegajoProfe);
                         break;
+                    case "FechaDesde":
+                        comparacion = (p1, p2) => (p2.FechaDesde).CompareTo(p1.FechaDesde);
+                        break;
+                    case "FechaHasta":
+                        comparacion = (p1, p2) => (p2.FechaHasta).CompareTo(p1.FechaHasta);
+                        break;
+                    case "Id":
+                        comparacion = (p1, p2) => (p2.Id).CompareTo(p1.Id);
+                        break;
                     default:
                         break;
+                    
                 }
                 acendente = true;
             }
