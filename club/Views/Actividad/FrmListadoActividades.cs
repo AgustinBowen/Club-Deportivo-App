@@ -71,7 +71,9 @@ namespace clubApp.Views
             }
 
 
-            this.actividadGrd.DataSource = Actividad.FindAllStatic(criterio, (c1, c2) => (c1.Id).CompareTo(c2.Id));
+            bindingList = new BindingList<Actividad>(Actividad.FindAllStatic(criterio, (p1, p2) => (p1.Id).CompareTo(p2.Id)));
+            bindingSource = new BindingSource(bindingList, null);
+            this.actividadGrd.DataSource = bindingSource;
         }
 
         private void LoadCombos()
@@ -87,7 +89,9 @@ namespace clubApp.Views
             this.comboProfesor.Enabled = false;
             this.comboCodTipoActividad.Enabled = false;
             this.actividadGrd.AutoGenerateColumns = false;
-            this.actividadGrd.DataSource = Actividad.FindAllStatic(criterio, (a1, a2) => (a1.Id).CompareTo(a2.Id));
+            bindingList = new BindingList<Actividad>(Actividad.FindAllStatic(criterio, (p1, p2) => (p1.Id).CompareTo(p2.Id)));
+            bindingSource = new BindingSource(bindingList, null);
+            this.actividadGrd.DataSource = bindingSource;
         }
         private void tipoActividadCHK_CheckedChanged(object sender, EventArgs e)
         {
