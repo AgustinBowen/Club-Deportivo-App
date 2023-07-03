@@ -111,6 +111,7 @@
             this.ProfesoresGrd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProfesoresGrd.Size = new System.Drawing.Size(826, 352);
             this.ProfesoresGrd.TabIndex = 5;
+            this.ProfesoresGrd.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ProfesoresGrd_ColumnHeaderMouseClick_1);
             // 
             // ApellidoChk
             // 
