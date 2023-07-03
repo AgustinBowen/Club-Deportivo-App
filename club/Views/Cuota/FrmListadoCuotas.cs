@@ -216,11 +216,7 @@ namespace clubApp.Views
             List<Cuota> listaCuotas = bindingList.ToList();
             frm.ShowExportar(listaCuotas);
         }
-        private void FrmListadoCuotas_Load(object sender, EventArgs e)
-        {
-            this.CuotasGrd.AutoGenerateColumns = false;
-            this.CuotasGrd.DataSource = Cuota.FindAllStatic(criterio, (c1, c2) => (c1.Id).CompareTo(c2.Id));
-        }
+      
 
         private void AnuladaChk_CheckedChanged(object sender, EventArgs e)
         {
@@ -306,7 +302,16 @@ namespace clubApp.Views
 
         private void FrmListadoCuotas_Load_1(object sender, EventArgs e)
         {
+            this.CuotasGrd.AutoGenerateColumns = false;
+            this.CuotasGrd.DataSource = Cuota.FindAllStatic(criterio, (c1, c2) => (c1.Id).CompareTo(c2.Id));
+        }
 
+        private void PagarBtn_Click(object sender, EventArgs e)
+        {
+            Cuota cuotaAux = (CuotasGrd.SelectedRows[0].DataBoundItem as Cuota);
+            cuotaAux.Estado = "p";
+            cuotaAux.SaveObj();
+            MessageBox.Show(string.Format("Se realizo el pago de la cuota: {0}",cuotaAux.ToString(),"Operacion Realizada",MessageBoxButtons.OK));
         }
     }
 }

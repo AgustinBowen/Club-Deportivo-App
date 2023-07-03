@@ -50,13 +50,14 @@
             this.AnuladaChk = new System.Windows.Forms.CheckBox();
             this.CuotasGrd = new System.Windows.Forms.DataGridView();
             this.IdCuotaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImporteCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaPagoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaVencCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodActSocioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AnioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MesCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImporteCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaVencimientoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaPagoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PagarBtn = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -277,6 +278,15 @@
             this.CuotasGrd.AllowUserToAddRows = false;
             this.CuotasGrd.AllowUserToDeleteRows = false;
             this.CuotasGrd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CuotasGrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdCuotaCol,
+            this.CodActSocioCol,
+            this.AnioCol,
+            this.MesCol,
+            this.EstadoCol,
+            this.ImporteCol,
+            this.FechaVencimientoCol,
+            this.FechaPagoCol});
             this.CuotasGrd.Location = new System.Drawing.Point(23, 106);
             this.CuotasGrd.Margin = new System.Windows.Forms.Padding(2);
             this.CuotasGrd.MultiSelect = false;
@@ -291,79 +301,79 @@
             this.CuotasGrd.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CuotasGrd_ColumnHeaderMouseClick);
             this.CuotasGrd.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.CuotasGrd_DataBindingComplete);
             this.CuotasGrd.DoubleClick += new System.EventHandler(this.CuotasGrd_DoubleClick);
-            this.CuotasGrd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
-            {
-                this.IdCuotaCol,
-                this.CodActSocioCol,
-                this.AnioCol,
-                this.MesCol,
-                this.EstadoCol,
-                this.ImporteCol,
-                this.FechaVencCol,
-                this.FechaPagoCol,
-            });
             // 
-            // IdCuota
+            // IdCuotaCol
             // 
             this.IdCuotaCol.DataPropertyName = "Id";
             this.IdCuotaCol.HeaderText = "ID Cuota";
             this.IdCuotaCol.Name = "IdCuotaCol";
             this.IdCuotaCol.ReadOnly = true;
             // 
-            // Importe
-            // 
-            this.ImporteCol.DataPropertyName = "Importe";
-            this.ImporteCol.HeaderText = "Importe";
-            this.ImporteCol.Name = "ImporteCol";
-            this.ImporteCol.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.EstadoCol.DataPropertyName = "Estado";
-            this.EstadoCol.HeaderText = "Estado";
-            this.EstadoCol.Name = "EstadoCol";
-            this.EstadoCol.ReadOnly = true;
-            // 
-            // FechaPago
-            // 
-            this.FechaPagoCol.DataPropertyName = "FechaPago";
-            this.FechaPagoCol.HeaderText = "Fecha pago";
-            this.FechaPagoCol.Name = "FechaPagoCol";
-            this.FechaPagoCol.ReadOnly = true;
-            // 
-            // FechaVenc
-            // 
-            this.FechaVencCol.DataPropertyName = "FechaVenc";
-            this.FechaVencCol.HeaderText = "Fecha vencimiento";
-            this.FechaVencCol.Name = "FechaVencimientoCol";
-            this.FechaVencCol.ReadOnly = true;
-            // 
-            // CodActSocio
+            // CodActSocioCol
             // 
             this.CodActSocioCol.DataPropertyName = "CodActSocio";
             this.CodActSocioCol.HeaderText = "Actividad socio";
             this.CodActSocioCol.Name = "CodActSocioCol";
             this.CodActSocioCol.ReadOnly = true;
             // 
-            // Anio
+            // AnioCol
             // 
             this.AnioCol.DataPropertyName = "Anio";
             this.AnioCol.HeaderText = "Año";
             this.AnioCol.Name = "AnioCol";
             this.AnioCol.ReadOnly = true;
             // 
-            // Mes
+            // MesCol
             // 
             this.MesCol.DataPropertyName = "Mes";
             this.MesCol.HeaderText = "Mes";
             this.MesCol.Name = "MesCol";
             this.MesCol.ReadOnly = true;
             // 
+            // EstadoCol
+            // 
+            this.EstadoCol.DataPropertyName = "Estado";
+            this.EstadoCol.HeaderText = "Estado";
+            this.EstadoCol.Name = "EstadoCol";
+            this.EstadoCol.ReadOnly = true;
+            // 
+            // ImporteCol
+            // 
+            this.ImporteCol.DataPropertyName = "Importe";
+            this.ImporteCol.HeaderText = "Importe";
+            this.ImporteCol.Name = "ImporteCol";
+            this.ImporteCol.ReadOnly = true;
+            // 
+            // FechaVencimientoCol
+            // 
+            this.FechaVencimientoCol.DataPropertyName = "FechaVenc";
+            this.FechaVencimientoCol.HeaderText = "Fecha vencimiento";
+            this.FechaVencimientoCol.Name = "FechaVencimientoCol";
+            this.FechaVencimientoCol.ReadOnly = true;
+            // 
+            // FechaPagoCol
+            // 
+            this.FechaPagoCol.DataPropertyName = "FechaPago";
+            this.FechaPagoCol.HeaderText = "Fecha pago";
+            this.FechaPagoCol.Name = "FechaPagoCol";
+            this.FechaPagoCol.ReadOnly = true;
+            // 
+            // PagarBtn
+            // 
+            this.PagarBtn.Location = new System.Drawing.Point(652, 461);
+            this.PagarBtn.Name = "PagarBtn";
+            this.PagarBtn.Size = new System.Drawing.Size(75, 23);
+            this.PagarBtn.TabIndex = 16;
+            this.PagarBtn.Text = "Pagar Cuota";
+            this.PagarBtn.UseVisualStyleBackColor = true;
+            this.PagarBtn.Click += new System.EventHandler(this.PagarBtn_Click);
+            // 
             // FrmListadoCuotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 492);
+            this.Controls.Add(this.PagarBtn);
             this.Controls.Add(this.CuotasGrd);
             this.Controls.Add(this.AnuladaChk);
             this.Controls.Add(this.groupBox4);
@@ -422,5 +432,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaPagoCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodActSocioCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVencimientoCol;
+        private System.Windows.Forms.Button PagarBtn;
     }
 }
