@@ -207,6 +207,12 @@
     <Compile Include="Views\Cuota\FrmListadoCuotas.Designer.cs">
       <DependentUpon>FrmListadoCuotas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Extra\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Extra\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmExportarArchivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +343,9 @@
     <EmbeddedResource Include="Views\Cuota\FrmListadoCuotas.resx">
       <DependentUpon>FrmListadoCuotas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Extra\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmExportarArchivo.resx">
       <DependentUpon>FrmExportarArchivo.cs</DependentUpon>
     </EmbeddedResource>
@@ -398,6 +407,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\bullet.png" />
     <Content Include="Resources\diego1.ico" />
     <Content Include="references\de\Npgsql.resources.dll" />
     <Content Include="references\es\Npgsql.resources.dll" />
@@ -413,6 +423,9 @@
     <None Include="Resources\mainMaradona.png" />
     <None Include="Resources\firmaMarado.png" />
     <None Include="Resources\diego1.png" />
+    <None Include="Resources\enemy.png" />
+    <None Include="Resources\explode.png" />
+    <None Include="Resources\player.png" />
     <Content Include="Script\scriptBD.sql" />
     <None Include="Resources\img_vac2.jpg" />
     <None Include="Resources\img_vac.jpg" />

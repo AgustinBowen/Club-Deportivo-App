@@ -113,10 +113,7 @@ namespace clubApp.Views
             this.FechaHastaPicker.Enabled = this.FechaFinChk.Checked;
         }
 
-        private void actividadGrd_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+     
         private void actividadGrd_DoubleClick(object sender, EventArgs e)
         {
             FrmActividadAM frmpac = new FrmActividadAM();
@@ -133,7 +130,9 @@ namespace clubApp.Views
 
         private void actividadGrd_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-        
+            FrmActividadAM frmpac = new FrmActividadAM();
+            Actividad pac = (this.actividadGrd.SelectedRows[0].DataBoundItem as Actividad);
+            frmpac.ShowModificarActividad(pac);
         }
 
       
@@ -176,5 +175,7 @@ namespace clubApp.Views
             bindingSource = new BindingSource(bindingList, null);
             actividadGrd.DataSource = bindingSource;
         }
+
+       
     }
 }

@@ -88,7 +88,6 @@
             this.actividadGrd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.actividadGrd.Size = new System.Drawing.Size(561, 237);
             this.actividadGrd.TabIndex = 0;
-            this.actividadGrd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.actividadGrd_CellContentClick);
             this.actividadGrd.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.actividadGrd_CellContentDoubleClick);
             this.actividadGrd.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.actividadGrd_ColumnHeaderMouseClick);
             // 

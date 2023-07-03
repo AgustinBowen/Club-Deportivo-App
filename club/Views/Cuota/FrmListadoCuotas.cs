@@ -213,7 +213,7 @@ namespace clubApp.Views
         private void ExportarBtn_Click(object sender, EventArgs e)
         {
             FrmExportarArchivo frm = new FrmExportarArchivo();
-            List<Cuota> listaCuotas = Cuota.FindAllStatic(criterio, null);
+            List<Cuota> listaCuotas = bindingList.ToList();
             frm.ShowExportar(listaCuotas);
         }
         private void FrmListadoCuotas_Load(object sender, EventArgs e)
@@ -236,22 +236,26 @@ namespace clubApp.Views
 
         private void CuotasGrd_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            Comparison<Cuota> comparacion = (p1, p2) => (p1.FechaVenc).CompareTo(p2.FechaVenc);
-            switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
-            {
-                case "Importe":
-                    comparacion = (p1, p2) => (p1.Importe).CompareTo(p2.Importe);
-                    break;
-                case "FechaVenc":
-                    comparacion = (p1, p2) => (p1.FechaVenc).CompareTo(p2.FechaVenc);
-                    break;
-                case "FechaPago":
-                    comparacion = (p1, p2) => (p1.FechaPago).CompareTo(p2.FechaPago);
-                    break;
-                default:
-                    break;
-            }
+            Comparison<Cuota> comparacion = (p1, p2) => (p1.Id).CompareTo(p2.Id);
             if (acendente)
+            {
+                switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
+                {
+                    case "Importe":
+                        comparacion = (p1, p2) => (p1.Importe).CompareTo(p2.Importe);
+                        break;
+                    case "FechaVenc":
+                        comparacion = (p1, p2) => (p1.FechaVenc).CompareTo(p2.FechaVenc);
+                        break;
+                    case "FechaPago":
+                        comparacion = (p1, p2) => (p1.FechaPago).CompareTo(p2.FechaPago);
+                        break;
+                    default:
+                        break;
+                }
+                acendente = false;
+            }
+            else
             {
                 switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
                 {
@@ -263,21 +267,6 @@ namespace clubApp.Views
                         break;
                     case "FechaPago":
                         comparacion = (p1, p2) => (p2.FechaPago).CompareTo(p1.FechaPago);
-                        break;
-                    default:
-                        break;
-                }
-                acendente = false;
-            }
-            else
-            {
-                switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
-                {
-                    case "id":
-                        comparacion = (p1, p2) => (p1.Id).CompareTo(p2.Id);
-                        break;
-                    case "Nombre":
-                        comparacion = (p1, p2) => (p1.FechaVenc).CompareTo(p2.FechaVenc);
                         break;
                     default:
                         break;

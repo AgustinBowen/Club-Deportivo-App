@@ -280,7 +280,7 @@ namespace clubApp.Views
                         criterio = string.Format("cod_tipo_act = {0}", actSocAux.ActividadObj.CodTipoActividad);
                         //float importe = ImporteActividad.FindAllStatic(criterio, null)[0].Importe;
                         Cuota cuotaAux = new Cuota();
-                        cuotaAux.Importe = 1;
+                        cuotaAux.Importe = new Random().Next(100,2000);
                         cuotaAux.Anio = DateTime.Now.Year;
                         cuotaAux.Mes = DateTime.Now.Month;
                         cuotaAux.CodActSocio = actSocAux.Id;
@@ -304,6 +304,13 @@ namespace clubApp.Views
         private void ActividadesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             new FrmListadoActividades().Show();
+        }
+
+        private void AcercaDe_mnu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Agustin Coronel\n Agustin Bowen \n Adrian Griffiths", "Creadores",MessageBoxButtons.OK);
+            Form1 f = new Form1();
+            f.Show();
         }
     }
 }

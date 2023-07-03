@@ -114,7 +114,7 @@ namespace clubApp.Views
         private void ExportarBtn_Click(object sender, EventArgs e)
         {
             FrmExportarArchivo frm = new FrmExportarArchivo();
-            List<Profesor> listaProfesor = Profesor.FindAllStatic(criterio, null);
+            List<Profesor> listaProfesor = bindingList.ToList();
             frm.ShowExportar(listaProfesor);
         }
         private void ProfesoresGrd_ColumnHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
