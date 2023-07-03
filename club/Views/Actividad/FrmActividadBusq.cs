@@ -46,11 +46,11 @@ namespace clubApp.Views
             {
                 if (criterio == null)
                 {
-                    criterio = String.Format("legajo = {0}", (this.comboProfesor.SelectedItem as Profesor).Legajo);
+                    criterio = String.Format("legajo_profe = {0}", (this.comboProfesor.SelectedItem as Profesor).Legajo);
                 }
                 else
                 {
-                    criterio += String.Format(" and legajo = {0}", (this.comboProfesor.SelectedItem as Profesor).Legajo);
+                    criterio += String.Format(" and legajo_profe = {0}", (this.comboProfesor.SelectedItem as Profesor).Legajo);
                 }
             }
 
@@ -91,6 +91,11 @@ namespace clubApp.Views
         private void profesorCHK_CheckedChanged(object sender, EventArgs e)
         {
             this.comboProfesor.Enabled = this.profesorCHK.Checked;
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
