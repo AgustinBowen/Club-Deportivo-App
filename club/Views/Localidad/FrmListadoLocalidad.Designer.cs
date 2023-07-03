@@ -131,6 +131,7 @@
             this.LocalidadGrd.Size = new System.Drawing.Size(242, 360);
             this.LocalidadGrd.TabIndex = 9;
             this.LocalidadGrd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProfesoresGrd_CellContentClick);
+            this.LocalidadGrd.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.LocalidadGrd_ColumnHeaderMouseClick);
             // 
             // Nombre
             // 

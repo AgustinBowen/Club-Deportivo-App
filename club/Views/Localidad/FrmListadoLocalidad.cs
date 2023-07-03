@@ -1,13 +1,21 @@
 ﻿using clubApp.db;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.Common;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace clubApp.Views
 {
     public partial class FrmListadoLocalidad : FormBase
+
     {
+        BindingList<Localidad> bindingList;
+        BindingSource bindingSource;
         string criterio = null;
+        bool acendente;
         public FrmListadoLocalidad()
         {
             InitializeComponent();
@@ -49,6 +57,7 @@ namespace clubApp.Views
 
         private void FiltroBtn_Click(object sender, EventArgs e)
         {
+            
             if (this.NombreChk.Checked)
             {
                 if (criterio == null)
@@ -79,7 +88,9 @@ namespace clubApp.Views
 
                 }
             }
-            this.LocalidadGrd.DataSource = Localidad.FindAllStatic(criterio, (p1, p2) => (p1.Nombre).CompareTo(p2.Nombre));
+            bindingList = new BindingList<Localidad>(Localidad.FindAllStatic(criterio, (p1, p2) => (p1.Nombre).CompareTo(p2.Nombre)));
+            bindingSource = new BindingSource(bindingList,null);
+            this.LocalidadGrd.DataSource = bindingSource;
         }
 
         private void ExportarBtn_Click(object sender, EventArgs e)
@@ -87,6 +98,28 @@ namespace clubApp.Views
             FrmExportarArchivo frm = new FrmExportarArchivo();
             List<Localidad> listaLocalidad = Localidad.FindAllStatic(criterio, null);
             frm.ShowExportar(listaLocalidad);
+        }
+
+        private void LocalidadGrd_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (acendente)
+            {
+                List<Localidad> listAux = bindingList.ToList();
+                listAux = listAux.OrderBy(x => x.Id).ToList();
+                bindingList = new BindingList<Localidad>(listAux);
+                bindingSource = new BindingSource(bindingList,null);
+                LocalidadGrd.DataSource = bindingSource;
+                acendente = false;
+            }
+            else
+            {
+                List<Localidad> listAux = bindingList.ToList();
+                listAux = listAux.OrderByDescending(x => x.Id).ToList();
+                bindingList = new BindingList<Localidad>(listAux);
+                bindingSource = new BindingSource(bindingList, null);
+                LocalidadGrd.DataSource = bindingSource;
+                acendente = true;
+            }
         }
     }
 }
