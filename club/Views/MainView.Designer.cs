@@ -274,6 +274,7 @@
             this.pagarCuotaToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.pagarCuotaToolStripMenuItem.Tag = "AltaCuota";
             this.pagarCuotaToolStripMenuItem.Text = "Pagar Cuota";
+            this.pagarCuotaToolStripMenuItem.Click += new System.EventHandler(this.pagarCuotaToolStripMenuItem_Click);
             // 
             // ImporteActiv_mnu_top
             // 

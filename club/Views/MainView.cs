@@ -312,5 +312,11 @@ namespace clubApp.Views
             Form1 f = new Form1();
             f.Show();
         }
+
+        private void pagarCuotaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Seleccione la Cuota que desea Pagar","Pagar Cuota",MessageBoxButtons.OK);
+            new FrmListadoCuotas().ShowListar();
+        }
     }
 }

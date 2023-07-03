@@ -52,6 +52,7 @@
             this.UsuarioTxt.Name = "UsuarioTxt";
             this.UsuarioTxt.Size = new System.Drawing.Size(201, 20);
             this.UsuarioTxt.TabIndex = 1;
+            this.UsuarioTxt.Text = "msantander";
             // 
             // label2
             // 
@@ -69,6 +70,7 @@
             this.ClaveTxt.PasswordChar = '*';
             this.ClaveTxt.Size = new System.Drawing.Size(201, 20);
             this.ClaveTxt.TabIndex = 3;
+            this.ClaveTxt.Text = "lenguaje";
             // 
             // IngresarBtn
             // 
