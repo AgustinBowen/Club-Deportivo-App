@@ -2,13 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace clubApp.Views
 {
     public partial class FrmListadoCuotas : FormBase
     {
+        BindingList<Cuota> bindingList;
+        BindingSource bindingSource;
         string criterio = null;
+        bool acendente;
         public FrmListadoCuotas()
         {
             InitializeComponent();
@@ -175,7 +179,10 @@ namespace clubApp.Views
 
                 }
             }
-            this.CuotasGrd.DataSource = Cuota.FindAllStatic(criterio, (c1, c2) => (c1.Id).CompareTo(c2.Id));
+            bindingList = new BindingList<Cuota>(Cuota.FindAllStatic(criterio, (p1, p2) => (p1.Id).CompareTo(p2.Id)));
+            bindingSource = new BindingSource(bindingList, null);
+            this.CuotasGrd.DataSource = bindingSource;
+            
         }
 
         private void FechaVencimientoPicker_ValueChanged(object sender, EventArgs e)
@@ -229,42 +236,59 @@ namespace clubApp.Views
 
         private void CuotasGrd_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DataGridViewColumn newColumn = CuotasGrd.Columns[e.ColumnIndex];
-            DataGridViewColumn oldColumn = CuotasGrd.SortedColumn;
-            ListSortDirection direction;
-            List<Cuota> listaAux = new List<Cuota>();
-            listaAux = Cuota.FindAllStatic(null, (c1, c2) => (c1.Anio).CompareTo(c2.Anio));
-            var binding = new BindingList<Cuota>(listaAux);
-            var source = new BindingSource(binding, null);
-            this.CuotasGrd.DataSource = source;
-            this.CuotasGrd.AllowUserToOrderColumns = true;
-
-            // If oldColumn is null, then the DataGridView is not sorted.
-            if (oldColumn != null)
+            Comparison<Cuota> comparacion = (p1, p2) => (p1.FechaVenc).CompareTo(p2.FechaVenc);
+            switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
             {
-                // Sort the same column again, reversing the SortOrder.
-                if (oldColumn == newColumn &&
-                    CuotasGrd.SortOrder == SortOrder.Ascending)
+                case "Importe":
+                    comparacion = (p1, p2) => (p1.Importe).CompareTo(p2.Importe);
+                    break;
+                case "FechaVenc":
+                    comparacion = (p1, p2) => (p1.FechaVenc).CompareTo(p2.FechaVenc);
+                    break;
+                case "FechaPago":
+                    comparacion = (p1, p2) => (p1.FechaPago).CompareTo(p2.FechaPago);
+                    break;
+                default:
+                    break;
+            }
+            if (acendente)
+            {
+                switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
                 {
-                    direction = ListSortDirection.Descending;
+                    case "Importe":
+                        comparacion = (p1, p2) => (p2.Importe).CompareTo(p1.Importe);
+                        break;
+                    case "FechaVenc":
+                        comparacion = (p1, p2) => (p2.FechaVenc).CompareTo(p1.FechaVenc);
+                        break;
+                    case "FechaPago":
+                        comparacion = (p1, p2) => (p2.FechaPago).CompareTo(p1.FechaPago);
+                        break;
+                    default:
+                        break;
                 }
-                else
-                {
-                    // Sort a new column and remove the old SortGlyph.
-                    direction = ListSortDirection.Ascending;
-                    oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
-                }
+                acendente = false;
             }
             else
             {
-                direction = ListSortDirection.Ascending;
+                switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
+                {
+                    case "id":
+                        comparacion = (p1, p2) => (p1.Id).CompareTo(p2.Id);
+                        break;
+                    case "Nombre":
+                        comparacion = (p1, p2) => (p1.FechaVenc).CompareTo(p2.FechaVenc);
+                        break;
+                    default:
+                        break;
+                }
+                acendente = true;
             }
-
-            // Sort the selected column.
-            CuotasGrd.Sort(newColumn, direction);
-            newColumn.HeaderCell.SortGlyphDirection =
-                direction == ListSortDirection.Ascending ?
-                SortOrder.Ascending : SortOrder.Descending;
+            List<Cuota> listAux = bindingList.ToList();
+            listAux.Sort(comparacion);
+            bindingList = new BindingList<Cuota>(listAux);
+            bindingSource = new BindingSource(bindingList, null);
+            CuotasGrd.DataSource = bindingSource;
         }
 
         private void FrmListadoCuotas_Load_1(object sender, EventArgs e)
