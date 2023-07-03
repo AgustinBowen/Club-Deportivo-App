@@ -158,36 +158,36 @@ namespace clubApp.Views
             MainView.Instance.Cursor = Cursors.Default;
             this.Close();
         }
-        public void ShowModificarProfesor(FormBase Invoker, Localidad localidad_modif)
+        public void ShowModificarLocalidad(FormBase Invoker, Localidad localidad_modif)
         {
-            ShowInfoProfesorInForm(localidad_modif, Invoker);
+            ShowInfoLocalidadInForm(localidad_modif, Invoker);
         }
 
-        public void ShowModificarProfesor(Localidad localidad_modif)
+        public void ShowModificarLocalidad(Localidad localidad_modif)
         {
-            ShowInfoProfesorInForm(localidad_modif, null);
+            ShowInfoLocalidadInForm(localidad_modif, null);
         }
 
-        private void ShowInfoProfesorInForm(Localidad localidad_modif, FormBase Invoker)
+        private void ShowInfoLocalidadInForm(Localidad localidad_modif, FormBase Invoker)
         {
             this.OperacionForm = FrmOperacion.frmModificacion;
             _Localidad_modif = localidad_modif;
             LocalidadLog = Newtonsoft.Json.JsonConvert.SerializeObject(_Localidad_modif);
-            // cargar cada control con informacion del Profesor....
+            // cargar cada control con informacion de la Localidad....
             FormBase.ShowDataFromModel(this, localidad_modif);
             this.InvokerForm = Invoker;
             this.ShowDialog();
 
         }
 
-        public void ShowIngresoProfesor(FormBase Invoker)
+        public void ShowIngresoLocalidad(FormBase Invoker)
         {
             this.InvokerForm = Invoker;
             this.OperacionForm = FrmOperacion.frmAlta;
             this.ShowDialog();
         }
 
-        public void ShowIngresoProfesor()
+        public void ShowIngresoLocalidad()
         {
             this.InvokerForm = null;
             this.OperacionForm = FrmOperacion.frmAlta;

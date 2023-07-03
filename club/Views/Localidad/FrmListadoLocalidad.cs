@@ -157,5 +157,12 @@ namespace clubApp.Views
             bindingSource = new BindingSource(bindingList, null);
             this.LocalidadGrd.DataSource = bindingSource;
         }
+
+        private void LocalidadGrd_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FrmLocalidadAM frmpac = new FrmLocalidadAM();
+            Localidad pac = (this.LocalidadGrd.SelectedRows[0].DataBoundItem as Localidad);
+            frmpac.ShowModificarLocalidad(pac);
+        }
     }
 }

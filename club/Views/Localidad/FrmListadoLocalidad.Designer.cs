@@ -65,6 +65,7 @@
             this.CodPostalTxt.Name = "CodPostalTxt";
             this.CodPostalTxt.Size = new System.Drawing.Size(116, 20);
             this.CodPostalTxt.TabIndex = 1;
+            this.CodPostalTxt.Tag = "cod_postal";
             this.CodPostalTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CodPostalTxt_KeyPress);
             // 
             // CodPostalChk
@@ -131,6 +132,7 @@
             this.LocalidadGrd.Size = new System.Drawing.Size(242, 360);
             this.LocalidadGrd.TabIndex = 9;
             this.LocalidadGrd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProfesoresGrd_CellContentClick);
+            this.LocalidadGrd.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LocalidadGrd_CellContentDoubleClick);
             this.LocalidadGrd.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.LocalidadGrd_ColumnHeaderMouseClick);
             // 
             // Nombre

@@ -82,7 +82,7 @@
             this.CodPostalTxt.Name = "CodPostalTxt";
             this.CodPostalTxt.Size = new System.Drawing.Size(80, 20);
             this.CodPostalTxt.TabIndex = 4;
-            this.CodPostalTxt.Tag = "Dni";
+            this.CodPostalTxt.Tag = "Id";
             this.CodPostalTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CodPostalTxt_KeyPress);
             // 
             // CodPostalLbl
@@ -102,7 +102,7 @@
             this.NombreTxt.Name = "NombreTxt";
             this.NombreTxt.Size = new System.Drawing.Size(166, 20);
             this.NombreTxt.TabIndex = 2;
-            this.NombreTxt.Tag = "Nombres";
+            this.NombreTxt.Tag = "Nombre";
             // 
             // NombresLbl
             // 
