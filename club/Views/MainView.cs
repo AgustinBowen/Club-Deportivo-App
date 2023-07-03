@@ -178,8 +178,10 @@ namespace clubApp.Views
 
         private void LocalidadAM_mnu_Click(object sender, EventArgs e)
         {
+            MainView.Instance.Cursor = Cursors.WaitCursor;
             FrmLocalidadAM frm = new FrmLocalidadAM();
-            frm.Show();
+            frm.DoCompleteOperationForm += new FormEvent(frm_DoCompleteOperationForm);
+            frm.ShowIngresoLocalidad(this);
         }
 
         private void BuscarLocalidad_mnu_Click(object sender, EventArgs e)
@@ -218,8 +220,10 @@ namespace clubApp.Views
 
         private void CuotaAM_mnu_Click(object sender, EventArgs e)
         {
-            FrmCuotaAM f = new FrmCuotaAM();
-            f.ShowBuscar();
+            MainView.Instance.Cursor = Cursors.WaitCursor;
+            FrmCuotaAM frm = new FrmCuotaAM();
+            frm.DoCompleteOperationForm += new FormEvent(frm_DoCompleteOperationForm);
+            frm.ShowIngresoCuota(this);
         }
 
         private void CuotaToolStripMenuItem_Click(object sender, EventArgs e)
