@@ -96,7 +96,7 @@ namespace clubApp.Views
         private void ExportarBtn_Click(object sender, EventArgs e)
         {
             FrmExportarArchivo frm = new FrmExportarArchivo();
-            List<Localidad> listaLocalidad = Localidad.FindAllStatic(criterio, null);
+            List<Localidad> listaLocalidad = bindingList.ToList();
             frm.ShowExportar(listaLocalidad);
         }
 

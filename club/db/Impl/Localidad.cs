@@ -57,5 +57,10 @@ namespace clubApp.db
         {
             return ORMDB<Localidad>.FindbyKey(key);
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0} - {1}",this.Nombre,this.Id);
+        }
     }
 }
