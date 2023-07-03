@@ -273,7 +273,10 @@ namespace clubApp.Views
                 {
                     foreach (ActividadSocio actSocAux in listaActividades)
                     {
+                        criterio = string.Format("cod_tipo_act = {0}", actSocAux.ActividadObj.CodTipoActividad);
+                        float importe = ImporteActividad.FindAllStatic(criterio, null)[0].Importe;
                         Cuota cuotaAux = new Cuota();
+                        cuotaAux.Importe = 1;
                         cuotaAux.Anio = DateTime.Now.Year;
                         cuotaAux.Mes = DateTime.Now.Month;
                         cuotaAux.CodActSocio = actSocAux.Id;

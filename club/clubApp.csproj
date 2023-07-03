@@ -231,7 +231,6 @@
     <Compile Include="Views\Localidad\FrmLocalidadList.Designer.cs">
       <DependentUpon>FrmLocalidadList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\OrdenadorColumnas.cs" />
     <Compile Include="Views\Profesor\FrmProfesorBusq.cs">
       <SubType>Form</SubType>
     </Compile>
