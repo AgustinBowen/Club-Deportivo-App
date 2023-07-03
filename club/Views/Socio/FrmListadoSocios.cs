@@ -1,6 +1,8 @@
 ﻿using clubApp.db;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace clubApp.Views
@@ -8,7 +10,10 @@ namespace clubApp.Views
     public partial class FrmListadoSocios : FormBase
 
     {
+        BindingList<Socio> bindingList;
+        BindingSource bindingSource;
         string criterio = null;
+        bool acendente;
         public FrmListadoSocios()
         {
             InitializeComponent();
@@ -29,7 +34,9 @@ namespace clubApp.Views
             LoadComboBox(Localidad.FindAllStatic(null, (l1, l2) => l1.Nombre.CompareTo(l2.Nombre)), this.LocalidadCbo, addSeleccion: true);
 
             this.SociosGrd.AutoGenerateColumns = false;
-            this.SociosGrd.DataSource = Socio.FindAllStatic(null, (p1, p2) => (p1.Apellido + p1.Nombres).CompareTo(p2.Apellido + p2.Nombres));
+            bindingList = new BindingList<Socio>(Socio.FindAllStatic(criterio, (p1, p2) => (p1.Nombres).CompareTo(p2.Nombres)));
+            bindingSource = new BindingSource(bindingList, null);
+            this.SociosGrd.DataSource = bindingSource;
         }
 
         private void LocalidadChk_CheckedChanged(object sender, EventArgs e)
@@ -50,7 +57,10 @@ namespace clubApp.Views
                 else
                     criterio = "cod_postal= " + LocalidadCbo.SelectedValue;
             }
-            this.SociosGrd.DataSource = Socio.FindAllStatic(criterio, (p1, p2) => (p1.Apellido + p1.Nombres).CompareTo(p2.Apellido + p2.Nombres));
+            
+            bindingList = new BindingList<Socio>(Socio.FindAllStatic(criterio, (p1, p2) => (p1.Nombres).CompareTo(p2.Nombres)));
+            bindingSource = new BindingSource(bindingList, null);
+            this.SociosGrd.DataSource = bindingSource;
         }
 
         private void SociosGrd_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -80,46 +90,45 @@ namespace clubApp.Views
             frm.ShowExportar(listaSocio);
         }
         private void SociosGrd_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {/*
-            DataGridViewColumn newColumn = SociosGrd.Columns[e.ColumnIndex];
-            DataGridViewColumn oldColumn = SociosGrd.SortedColumn;
-            ListSortDirection direction;
-            List<Socio> listaAux = new List<Socio>();
-            listaAux = Socio.FindAllStatic(null, (p1, p2) => (p1.Apellido + p1.Nombres).CompareTo(p2.Apellido + p2.Nombres));
-            var binding = new BindingList<Socio>(listaAux);
-            var source = new BindingSource(binding, null);
-            this.SociosGrd.DataSource = source;
-            this.SociosGrd.AllowUserToOrderColumns = true;
-
-
-            // If oldColumn is null, then the DataGridView is not sorted.
-            if (oldColumn != null)
-            {
-                // Sort the same column again, reversing the SortOrder.
-                if (oldColumn == newColumn &&
-                    SociosGrd.SortOrder == SortOrder.Ascending)
+        {
+           Comparison<Socio> comparacion = (p1, p2) => (p1.Nombres).CompareTo(p2.Nombres);
+                if (acendente)
                 {
-                    direction = ListSortDirection.Descending;
+                    switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
+                    {
+                        case "NroDocumento":
+                            comparacion = (p1, p2) => (p1.NroDocumento).CompareTo(p2.NroDocumento);
+                            break;
+                        case "Apellido":
+                            comparacion = (p1, p2) => (p1.Apellido).CompareTo(p2.Apellido);
+                            break;
+                        default:
+                            break;
+                    }
+                    acendente = false;
                 }
                 else
                 {
-                    // Sort a new column and remove the old SortGlyph.
-                    direction = ListSortDirection.Ascending;
-                    oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
+                    switch ((sender as DataGridView).Columns[e.ColumnIndex].DataPropertyName)
+                    {
+                        case "NroDocumento":
+                            comparacion = (p1, p2) => (p2.NroDocumento).CompareTo(p1.NroDocumento);
+                            break;
+                        case "Apellido":
+                            comparacion = (p1, p2) => (p2.Apellido).CompareTo(p1.Apellido);
+                            break;
+                        default:
+                            break;
+                    }
+                    acendente = true;
                 }
-            }
-            else
-            {
-                direction = ListSortDirection.Ascending;
-            }
-
-            // Sort the selected column.
-            SociosGrd.Sort(newColumn, direction);
-            newColumn.HeaderCell.SortGlyphDirection =
-                direction == ListSortDirection.Ascending ?
-                SortOrder.Ascending : SortOrder.Descending;*/
+                List<Socio> listAux = bindingList.ToList();
+                listAux.Sort(comparacion);
+                bindingList = new BindingList<Socio>(listAux);
+                bindingSource = new BindingSource(bindingList, null);
+                SociosGrd.DataSource = bindingSource;
         }
-
+        
         private void ActivoChk_CheckedChanged(object sender, EventArgs e)
         {
 
