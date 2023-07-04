@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Media;
 using System.Windows.Forms;
 
 namespace clubApp.Views
@@ -10,6 +11,7 @@ namespace clubApp.Views
     public partial class MainView : FormBase
     {
         private Usuario _usuarioActual = null;
+        private SoundPlayer reproductor;
         public Usuario UsuarioActual
         {
             get { return _usuarioActual; }
@@ -99,6 +101,9 @@ namespace clubApp.Views
                     return;
                 }
                 this.Visible = true;
+                string rutaCancion = "C:/Users/agus_/source/repos/Club-Deportivo-App/club/cancionMarado8bits.wav";
+                reproductor = new SoundPlayer(rutaCancion);
+                reproductor.Play();
             }
         }
 
@@ -317,6 +322,20 @@ namespace clubApp.Views
         {
             MessageBox.Show("Seleccione la Cuota que desea Pagar","Pagar Cuota",MessageBoxButtons.OK);
             new FrmListadoCuotas().ShowListar();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string rutaCancion = "C:/Users/agus_/source/repos/Club-Deportivo-App/club/grandeDiegoSonido.wav";
+            reproductor = new SoundPlayer(rutaCancion);
+            reproductor.Play();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string rutaCancion = "C:/Users/agus_/source/repos/Club-Deportivo-App/club/cancionMarado8bits.wav";
+            reproductor = new SoundPlayer(rutaCancion);
+            reproductor.Play();
         }
     }
 }

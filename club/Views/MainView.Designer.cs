@@ -73,6 +73,8 @@
             this.StatusInfoUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.CancionBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.status.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -475,6 +477,26 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
+            // CancionBtn
+            // 
+            this.CancionBtn.Location = new System.Drawing.Point(170, 565);
+            this.CancionBtn.Name = "CancionBtn";
+            this.CancionBtn.Size = new System.Drawing.Size(152, 47);
+            this.CancionBtn.TabIndex = 7;
+            this.CancionBtn.Text = "Parar reproduccion";
+            this.CancionBtn.UseVisualStyleBackColor = true;
+            this.CancionBtn.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 565);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(152, 47);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Reproducir cancion";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -482,6 +504,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1119, 656);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CancionBtn);
             this.Controls.Add(this.status);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pictureBox1);
@@ -553,5 +577,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem generarCutoasMensualesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pagarCuotaToolStripMenuItem;
+        private System.Windows.Forms.Button CancionBtn;
+        private System.Windows.Forms.Button button1;
     }
 }
