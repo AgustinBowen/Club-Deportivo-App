@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Media;
 using System.Windows.Forms;
@@ -101,9 +102,8 @@ namespace clubApp.Views
                     return;
                 }
                 this.Visible = true;
-                string rutaCancion = "C:/Users/agus_/source/repos/Club-Deportivo-App/club/cancionMarado8bits.wav";
+                string rutaCancion =Environment.CurrentDirectory + "/cancionMarado8bits.wav";
                 reproductor = new SoundPlayer(rutaCancion);
-                reproductor.PlayLooping();
             }
         }
 
@@ -167,6 +167,9 @@ namespace clubApp.Views
 
         private void MainView_FormClosing(object sender, FormClosingEventArgs e)
         {
+            string rutaCancion = Environment.CurrentDirectory + "/grandeDiegoSonido.wav";
+            reproductor = new SoundPlayer(rutaCancion);
+            reproductor.Play();
             if (MessageBox.Show("Desea salir del sistema?", "salida..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Dispose();
@@ -326,16 +329,14 @@ namespace clubApp.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string rutaCancion = "C:/Users/agus_/source/repos/Club-Deportivo-App/club/grandeDiegoSonido.wav";
-            reproductor = new SoundPlayer(rutaCancion);
-            reproductor.Play();
+            reproductor.Stop();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string rutaCancion = "C:/Users/agus_/source/repos/Club-Deportivo-App/club/cancionMarado8bits.wav";
+            string rutaCancion = Environment.CurrentDirectory + "/cancionMarado8bits.wav";
             reproductor = new SoundPlayer(rutaCancion);
-            reproductor.Play();
+            reproductor.PlayLooping();
         }
     }
 }

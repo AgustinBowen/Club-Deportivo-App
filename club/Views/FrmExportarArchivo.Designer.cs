@@ -34,6 +34,7 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.InitialDirectory = "C:\\";
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // FrmExportarArchivo
             // 

@@ -83,5 +83,10 @@ namespace clubApp.Views
             }
             this.Close();
         }
+
+        private void saveFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
     }
 }
