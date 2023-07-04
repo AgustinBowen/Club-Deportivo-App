@@ -103,7 +103,7 @@ namespace clubApp.Views
                 this.Visible = true;
                 string rutaCancion = "C:/Users/agus_/source/repos/Club-Deportivo-App/club/cancionMarado8bits.wav";
                 reproductor = new SoundPlayer(rutaCancion);
-                reproductor.Play();
+                reproductor.PlayLooping();
             }
         }
 
